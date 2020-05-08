@@ -8,11 +8,11 @@ class Mapmerchant extends Component{
   render(){
     return(
       <div className="design">
-        <Grid  container spacing={12} style={{padding:'30px'}}>
+        <Grid  container spacing={12} style={{padding:'0px'}}>
           {Data.map((detail,index)=>{
             return <div >
-              <Grid item xl={3} style={{padding:'12px'}} >
-                <Card className="border" border="dark"   style={{width:'25rem'}}>
+              <Grid item lg={3} style={{padding:'15px'}} >
+                <Card className="border" border="dark"   style={{width:'100%'}}>
                   <Card.Body>
                     <ReactPlayer playing width="card.innerWidth" height="card.innerHeight" loop muted url={detail.videourl} />
                       <Card.Title>{detail["video details"]["video name"]}</Card.Title>
