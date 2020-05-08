@@ -3,12 +3,13 @@ import Navigation from "./components/Navigation/Navigation";
 import ChangePassword from "./components/ChangePassword/ChangePassword";
 import Payment from "./components/payment/payment";
 import SingleShare from "./components/SingleShare/SingleShare";
+import UPI from "./components/UPI/UPI";
 function App() {
 	return (
 
 		<div className="App">
 			<Navigation/>
-			<SingleShare/>
+			<UPI/>
 		</div>
 	);
 }
