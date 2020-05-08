@@ -1,6 +1,6 @@
 import React from 'react'
-import {Nav,Navbar} from 'react-bootstrap'
-import logo from '../images/purple_bg_name.jpg';
+import {Nav,Navbar,NavDropdown,FormControl,Form,Button} from 'react-bootstrap'
+import logo from '../images/white_bg_noname.jpg';
 
 import {TiShoppingCart} from 'react-icons/ti'
 
@@ -9,34 +9,32 @@ import './Navig.css'
 
 function Navig() {
     return (
-        <div>
-            <Navbar expand="lg" className="sh" variant="dark">
-                <Navbar.Brand  style={{backgroundColor:'#620b80',padding:'10px',borderRadius:'100px'}} href="/">
-                  <img
-                    src={logo}
-                    width="50"
-                    height="50"
-                    className="d-inline-block align-top"
-                    alt="logo"
-                  />
-                </Navbar.Brand>
-
-
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse  id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
-
-                    <Nav.Link href="/">Home</Nav.Link>
-
-                    </Nav>
-                    <Nav>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <div style={{padding:'5px'}}></div>
-                    <TiShoppingCart size={40}/>
-                    </Nav>
-                </Navbar.Collapse>
-
-             </Navbar>
+        <div class="navig">
+            <div class="row">
+              <div class="col-md-2">
+                <img class="pull-left" src={logo} alt="logo"/>
+                <h2 class="pull-left">Crevalto</h2>
+              </div>
+              <div class="col-md-7">
+                <form>
+                  <input type="input" name="search" placeholder="SEARCH"/>
+                </form>
+              </div>
+              <div class="col-md-3" style={{paddingLeft:'0px'}}>
+                  <Nav className="smalls">
+                    <Nav.Link href="#features">Home</Nav.Link>
+                    <Nav.Link href="#pricing">Cart</Nav.Link>
+                    <NavDropdown title="Others" id="collasible-nav-dropdown">
+                      <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link href="#pricing">Login</Nav.Link>
+                  </Nav>
+              </div>
+            </div>
         </div>
     )
 }
