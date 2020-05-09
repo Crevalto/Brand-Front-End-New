@@ -49,7 +49,7 @@ color: white;
     background: var(--darkGrey) !important;
   }
   .services-center {
-    width: 90vw !important;
+    width: 60vw !important;
     margin: 0 auto !important;
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)) !important;
@@ -71,7 +71,7 @@ color: white;
   }
   @media screen and (min-width: 992px) {
     .services-center {
-      width: 95vw !important;
+      width: 60vw !important;
       max-width: 1170px !important;
     }
 
