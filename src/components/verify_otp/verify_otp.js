@@ -5,7 +5,7 @@ import './verify.css'
 
 function Home() {
   return (
-    <div className="verify_otp">
+    <div className="verify_otp paddertop">
       <div class="row">
           <div class="col-md-3">
           </div>

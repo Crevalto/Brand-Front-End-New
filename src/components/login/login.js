@@ -7,7 +7,7 @@ import Cookies from "universal-cookie";
 
 
 class login extends Component {
-  
+
   constructor(){
     super()
     this.handleChange=this.handleChange.bind(this);
@@ -22,10 +22,10 @@ class login extends Component {
 
 
   handleChange(e){
-   
+
     this.setState({[e.target.name]:[e.target.value]});
-    
-  
+
+
   }
 
   handleclick(e){
@@ -36,24 +36,24 @@ class login extends Component {
    console.log(cookies.get('email'))
     //this.history.push("/");
 
-    
+
     const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
     var data = {
-      email : this.state.email,
-      password : this.state.password ,
+      emailAddress : this.state.email[0],
+      accountPassword : this.state.password[0],
     }
 
-console.log(data);  
+console.log(data);
     fetch(url,{
     method:'POST',
     body:JSON.stringify(data),
-headers:{'Content-Type':'application/json'} 
+headers:{'Content-Type':'application/json'}
 })
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response => console.log("Success:",response))
     }
-  
+
 
 
   render(){

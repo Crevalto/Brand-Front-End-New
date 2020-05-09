@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+.navig a{
+    font-weight: 700;
+    padding-left: 12px;
+    padding-right: 12px;
+    color:white !important;
+    transition: all .3s linear;
+}
+
+.sh{
+background-color: white;
+box-shadow:0px 2px 15px  purple;
+}
+.navig ::placeholder{
+  font-size: 20px;
+}
+.navig{
+  z-index:100;
+  position: fixed;
+  width:100%;
+  background:#620b80;
+  padding:8px 5px 8px 8px;
+  color:white !important;
+  box-shadow: 0px 0px 10px #632780;
+}
+.navig .smalls{
+  margin-top:15px;
+}
+.navig a:hover{
+  background-color: white;
+  color:#620b80 !important;
+  box-shadow: inset 0px 0 6px #632780!important;
+  transition: all .3s ease-out;
+}
+.navig form{
+  padding-bottom:0px;
+}
+.navig img{
+  height: 70px;
+  width: 70px;
+  padding:5px;
+  background:white;
+  border-radius: 100px;
+  box-shadow: inset 0px 0 6px #632780!important;
+}
+.navig h2{
+  font-family: 'Dancing Script', cursive;
+  margin: 15px;
+  margin-top:20px;
+  font-size: 27px;
+  font-weight: 500;
+}
+.navig input{
+  width:100%;
+  background-color: whitesmoke !important;
+  border:0px solid white !important;
+  border-radius: 25px 25px 25px 25px !important;
+  padding:10px;
+  padding-left: 20px;
+  padding-bottom:9px;
+  margin-bottom:0px;
+box-shadow: inset 0px 0 10px #632780 !important;
+}
+.navig .btn{
+  background-color: whitesmoke;
+  visibility: hidden;
+  padding:10px;
+  margin-top:-3px;
+  border:0px white solid;
+  width:0%;
+  border-radius:0px 25px 25px 0px !important;
+}
