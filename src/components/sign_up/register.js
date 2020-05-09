@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import logo from '../images/logos.jpg'
 import "./register.css"
+import { withRouter } from "react-router-dom";
+
+
 class Signup extends Component {
 constructor(){
     super();
     this.state={
+        responses_otp:"",
+        responses_status:"",
         OrganisationName:'',
         Cinnumber:'',
         Address:'',
@@ -50,8 +55,21 @@ headers:{'Content-Type':'application/json'}
 })
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
-    .then(response => console.log("Success:",response))
+    .then(response =>{ console.log("Success:",response.status)
+    this.setState({responses_otp : response.otp,
+                            responses_status: response.status}) 
+    })
+    .then(run=>{
+      console.log(this.state.responses_otp)
+    if(this.state.responses_status===true){
+    this.props.history.push(`/verify/${this.state.responses_otp+"_"+this.state.email}`);
+    }else{
+      alert("Something Went Wrong")
     }
+    })
+    
+    
+  }
 
   render(){
     return(
@@ -103,7 +121,7 @@ headers:{'Content-Type':'application/json'}
 
                    </div>
 
-                   <button class="btn btn-primary" type="submit" >SIGN UP</button>
+                   <button  class="btn btn-primary" type="submit" >SIGN UP</button>
                  </div>
               </form>
               </div>
@@ -117,4 +135,4 @@ headers:{'Content-Type':'application/json'}
     )
 }
 }
-export default Signup
+export default withRouter(Signup)
