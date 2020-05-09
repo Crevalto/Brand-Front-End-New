@@ -47,7 +47,7 @@ handleSubmit = event =>{
     }
 
 }
-console.log(data);  
+console.log(data);
     fetch(url,{
     method:'POST',
     body:JSON.stringify(data),
@@ -57,7 +57,7 @@ headers:{'Content-Type':'application/json'}
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response =>{ console.log("Success:",response.status)
     this.setState({responses_otp : response.otp,
-                            responses_status: response.status}) 
+                            responses_status: response.status})
     })
     .then(run=>{
       console.log(this.state.responses_otp)
@@ -67,18 +67,14 @@ headers:{'Content-Type':'application/json'}
       alert("Something Went Wrong")
     }
     })
-    
-    
+
+
   }
 
   render(){
     return(
     <div>
-<<<<<<< HEAD
         <div className="body_signup paddertop" >
-=======
-        <div className="body_signup paddertop">
->>>>>>> 9f8d415ec6e8dfac88f185541e049dfb9ecfd47e
             <div className="row">
                 <div className="col-md-3" />
                 <div className="col-md-6">
