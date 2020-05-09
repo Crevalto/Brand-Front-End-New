@@ -1,4 +1,4 @@
-body{
+.single-share body{
     margin: 0;
     padding: 0;
 }
@@ -9,7 +9,7 @@ body{
     width: 100vw;
     align-items: center;
 }
-.video-placeholder{
+.single-share .video-placeholder{
     width: 600px;
     background-color: black;
     height: 400px;

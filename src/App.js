@@ -28,6 +28,10 @@ function App() {
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
           <Route  path="/verify/:slug" component={Verify}/>
+<<<<<<< HEAD
+=======
+          <Route  path="/products/:slug" component={Products}/>
+>>>>>>> 9f8d415ec6e8dfac88f185541e049dfb9ecfd47e
           <Route component={Pagenotfound}/>
       </Switch>
 
@@ -35,4 +39,3 @@ function App() {
   );
 }
 export default App;
-

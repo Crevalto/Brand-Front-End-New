@@ -74,7 +74,11 @@ headers:{'Content-Type':'application/json'}
   render(){
     return(
     <div>
+<<<<<<< HEAD
         <div className="body_signup paddertop" >
+=======
+        <div className="body_signup paddertop">
+>>>>>>> 9f8d415ec6e8dfac88f185541e049dfb9ecfd47e
             <div className="row">
                 <div className="col-md-3" />
                 <div className="col-md-6">

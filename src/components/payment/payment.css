@@ -1,8 +1,8 @@
-.payment-options{
+.payment-body .payment-options{
     margin-top: 3rem ;
     margin-left: 3rem;
 }
-.payment-options__item{
+.payment-body .payment-options__item{
     text-decoration: none;
     margin-left: 3rem;
     border: 2px solid black;
@@ -10,7 +10,7 @@
     border-radius: 0.5rem;
     color: #610B80;
 }
-.payment-options__item:hover{
+.payment-body .payment-options__item:hover{
     text-decoration: none;
     color: white;
     background-color: #610B80;

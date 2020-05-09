@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Cart extends Component {
     render() {
         return (
-            <div className="cart">
+            <div className="cart  paddertop">
                 
                 <div className="cart__products">
                     

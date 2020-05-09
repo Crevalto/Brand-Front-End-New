@@ -7,7 +7,11 @@ import Prodcat from './prodcat.js'
 
 function Home() {
   return (
+<<<<<<< HEAD
     <div className="dback paddertop" >
+=======
+    <div className="dback  paddertop">
+>>>>>>> 9f8d415ec6e8dfac88f185541e049dfb9ecfd47e
       <Jumbotron className="jum">
       <Row >
         <Col md={5}>
@@ -16,19 +20,16 @@ function Home() {
         <Col md={7}></Col>
         </Row>
       </Jumbotron>
+      <div class="row">
+        <div class="col-md-4">
 
-
-      <h3 className="prod">Product Categories</h3>
-      <Row >
-        <Col className="colsty" md={1}></Col>
-        <Col md={10}>
-        <CardDeck style={{color:'black',marginBottom:'50px',textAlign:'left'}}>
-          <Prodcat/>
-        </CardDeck>
-        </Col>
-        <Col md={1}></Col>
-      </Row>
         </div>
+        <div class="col-md-4">
+          <h3>Product Categories</h3>
+        </div>
+      </div>
+        <Prodcat/>
+    </div>
   );
 }
 export default Home;

@@ -15,7 +15,7 @@ export default function greeting () {
       }
 
 
-     return (<div>
+     return (<div class="greeting-body  paddertop">
             <div onload={element_scroll()}>
                 <div class="row" id="fullpage">
                     <div class="col-md-1"></div>

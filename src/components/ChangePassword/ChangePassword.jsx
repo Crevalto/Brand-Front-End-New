@@ -3,7 +3,7 @@ import './ChangePassword.css'
 export class ChangePassword extends Component {
     render() {
         return (
-            <div>
+            <div  paddertop>
                  <div class="row justify-content-center">
           <div class="col-md-6">
             <span class="anchor" id="formChangePassword"></span>

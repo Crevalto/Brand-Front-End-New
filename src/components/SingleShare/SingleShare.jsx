@@ -3,7 +3,7 @@ import './SingleShare.css'
 export class SingleShare extends Component {
     render() {
         return (
-            <div className="single-share">
+            <div className="single-share paddertop">
                 <div className="video-placeholder">
 
                 </div>

@@ -7,11 +7,11 @@
     transition: all .3s linear;
 }
 
-.nav_item{
+.navig .nav_item{
   color:#620b80 !important;
 }
 
-.sh{
+.navig .sh{
 background-color: white;
 box-shadow:0px 2px 15px  purple;
 }
@@ -54,6 +54,14 @@ box-shadow:0px 2px 15px  purple;
   font-size: 27px;
   font-weight: 500;
 }
+.navig ::placeholder {
+color: #6027814d !important;
+font-family: 'Open Sans Condensed', sans-serif;
+font-weight: 700;
+font-size: 18px;
+opacity: 1;
+letter-spacing: 1px;
+}
 .navig input{
   width:100%;
   background-color: whitesmoke !important;
@@ -63,6 +71,7 @@ box-shadow:0px 2px 15px  purple;
   padding-left: 20px;
   padding-bottom:9px;
   margin-bottom:0px;
+  margin-top: 10px;
 box-shadow: inset 0px 0 10px #632780 !important;
 }
 .navig .btn{
