@@ -7,12 +7,12 @@
   }
   .body_signup .card_signup
   {
-    background:white;
-    padding:10px;
-    margin:50px auto;
-    box-shadow: 0px 0px 15px #6327808a; 
-    border-top:10px solid #632780;
-    width:75%;
+      background:whitesmoke;
+      padding:50px;
+      margin:50px auto;
+      border:5px solid #6327808a;
+      box-shadow: 0px 0px 15px #6327808a;
+      width:75%;
   }
   .body_signup .card_signup h2
   {
@@ -23,7 +23,7 @@
   .body_signup .row{
     margin:0px !important;
     padding-top: 10px;
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
   }
   .body_signup .card_signup img
   {
@@ -71,12 +71,14 @@
     font-size: 18px !important;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight:700;
+    background: transparent;
     width:100%;
     letter-spacing: 2px;
   }
   .body_signup input:focus
   {
     border-bottom: 3px solid #602781 !important;
+    background: transparent;
   }
   .body_signup ::placeholder {
   color: #6027814d !important;

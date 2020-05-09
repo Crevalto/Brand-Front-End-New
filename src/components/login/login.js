@@ -28,7 +28,6 @@ class login extends Component {
 
   }
 
-<<<<<<< HEAD
     handleclick(e){
         e.preventDefault()
         const cookies = new Cookies();
@@ -36,39 +35,19 @@ class login extends Component {
         cookies.set('password', this.state.password[0]);
         console.log(cookies.get('email'))
         this.props.history.push("/");
-    
-=======
-  handleclick(e){
-    e.preventDefault()
-    const cookies = new Cookies();
-    cookies.set('email', this.state.email[0]);
-    cookies.set('password', this.state.password[0]);
-   console.log(cookies.get('email'))
-    //this.history.push("/");
 
-
->>>>>>> e9c4d7c0418f77b03c72a84a4473cc170f206e13
     const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
     var data = {
       emailAddress : this.state.email[0],
       accountPassword : this.state.password[0],
     }
 
-<<<<<<< HEAD
-    console.log(data);  
+    console.log(data);
         fetch(url,{
         method:'POST',
         body:JSON.stringify(data),
-    headers:{'Content-Type':'application/json'} 
+    headers:{'Content-Type':'application/json'}
     })
-=======
-console.log(data);
-    fetch(url,{
-    method:'POST',
-    body:JSON.stringify(data),
-headers:{'Content-Type':'application/json'}
-})
->>>>>>> e9c4d7c0418f77b03c72a84a4473cc170f206e13
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response => console.log("Success:",response))

@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap'
 
 
  class prodcat extends Component {
-    
+
     state={
         services:[]
     }
@@ -12,7 +12,7 @@ import {Card} from 'react-bootstrap'
 
         fetch('https://crevaltobkend.herokuapp.com/brand/getcategories')
         .then(response => response.json()
-        
+
         )
         .then((jsonData) => {
           this.setState({ services:jsonData})
@@ -27,27 +27,22 @@ import {Card} from 'react-bootstrap'
 
     render() {
         return (
-            <section className="services">
-            <div className="services-center">
-
-               
-
+        <div class="row">
             {this.state.services.map((product,index) =>{
-                
-                return <article key={index} className="service">
-                        <Card style={{textAlign:'left'}}>
-                
-                            <Card.Img width="10" height="400"  variant="top" src={product.categoryThumbnail} />
-                            <Card.Body>
-                            <Card.Title>{product.categoryName}</Card.Title>
-                        </Card.Body>
-                            
 
-                        </Card>
-             </article>
-                })}
-              </div> 
-  </section>    
+                return(
+                <div class="col-md-4"  key={index}>
+                <a>
+                  <div class="card">
+                  <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
+                  <div class="holder" style={{marginTop:'-38px',width:'100%'}}>
+                      <h5 class="card-title">{product.categoryName}</h5>
+                  </div>
+                  </div>
+                </a>
+                </div>
+           )})}
+        </div>
 
         )
     }
