@@ -28,7 +28,7 @@ handlechange(e){
 
 }
 
-  
+
 
 handleClick(e){
 
@@ -37,27 +37,27 @@ handleClick(e){
   {
     const url = 'https://crevaltobkend.herokuapp.com/brand/users/verify';
     var data = {
-      emailAddress :val[1] 
+      emailAddress :val[1]
     }
 
-    console.log(val[1]);  
+    console.log(val[1]);
         fetch(url,{
         method:'POST',
         body:JSON.stringify(data),
-    headers:{'Content-Type':'application/json'} 
+    headers:{'Content-Type':'application/json'}
     })
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response =>{ console.log("Success:",response)
-    if(response.status===true){       
+    if(response.status===true){
             this.props.history.push("/login")
-          alert(response.message)  
+          alert(response.message)
           }
             else{
             alert(response.error)
             }
       })
- 
+
 
   }else{
     alert("vicky")
