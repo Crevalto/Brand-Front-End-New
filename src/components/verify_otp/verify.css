@@ -1,9 +1,11 @@
+.paddertop{
+  padding-top: 90px;
+}
 .verify_otp
 {
   background: rgba(99, 39, 128, 0.21);
   background-attachment: fixed;
   height: 100vh;
-  padding: 100px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
