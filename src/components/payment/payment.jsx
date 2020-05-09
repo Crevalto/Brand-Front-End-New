@@ -3,7 +3,7 @@ import './payment.css'
 export class payment extends Component {
     render() {
         return (
-            <div>
+            <div class="payment-body paddertop">
                 
                 <div class="row justify-content-center">
           <div class="col-md-6">

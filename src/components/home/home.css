@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
-.jum{
+.dback .jum{
     background:  linear-gradient(
       #6621cc80, 
       #6621cc80
@@ -13,11 +13,11 @@
     padding:6% !important;
 }
 
-.colsty{
+.dback .colsty{
   max-width: 6% !important;
 }
 
-.prod{
+.dback .prod{
   
     margin: 3rem;
     font-size: 50px;
@@ -28,27 +28,27 @@
   overflow: hidden;
 }
 
-.pquote{
+.dback .pquote{
 color: white;
   text-align: center;
     font-family: 'Dancing Script', cursive;
 }
 
-.layer{
+.dback .layer{
     width:100% !important; 
     height: 100% !important;
 }
 
-.services {
+.dback .services {
     padding-top: 1rem !important;
     padding-right: 3rem 0 !important;
     padding-left: 3rem 0 !important;
     padding-bottom: 3rem 0 !important;
   }
-  .services {
+  .dback .services {
     background: var(--darkGrey) !important;
   }
-  .services-center {
+  .dback .services-center {
     width: 60vw !important;
     margin: 0 auto !important;
     display: grid !important;
@@ -56,21 +56,21 @@ color: white;
     grid-row-gap: 2rem !important;
     grid-column-gap: 40px !important;
   }
-  .service span {
+  .dback .service span {
     display: inline-block !important;
     color: var(--primaryColor) !important;
     font-size: 2.5rem !important;
     margin-bottom: 1.5rem !important;
   }
-  .services h6 {
+  .dback .services h6 {
     letter-spacing: var(--mainSpacing) !important;
   }
-  .services p {
+  .dback .services p {
     width: 80% !important;
     margin: 0 auto !important;
   }
   @media screen and (min-width: 992px) {
-    .services-center {
+    .dback .services-center {
       width: 60vw !important;
       max-width: 1170px !important;
     }
@@ -78,7 +78,7 @@ color: white;
   }
   
   @media screen and (min-width: 1200px) {
-    .services p {
+    .dback .services p {
       width: 100% !important;
     }
   }

@@ -7,11 +7,11 @@
     transition: all .3s linear;
 }
 
-.nav_item{
+.navig .nav_item{
   color:#620b80 !important;
 }
 
-.sh{
+.navig .sh{
 background-color: white;
 box-shadow:0px 2px 15px  purple;
 }

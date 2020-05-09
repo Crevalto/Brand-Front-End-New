@@ -60,7 +60,7 @@ headers:{'Content-Type':'application/json'}
     console.log(this.state.email)
     console.log(this.state.password)
     return (
-      <div className="body">
+      <div className="body paddertop">
     <Row >
        <Col md={3}></Col>
        <Col md={6}>

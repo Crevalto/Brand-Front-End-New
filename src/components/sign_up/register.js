@@ -56,7 +56,7 @@ headers:{'Content-Type':'application/json'}
   render(){
     return(
     <div>
-        <div className="body_signup">
+        <div className="body_signup paddertop">
             <div className="row">
                 <div className="col-md-3" />
                 <div className="col-md-6">

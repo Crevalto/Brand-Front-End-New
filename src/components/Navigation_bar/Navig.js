@@ -9,7 +9,7 @@ import './Navig.css'
 
 function Navig() {
     return (
-        <div class="navig">
+        <div class="navig paddertop">
             <div class="row">
               <div class="col-md-2">
                 <img class="pull-left" src={logo} alt="logo"/>

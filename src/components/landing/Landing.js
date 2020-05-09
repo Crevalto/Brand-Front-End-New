@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 
  export default function Landing() {
     return (
-    <div className="body-landing">
+    <div className="body-landing  paddertop">
     <div style={{position:'fixed'}}>
      <ReactPlayer width={window.innerWidth} height="200"   playing loop url="https://shotstack-api-stage-output.s3-ap-southeast-2.amazonaws.com/c0ru1ymfya/a3d0e1f9-4965-46c4-ac32-c966175c4777.mp4" muted/>
      </div>
