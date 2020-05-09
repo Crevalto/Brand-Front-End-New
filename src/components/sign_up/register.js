@@ -14,7 +14,7 @@ constructor(){
     }
 }
 handleChange = event =>{
-    this.setState({[event.target.name]:[event.target.value]})
+    this.setState({[event.target.name]:event.target.value})
 }
 handleSubmit = event =>{
     event.preventDefault();
@@ -24,17 +24,17 @@ handleSubmit = event =>{
     console.log("Email"+this.state.email);
     console.log("Account Password"+this.state.accountPassword);
     console.log("Password"+this.state.Password);
-    const url = 'http://117.221.237.210:4000/brand/users/register';
+    const url = 'http://crevaltobkend.herokuapp.com/brand/users/register';
     var data = {
-    bandName : this.state.OrganisationName[0],
-    accountPassword : this.state.Password[0] ,
-    brandAddress : this.state.Address[0],
+    brandName : this.state.OrganisationName,
+    accountPassword : this.state.Password ,
+    brandAddress : this.state.Address,
     identificationDetail: {
         regNo: "12345",
-        cinNo: this.state.Cinnumber[0]
+        cinNo: this.state.Cinnumber
       },
-    emailAddress: this.state.email[0],
-    phoneNo: 9677795798,
+    emailAddress: this.state.email,
+    phoneNo: 9455445548,
     brandAssets: {
         brandLogoSrc: "logo",
         brandColor: "yellow",
@@ -42,7 +42,7 @@ handleSubmit = event =>{
     }
 
 }
-console.log(data);
+console.log(data);  
     fetch(url,{
     method:'POST',
     body:JSON.stringify(data),

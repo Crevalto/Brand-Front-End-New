@@ -1,11 +1,66 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './login.css'
 import logo from '../images/logos.jpg'
-import {Link} from "react-router-dom"
+//import {Link} from "react-router-dom"
 import {Row,Col,Form, Button} from "react-bootstrap"
-function login() {
+import Cookies from "universal-cookie";
+
+
+class login extends Component {
+  
+  constructor(){
+    super()
+    this.handleChange=this.handleChange.bind(this);
+    this.handleclick=this.handleclick.bind(this);
+    this.state={
+      credentials:'',
+      email:'',
+      password:''
+    }
+  }
+
+
+
+  handleChange(e){
+   
+    this.setState({[e.target.name]:[e.target.value]});
+    
+  
+  }
+
+  handleclick(e){
+    e.preventDefault()
+    const cookies = new Cookies();
+    cookies.set('email', this.state.email[0]);
+    cookies.set('password', this.state.password[0]);
+   console.log(cookies.get('email'))
+    //this.history.push("/");
+
+    
+    const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
+    var data = {
+      email : this.state.email,
+      password : this.state.password ,
+    }
+
+console.log(data);  
+    fetch(url,{
+    method:'POST',
+    body:JSON.stringify(data),
+headers:{'Content-Type':'application/json'} 
+})
+    .then(res =>res.json())
+    .catch(error => console.error("Show me error that cannot be specify",error))
+    .then(response => console.log("Success:",response))
+    }
+  
+
+
+  render(){
+    console.log(this.state.email)
+    console.log(this.state.password)
     return (
-  <div className="body">
+      <div className="body">
     <Row >
        <Col md={3}></Col>
        <Col md={6}>
@@ -23,13 +78,13 @@ function login() {
                <Col md={12}>
                <Form>
                  <div class="form-group">
-                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required/>
+                   <input type="email" name="email" class="form-control" onChange={this.handleChange} value={this.state.email} id="exampleInputEmail1" placeholder="Email" required/>
                  </div>
                  <div class="form-group">
-                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
+                   <input type="password" name="password" onChange={this.handleChange} value={this.state.password} class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
                  </div>
-                 <Button type="submit" class="btn btn-primary">Log-in</Button><br/>
-                 <Link to="/register"> <Button  class="btn btn-danger">Sign-up</Button></Link>
+                 <Button type="submit" onClick={this.handleclick} class="btn btn-primary">Log-in</Button><br/>
+                  <Button  class="btn btn-danger">Sign-up</Button>
                </Form>
              </Col>
              </Row>
@@ -40,5 +95,5 @@ function login() {
   </div>
       )
 }
-
+}
 export default login

@@ -10,7 +10,7 @@ import {Card} from 'react-bootstrap'
 
     componentDidMount(){
 
-        fetch('https://cors-anywhere.herokuapp.com/http://117.242.221.193:4000/brand/getcategories')
+        fetch('https://crevaltobkend.herokuapp.com/brand/getcategories')
         .then(response => response.json()
         
         )
@@ -37,7 +37,7 @@ import {Card} from 'react-bootstrap'
                 return <article key={index} className="service">
                         <Card style={{textAlign:'left'}}>
                 
-                            <Card.Img   variant="top" src={product.categoryThumbnail} />
+                            <Card.Img width="10" height="400"  variant="top" src={product.categoryThumbnail} />
                             <Card.Body>
                             <Card.Title>{product.categoryName}</Card.Title>
                         </Card.Body>
