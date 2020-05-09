@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
           <Route  path="/verify/:slug" component={Verify}/>
-          <Route path="/product/:sulg" component={Products}/>
+          <Route path="/product/:prod" component={Products}/>
           <Route component={Pagenotfound}/>
       </Switch>
 

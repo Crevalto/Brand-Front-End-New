@@ -22,7 +22,7 @@ function Navig() {
               </div>
               <div class="col-md-3" style={{paddingLeft:'0px'}}>
                   <Nav className="smalls">
-                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/home">Home</Nav.Link>
                     <Nav.Link href="/cart">Cart</Nav.Link>
                     <NavDropdown title="Others" id="collasible-nav-dropdown">
                       <NavDropdown.Item className="nav_item" href="/merchant">Merchant</NavDropdown.Item>
