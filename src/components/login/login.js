@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './login.css'
 import logo from '../images/logos.jpg'
-//import {Link} from "react-router-dom"
+import {Link,withRouter} from "react-router-dom"
 import {Row,Col,Form, Button} from "react-bootstrap"
 import Cookies from "universal-cookie";
 
@@ -28,14 +28,13 @@ class login extends Component {
   
   }
 
-  handleclick(e){
-    e.preventDefault()
-    const cookies = new Cookies();
-    cookies.set('email', this.state.email[0]);
-    cookies.set('password', this.state.password[0]);
-   console.log(cookies.get('email'))
-    //this.history.push("/");
-
+    handleclick(e){
+        e.preventDefault()
+        const cookies = new Cookies();
+        cookies.set('email', this.state.email[0]);
+        cookies.set('password', this.state.password[0]);
+        console.log(cookies.get('email'))
+        this.props.history.push("/");
     
     const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
     var data = {
@@ -43,12 +42,12 @@ class login extends Component {
       password : this.state.password ,
     }
 
-console.log(data);  
-    fetch(url,{
-    method:'POST',
-    body:JSON.stringify(data),
-headers:{'Content-Type':'application/json'} 
-})
+    console.log(data);  
+        fetch(url,{
+        method:'POST',
+        body:JSON.stringify(data),
+    headers:{'Content-Type':'application/json'} 
+    })
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response => console.log("Success:",response))
@@ -84,7 +83,7 @@ headers:{'Content-Type':'application/json'}
                    <input type="password" name="password" onChange={this.handleChange} value={this.state.password} class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
                  </div>
                  <Button type="submit" onClick={this.handleclick} class="btn btn-primary">Log-in</Button><br/>
-                  <Button  class="btn btn-danger">Sign-up</Button>
+                  <Link to="/register"><Button  class="btn btn-danger">Sign-up</Button></Link>
                </Form>
              </Col>
              </Row>
@@ -96,4 +95,4 @@ headers:{'Content-Type':'application/json'}
       )
 }
 }
-export default login
+export default withRouter( login)
