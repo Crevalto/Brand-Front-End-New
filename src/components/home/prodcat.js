@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Card} from 'react-bootstrap'
-
+//import {Card} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
  class prodcat extends Component {
 
@@ -32,14 +32,16 @@ import {Card} from 'react-bootstrap'
 
                 return(
                 <div class="col-md-4"  key={index}>
-                <a>
+                
+                <Link to={`/product/${product._id}`}> 
+ 
                   <div class="card">
                   <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
                   <div class="holder" style={{marginTop:'-38px',width:'100%'}}>
                       <h5 class="card-title">{product.categoryName}</h5>
                   </div>
                   </div>
-                </a>
+              </Link>
                 </div>
            )})}
         </div>

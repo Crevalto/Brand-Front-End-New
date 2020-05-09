@@ -1,5 +1,5 @@
 import React from 'react';
-import {Jumbotron,CardDeck,Row,Col} from 'react-bootstrap'
+import {Jumbotron,Row,Col} from 'react-bootstrap'
 //import ReactPlayer from 'react-player'
 import "./home.css"
 import Prodcat from './prodcat.js'
@@ -7,7 +7,7 @@ import Prodcat from './prodcat.js'
 
 function Home() {
   return (
-    <div className="dback  paddertop">
+    <div className="dback paddertop">
       <Jumbotron className="jum">
       <Row >
         <Col md={5}>

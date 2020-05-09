@@ -40,7 +40,6 @@ class login extends Component {
       emailAddress : this.state.email[0],
       accountPassword : this.state.password[0],
     }
-
     console.log(data);
         fetch(url,{
         method:'POST',
