@@ -35,14 +35,12 @@ class login extends Component {
         cookies.set('password', this.state.password[0]);
         console.log(cookies.get('email'))
         this.props.history.push("/");
-    
     const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
     var data = {
       emailAddress : this.state.email[0],
       accountPassword : this.state.password[0],
     }
-
-    console.log(data);  
+    console.log(data);
         fetch(url,{
         method:'POST',
         body:JSON.stringify(data),

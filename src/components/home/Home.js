@@ -7,21 +7,19 @@ import Prodcat from './prodcat.js'
 
 function Home() {
   return (
-    <div className="dback paddertop" >
+    <div className="dback paddertop">
       <Jumbotron className="jum">
       <Row >
-        <Col md={5}>
+        <Col md={12}>
         <h2 className="pquote">"There is no exercise better for the heart than reaching down and <br/>lifting people up"</h2>
         </Col>
-        <Col md={7}></Col>
         </Row>
       </Jumbotron>
       <div class="row">
-        <div class="col-md-4">
-
-        </div>
-        <div class="col-md-4">
-          <h3>Product Categories</h3>
+        <div class="col-md-12">
+          <h2>
+          Categories
+          </h2>
         </div>
       </div>
         <Prodcat/>
