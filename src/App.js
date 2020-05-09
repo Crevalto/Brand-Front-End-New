@@ -7,6 +7,7 @@ import Register from './components/sign_up/register'
 import Landing from './components/landing/Landing'
 import Pagenotfound from './components/404/pagenotfound'
 import Greeting from './components/greeting/greeting'
+import Verify from './components/verify_otp/verify_otp'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/merchant" component={Merchant}/>
           <Route exact path="/landing" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
+          <Route exact path="/verify" component={Verify}/>
           <Route component={Pagenotfound}/>
       </Switch>
 
