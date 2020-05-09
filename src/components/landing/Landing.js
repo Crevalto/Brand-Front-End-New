@@ -1,6 +1,7 @@
 import React from 'react';
 import './video.css';
 import ReactPlayer from 'react-player'
+import {Link} from 'react-router-dom'
 
  export default function Landing() {
     return (
@@ -13,7 +14,7 @@ import ReactPlayer from 'react-player'
       <br/>
       <h1>EXTEND YOUR ARMS TO THE NEED</h1>
       <br/>
-      <button  type="button" class="btn btn-danger-home">Join the movement <span class="glyphicon glyphicon-forward" className="sp" aria-hidden="true"></span></button>
+     <Link to="/home"> <button  type="button" class="btn btn-danger-home">Join the movement <span class="glyphicon glyphicon-forward" className="sp" aria-hidden="true"></span></button></Link>
     </div>
   </div>
     </div>

@@ -50,7 +50,7 @@ handleClick(e){
     .catch(error => console.error("Show me error that cannot be specify",error))
     .then(response =>{ console.log("Success:",response)
     if(response.status===true){       
-            this.props.history.push("/")
+            this.props.history.push("/login")
           alert(response.message)  
           }
             else{

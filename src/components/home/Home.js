@@ -7,7 +7,7 @@ import Prodcat from './prodcat.js'
 
 function Home() {
   return (
-    <div className="dback">
+    <div className="dback paddertop" >
       <Jumbotron className="jum">
       <Row >
         <Col md={5}>
