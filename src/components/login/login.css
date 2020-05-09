@@ -1,0 +1,107 @@
+.body{
+  text-align: center;
+  background: url("../images/Helping-Hand.jpg");/*rgba(99, 39, 128, 0.2)*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+}
+.card-login
+{
+  background:whitesmoke;
+  padding:50px;
+  margin:50px auto;
+  border:5px solid #6327808a;
+  box-shadow: 0px 0px 15px #6327808a;
+  width:75%;
+}
+.card-login h2
+{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color:#602781;
+}
+.row{
+  margin:0px !important;
+}
+.card-login img
+{
+  width:150px;
+  border-radius:100px;
+  padding:10px;
+  border:2px solid #632780;
+}
+form
+{
+  padding:10px 10px 20px 10px;
+}
+.form-control
+{
+  margin-top:30px !important;
+  margin-bottom: 40px;
+}
+.card-login .btn-primary{
+
+  background: transparent;
+  color:#602781;
+  border:3px solid #602781;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: all .2s linear;
+  text-transform: uppercase;
+  width:100%;
+}
+.card-login .btn-primary:hover
+{
+  background-color: #602781;
+  border:3px solid #602781;
+  color:white;
+  transition: all .3s ease-out;
+}
+.card-login .btn-danger{
+  background: transparent;
+  border:3px solid #602781;
+  color:#602781;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: all .2s linear;
+  text-transform: uppercase;
+  width:100%;
+}
+.card-login .btn-danger:hover{
+  background: #602781;
+  color:white;
+  border:3px solid #602781;
+  transition: all .2s linear;
+}
+input{
+  border:none !important;
+  border-bottom: 3px solid #6027814d !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color:#602781 !important;
+  font-size: 18px !important;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight:700;
+  letter-spacing: 2px;
+  background: transparent !important;
+}
+input:focus
+{
+  border-bottom: 3px solid #602781 !important;
+}
+::placeholder {
+color: #6027814d !important;
+font-family: 'Open Sans Condensed', sans-serif;
+font-weight: 700;
+font-size: 18px;
+opacity: 1;
+letter-spacing: 1px;
+}
+input:focus>::placeholder
+{
+color:#602781 !important;
+}

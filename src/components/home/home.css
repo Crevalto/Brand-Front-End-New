@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+.jum{
+    background:  linear-gradient(
+      #6621cc80, 
+      #6621cc80
+    ),url("../images/back.jpg") center/cover no-repeat;
+    min-height:calc(100vh - 320px);
+    border-radius: 0rem !important;
+    padding:6% !important;
+}
+
+.colsty{
+  max-width: 6% !important;
+}
+
+.prod{
+  
+    margin: 3rem;
+    font-size: 50px;
+    font-family: 'Acme', sans-serif;
+}
+
+.dback{
+  overflow: hidden;
+}
+
+.pquote{
+color: white;
+  text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.layer{
+    width:100% !important; 
+    height: 100% !important;
+}
+
+.services {
+    padding-top: 1rem !important;
+    padding-right: 3rem 0 !important;
+    padding-left: 3rem 0 !important;
+    padding-bottom: 3rem 0 !important;
+  }
+  .services {
+    background: var(--darkGrey) !important;
+  }
+  .services-center {
+    width: 90vw !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)) !important;
+    grid-row-gap: 2rem !important;
+    grid-column-gap: 40px !important;
+  }
+  .service span {
+    display: inline-block !important;
+    color: var(--primaryColor) !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .services h6 {
+    letter-spacing: var(--mainSpacing) !important;
+  }
+  .services p {
+    width: 80% !important;
+    margin: 0 auto !important;
+  }
+  @media screen and (min-width: 992px) {
+    .services-center {
+      width: 95vw !important;
+      max-width: 1170px !important;
+    }
+
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .services p {
+      width: 100% !important;
+    }
+  }
+  /*end of services */
+
+
