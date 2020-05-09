@@ -1,8 +1,8 @@
 import React from 'react'
-import {Nav,Navbar,NavDropdown,FormControl,Form,Button} from 'react-bootstrap'
+import {Nav,NavDropdown} from 'react-bootstrap'
 import logo from '../images/white_bg_noname.jpg';
 
-import {TiShoppingCart} from 'react-icons/ti'
+//import {TiShoppingCart} from 'react-icons/ti'
 
 
 import './Navig.css'
