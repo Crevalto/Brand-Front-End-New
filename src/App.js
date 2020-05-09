@@ -21,14 +21,14 @@ function App() {
     <div>
         <Navig/>
         <Switch>
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/merchant" component={Merchant}/>
-          <Route exact path="/" component={Landing}/>
+          <Route exact path="/landing" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
           <Route  path="/verify/:slug" component={Verify}/>
-          <Route path="/product/:sulg" component={Products}/>
+          <Route  path="/products/:slug" component={Products}/>
           <Route component={Pagenotfound}/>
       </Switch>
 

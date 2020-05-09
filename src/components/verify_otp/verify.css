@@ -84,3 +84,27 @@ input[type=number] {
 .verify_otp a:hover{
   color:inherit;
 }
+.verify_otp input{
+  border:none !important;
+  border-bottom: 3px solid #6027814d !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color:#602781 !important;
+  font-size: 18px !important;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight:700;
+  letter-spacing: 2px;
+  background: transparent !important;
+}
+.verify_otp input:focus
+{
+  border-bottom: 3px solid #602781 !important;
+}
+.verify_otp ::placeholder {
+color: #6027814d !important;
+font-family: 'Open Sans Condensed', sans-serif;
+font-weight: 700;
+font-size: 18px;
+opacity: 1;
+letter-spacing: 1px;
+}
