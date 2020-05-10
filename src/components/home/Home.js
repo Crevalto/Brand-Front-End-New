@@ -10,11 +10,15 @@ function Home() {
     <div className="dback paddertop">
       <Jumbotron className="jum">
       <Row >
-        <Col md={12}>
-        <h2 className="pquote">"There is no exercise better for the heart than reaching down and <br/>lifting people up"</h2>
+        <Col md={7}></Col>
+        <Col md={5}>
+          <div class="round">
+            <h2 className="pquote">Let's show the love and kind towards the fashion industry</h2>
+          </div>
         </Col>
         </Row>
       </Jumbotron>
+      
       <div class="row">
         <div class="col-md-12">
           <h2>

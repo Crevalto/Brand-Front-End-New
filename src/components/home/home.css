@@ -4,15 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 .dback .jum{
-    background:  linear-gradient(
+    background: linear-gradient(
       #6621cc80,
-      #6621cc80
-    ),url("../images/raised_hands.png") center/cover no-repeat;
-    min-height:calc(100vh - 200px);
+      #6621cc80), url("https://i1.wp.com/www.deltacommunitychurch.co.za/wp-content/uploads/2019/01/Heart-in-hands-gift.jpg?ssl=1") center/cover no-repeat;
+  height:450px;
     border-radius: 0rem !important;
-    padding:6% !important;
+    padding-top: 25px;
     box-shadow: 0px 5px 10px #777777;
 }
+/*
+),*/
 
 .dback .colsty{
   max-width: 6% !important;
@@ -29,11 +30,23 @@
   overflow: hidden;
   background: whitesmoke;
 }
-
+.dback .round{
+  background: whitesmoke;
+  height: 400px;
+  width:400px;
+  border-radius: 500px;
+  padding:50px;
+  box-shadow:inset 0px 0px 50px #6327806b;
+  margin-bottom: 0px;
+}
 .dback h2.pquote{
-color: #632780 !important;
+  color: #9456ab !important;
   text-align: center;
-    font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  margin:0px;
+  font-weight: 700;
+  line-height: 70px;
 }
 
 .dback .layer{
@@ -43,27 +56,28 @@ color: #632780 !important;
 
 .dback .card{
   margin:30px;
-  box-shadow:0px 0px 20px #632780;
+  box-shadow:inset 0px 0px 10px #9456abb0;
   text-align: center !important;
-  padding:2px;
-  background: #632780;
+  padding:10px 10px 0px 10px;
+  background: white ;
 }
 .dback .card img{
   margin:0px auto;
   background:;
   color:white;
-  height:340px;
-  width:340px;
+  width:325px;
+  height: 325px;
+
 }
 .dback h5{
   font-family:'Righteous','sans-serif';
   font-weight:700;
   font-size:24px;
   color:white;
-  background: #632780;
-  width:40%;
+  background: #9456abb0;
+  width:45%;
   margin:0px auto;
-  padding:5px 20px 5px 20px;
+  padding:7px 20px 5px 20px;
   border-radius:10px 10px 0px 0px;
   text-transform: uppercase;
 }
@@ -91,5 +105,11 @@ color: #632780 !important;
   }
   .dback a:hover{
     text-decoration: none;
+  }
+  .dback .card-selection{
+    width:80%;
+    margin:50px auto;
+    height:100px;
+    box-shadow: 0px 5px 10px #444444;
   }
   /*end of services */
