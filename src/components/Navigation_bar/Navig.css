@@ -3,7 +3,7 @@
     font-weight: 700;
     padding-left: 12px;
     padding-right: 12px;
-    color:white ;
+    color:#444444 ;
     transition: all .3s linear;
 }
 
@@ -22,18 +22,17 @@ box-shadow:0px 2px 15px  purple;
   z-index:100;
   position: fixed;
   width:100%;
-  background:#620b80;
+  background:whitesmoke;
   padding:8px 5px 8px 8px;
-  color:white !important;
-  box-shadow: 0px 0px 10px #632780;
+  text-align: center;
+  color:#620b80 !important;
+  box-shadow: 0px 0px 10px #4444;
 }
 .navig .smalls{
   margin-top:15px;
 }
 .navig a:hover{
-  background-color: white;
   color:#620b80 !important;
-  box-shadow: inset 0px 0 6px #632780!important;
   transition: all .3s ease-out;
 }
 .navig form{
@@ -45,7 +44,7 @@ box-shadow:0px 2px 15px  purple;
   padding:5px;
   background:white;
   border-radius: 100px;
-  box-shadow: inset 0px 0 6px #632780!important;
+  box-shadow: inset 0px 0 6px #444444!important;
 }
 .navig h2{
   font-family: 'Dancing Script', cursive;
@@ -55,7 +54,7 @@ box-shadow:0px 2px 15px  purple;
   font-weight: 500;
 }
 .navig ::placeholder {
-color: #6027814d !important;
+color: #444444 !important;
 font-family: 'Open Sans Condensed', sans-serif;
 font-weight: 700;
 font-size: 18px;
@@ -72,12 +71,15 @@ letter-spacing: 1px;
   padding-bottom:9px;
   font-size: 18px !important;
   font-family: 'Open Sans Condensed', sans-serif;
-  color:#632780;
+  color:#444444;
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom:0px;
   margin-top: 10px;
-box-shadow: inset 0px 0 10px #632780 !important;
+box-shadow: inset 0px 0 10px #444444 !important;
+}
+.navig input:focus{
+  outline: none;
 }
 .navig .btn{
   background-color: whitesmoke;

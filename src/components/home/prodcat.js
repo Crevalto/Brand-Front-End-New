@@ -32,12 +32,12 @@ import {Link} from 'react-router-dom'
 
                 return(
                 <div class="col-md-4"  key={index}>
-                
-                <Link to={`/product/${product._id}`}> 
- 
+
+                <Link to={`/product/${product._id}`}>
+
                   <div class="card">
                   <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
-                  <div class="holder" style={{marginTop:'-38px',width:'100%'}}>
+                  <div class="holder" style={{marginTop:'-30px',width:'100%'}}>
                       <h5 class="card-title">{product.categoryName}</h5>
                   </div>
                   </div>
