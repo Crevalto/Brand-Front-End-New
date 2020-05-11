@@ -13,10 +13,12 @@ class Navig extends Component {
     this.handleclick=this.handleclick.bind(this);
     this.changetoggle=this.changetoggle.bind(this);
     this.state={
+      loggedin:false,
       credentials:'',
       email:'',
       password:'',
-      popoverOpen:false
+      popoverOpen:false,
+      cmpname:''
     }
 
   }
@@ -26,8 +28,6 @@ class Navig extends Component {
   handleChange(e){
 
     this.setState({[e.target.name]:[e.target.value]});
-
-
   }
 
     handleclick(e){
@@ -50,7 +50,8 @@ class Navig extends Component {
                   alert(response.error)
                 }
                 else{
-                  this.setState({popoverOpen:!(this.state.popoverOpen)});
+                  this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:response.name,loggedin:true});
+                  
                   alert("Logged in ")
                 }
   })
@@ -106,7 +107,7 @@ changetoggle(){
                   <Nav.Link href="/cart">Cart</Nav.Link>
                   </Nav>
 
-
+{this.state.loggedin===false?
       <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
         <PopoverHeader>Sign In</PopoverHeader>
         <PopoverBody>
@@ -130,8 +131,14 @@ changetoggle(){
                </Form>
         </PopoverBody>
       </Popover>
-
-
+:
+<Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
+<PopoverHeader>Sign In</PopoverHeader>
+<PopoverBody>
+        Welcome {this.state.cmpname}
+</PopoverBody>
+</Popover>
+  }
 
               </div>
             </div>
