@@ -35,6 +35,14 @@ box-shadow:0px 2px 15px  purple;
   color:#9456ab !important;
   transition: all .3s ease-out;
 }
+
+.popovereff:hover{
+  text-decoration: none;
+  color:#9456ab !important;
+  transition: all .3s ease-out;
+
+}
+
 .navig form{
   padding-bottom:0px;
 }
