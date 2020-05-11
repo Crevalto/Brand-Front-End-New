@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
-import logo from '../images/white_bg_noname.jpg';
+import logo from '../images/no_bg_noname.png';
 import {  Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import './Navig.css'
@@ -24,7 +24,7 @@ class Navig extends Component {
   }
 
 
-  
+
   handleChange(e){
 
     this.setState({[e.target.name]:[e.target.value]});
@@ -51,7 +51,7 @@ class Navig extends Component {
                 }
                 else{
                   this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:response.name,loggedin:true});
-                  
+
                   alert("Logged in ")
                 }
   })
@@ -59,13 +59,13 @@ class Navig extends Component {
 
 
   toggle (){
-    
+
   this.setState({popoverOpen:!(this.state.popoverOpen)});
   }
 
 changetoggle(){
   this.setState({popoverOpen:!(this.state.popoverOpen)});
-  
+
 }
 
   render(){

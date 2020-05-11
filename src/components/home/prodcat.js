@@ -36,7 +36,9 @@ import {Link} from 'react-router-dom'
                 <Link to={`/product/${product._id}`}>
 
                   <div class="card">
-                  <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
+                  <div class="image-holder">
+                    <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
+                  </div>
                   <div class="holder" style={{marginTop:'-30px',width:'100%'}}>
                       <h5 class="card-title">{product.categoryName}</h5>
                   </div>

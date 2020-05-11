@@ -56,29 +56,46 @@
 
 .dback .card{
   margin:30px;
-  box-shadow:inset 0px 0px 10px #9456abb0;
+  box-shadow:0px 0px 30px #44444454;
   text-align: center !important;
-  padding:10px 10px 0px 10px;
   background: white ;
+  overflow: hidden;
+  padding:0px;
+  z-index: 0;
 }
 .dback .card img{
   margin:0px auto;
   background:;
   color:white;
-  width:325px;
-  height: 325px;
+  width:342px;
+  height:342px;
+  z-index: 1;
+  transition: all .2s linear;
 
 }
+.dback .card .image-holder{
+  width:342px;
+  height:342px;
+  overflow: hidden;
+}
+.dback .card img:hover{
+  transform: scale(1.1);
+  content: 'Black';
+  transition: all .4s linear;
+}
+.dback .holder{
+  z-index:2;
+}
 .dback h5{
-  font-family:'Righteous','sans-serif';
+  font-family:'Open Sans Condensed','sans-serif';
   font-weight:700;
   font-size:24px;
   color:white;
-  background: #9456abb0;
-  width:45%;
+  background: #44444491;
+  width:100%;
   margin:0px auto;
   padding:7px 20px 5px 20px;
-  border-radius:10px 10px 0px 0px;
+  border-radius:0px;
   text-transform: uppercase;
 }
 .dback .btn{
@@ -89,11 +106,11 @@
 }
 .dback .col-md-12 h2{
   margin:10px;
-  margin-bottom:30px;
   font-family: 'Righteous','cursive';
   font-size: 80px;
-  color:#63278040;
+  color:whitesmoke;
   text-align: center;
+  text-shadow: 0px 3px 2px #00000059;
 }
   .dback h3{
     font-family: 'Open Sans Condensed','sans-serif';
@@ -109,7 +126,51 @@
   .dback .card-selection{
     width:80%;
     margin:50px auto;
-    height:100px;
-    box-shadow: 0px 5px 10px #444444;
+    background: white;
+    border-top:8px solid #9456ab;
+    box-shadow: 0px 5px 5px #44444442;
+    text-align: center;
+    padding:20px 30px 20px 30px;
   }
+  .dback .card-selection svg{
+    margin-top:20px;
+    color:#9456ab;
+    background: white;
+     width:5em;
+     height:5em;
+    padding:20px;
+    border-radius: 5em;
+    border:2px solid #9456ab;
+  }
+  .dback .card-selection h4{
+    margin-top:10px;
+    color:#9456ab;
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
+  }
+  .dback .card-selection p{
+    color:#444444;
+    font-family: 'Open Sans';
+    font-size: 18px;
+  }
+  .dback .categories{
+    width:100%;
+    margin-top: 50px;
+    background-color: #e1cfe8;
+    padding-top:50px;
+    background-attachment: fixed;
+  }
+  .dback .categories h6{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 20px;
+    color:#444444;
+    font-family: 'Open Sans',sans-serif;
+  }
+  .dback .special_border{
+    border-bottom: 2px white solid;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
   /*end of services */
