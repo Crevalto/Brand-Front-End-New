@@ -74,7 +74,8 @@ class Navig extends Component {
   logout(){
     localStorage.setItem('loggedin',false)
     localStorage.setItem('compname',"")
-    this.setState({popoverOpen:!(this.state.popoverOpen)})
+
+    this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:"",loggedin:"false"})
   }
 
   toggle (){
