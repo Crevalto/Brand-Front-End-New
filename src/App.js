@@ -15,7 +15,6 @@ import { Route, Switch } from 'react-router-dom';
 import Merchant from './components/map_merchant/Mapmerchant'
 
 
-
 function App() {
   return (
     <div>

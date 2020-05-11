@@ -1,14 +1,74 @@
-import React from 'react'
-import {Nav,NavDropdown} from 'react-bootstrap'
+import React, { Component } from 'react'
+import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
 import logo from '../images/white_bg_noname.jpg';
-
-
-
-
+import {  Popover, PopoverHeader, PopoverBody } from 'reactstrap'
+import {Link} from 'react-router-dom'
 import './Navig.css'
 
-function Navig() {
-    return (
+class Navig extends Component {
+  constructor(){
+    super()
+    this.toggle=this.toggle.bind(this)
+    this.handleChange=this.handleChange.bind(this);
+    this.handleclick=this.handleclick.bind(this);
+    this.changetoggle=this.changetoggle.bind(this);
+    this.state={
+      credentials:'',
+      email:'',
+      password:'',
+      popoverOpen:false
+    }
+
+  }
+
+
+  
+  handleChange(e){
+
+    this.setState({[e.target.name]:[e.target.value]});
+
+
+  }
+
+    handleclick(e){
+        e.preventDefault()
+     const url = 'http://crevaltobkend.herokuapp.com/brand/users/login';
+    var data = {
+      emailAddress : this.state.email[0],
+      accountPassword : this.state.password[0],
+    }
+    console.log(data);
+        fetch(url,{
+        method:'POST',
+        body:JSON.stringify(data),
+    headers:{'Content-Type':'application/json'}
+    })
+    .then(res =>res.json())
+    .catch(error => console.error("Show me error that cannot be specify",error))
+    .then(response => {console.log("Success:",response)
+                if(response.status===false){
+                  alert(response.error)
+                }
+                else{
+                  this.setState({popoverOpen:!(this.state.popoverOpen)});
+                  alert("Logged in ")
+                }
+  })
+  }
+
+
+  toggle (){
+    
+  this.setState({popoverOpen:!(this.state.popoverOpen)});
+  }
+
+changetoggle(){
+  this.setState({popoverOpen:!(this.state.popoverOpen)});
+  
+}
+
+  render(){
+  return (
         <div class="navig">
             <div class="row">
               <div class="col-md-2">
@@ -28,7 +88,7 @@ function Navig() {
                       <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 011.414 0l6.647 6.646a.5.5 0 01-.708.708L8 2.207 1.354 8.854a.5.5 0 11-.708-.708L7.293 1.5z" clip-rule="evenodd"/>
                       </svg>
                     </Nav.Link>
-                    <Nav.Link href="/login">
+                    <Nav.Link  id="Popover1" >
                     <svg class="bi bi-person" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 00.014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 00.022.004zm9.974.056v-.002.002zM8 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0z" clip-rule="evenodd"/>
                     </svg>
@@ -45,10 +105,39 @@ function Navig() {
                   </Nav.Link>
                   <Nav.Link href="/cart">Cart</Nav.Link>
                   </Nav>
+
+
+      <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
+        <PopoverHeader>Sign In</PopoverHeader>
+        <PopoverBody>
+           <Form>
+                 <div class="form-group">
+                   <input type="email" name="email" class="form-control" onChange={this.handleChange} value={this.state.email} id="exampleInputEmail1" placeholder="Email" required/>
+                 </div>
+                 <div class="form-group">
+                   <input type="password" name="password" onChange={this.handleChange} value={this.state.password} class="form-control" id="exampleInputPassword1" placeholder="Password" required/>
+                 </div>
+                 <Row>
+                   <Col md={1}></Col>
+                   <Col>
+                 <Button type="submit" onClick={this.handleclick} class="btn btn-primary">Log-in</Button><br/>
+                 </Col>
+                 <Col>
+                  <Link to="/register"><Button onClick={this.changetoggle} class="btn btn-danger">Sign-up</Button></Link>
+                  </Col>
+                  <Col md={1}></Col>
+                  </Row>
+               </Form>
+        </PopoverBody>
+      </Popover>
+
+
+
               </div>
             </div>
         </div>
     )
 }
 
+}
 export default Navig
