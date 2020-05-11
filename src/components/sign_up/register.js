@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import logo from '../images/logos.jpg'
 import "./register.css"
+import { withRouter } from "react-router-dom";
+
+
 class Signup extends Component {
 constructor(){
     super();
     this.state={
+        responses_otp:"",
+        responses_status:"",
         OrganisationName:'',
         Cinnumber:'',
         Address:'',
@@ -14,7 +19,7 @@ constructor(){
     }
 }
 handleChange = event =>{
-    this.setState({[event.target.name]:[event.target.value]})
+    this.setState({[event.target.name]:event.target.value})
 }
 handleSubmit = event =>{
     event.preventDefault();
@@ -24,17 +29,17 @@ handleSubmit = event =>{
     console.log("Email"+this.state.email);
     console.log("Account Password"+this.state.accountPassword);
     console.log("Password"+this.state.Password);
-    const url = 'http://117.221.237.210:4000/brand/users/register';
+    const url = 'http://crevaltobkend.herokuapp.com/brand/users/register';
     var data = {
-    bandName : this.state.OrganisationName[0],
-    accountPassword : this.state.Password[0] ,
-    brandAddress : this.state.Address[0],
+    brandName : this.state.OrganisationName,
+    accountPassword : this.state.Password ,
+    brandAddress : this.state.Address,
     identificationDetail: {
         regNo: "12345",
-        cinNo: this.state.Cinnumber[0]
+        cinNo: this.state.Cinnumber
       },
-    emailAddress: this.state.email[0],
-    phoneNo: 9677795798,
+    emailAddress: this.state.email,
+    phoneNo: 9455445548,
     brandAssets: {
         brandLogoSrc: "logo",
         brandColor: "yellow",
@@ -50,13 +55,26 @@ headers:{'Content-Type':'application/json'}
 })
     .then(res =>res.json())
     .catch(error => console.error("Show me error that cannot be specify",error))
-    .then(response => console.log("Success:",response))
+    .then(response =>{ console.log("Success:",response.status)
+    this.setState({responses_otp : response.otp,
+                            responses_status: response.status})
+    })
+    .then(run=>{
+      console.log(this.state.responses_otp)
+    if(this.state.responses_status===true){
+    this.props.history.push(`/verify/${this.state.responses_otp+"_"+this.state.email}`);
+    }else{
+      alert("Something Went Wrong")
     }
+    })
+
+
+  }
 
   render(){
     return(
     <div>
-        <div className="body_signup">
+        <div className="body_signup paddertop" >
             <div className="row">
                 <div className="col-md-3" />
                 <div className="col-md-6">
@@ -103,7 +121,7 @@ headers:{'Content-Type':'application/json'}
 
                    </div>
 
-                   <button class="btn btn-primary" type="submit" >SIGN UP</button>
+                   <button  class="btn btn-primary" type="submit" >SIGN UP</button>
                  </div>
               </form>
               </div>
@@ -117,4 +135,4 @@ headers:{'Content-Type':'application/json'}
     )
 }
 }
-export default Signup
+export default withRouter(Signup)

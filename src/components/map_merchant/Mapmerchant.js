@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 class Mapmerchant extends Component{
   render(){
     return(
-      <div className="design">
+      <div className="design paddertop">
         <Grid  container spacing={12} style={{padding:'0px'}}>
           {Data.map((detail,index)=>{
             return <div >

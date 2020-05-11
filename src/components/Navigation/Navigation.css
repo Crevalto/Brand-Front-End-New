@@ -1,4 +1,4 @@
-.navigation{
+.navigation-body .navigation{
     display: flex;
     background-color: #610B80;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.349);
@@ -7,7 +7,7 @@
     padding: 0.7rem;
     align-items: center;
 }
-.navigation__link{
+.navigation-body .navigation__link{
     color: white;
     text-decoration: none;
     margin: 2rem;

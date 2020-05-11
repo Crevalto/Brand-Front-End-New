@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import {Card} from 'react-bootstrap'
-
+//import {Card} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
  class prodcat extends Component {
-    
+
     state={
         services:[]
     }
 
     componentDidMount(){
 
-        fetch('https://cors-anywhere.herokuapp.com/http://117.242.221.193:4000/brand/getcategories')
+        fetch('https://crevaltobkend.herokuapp.com/brand/getcategories')
         .then(response => response.json()
-        
+
         )
         .then((jsonData) => {
           this.setState({ services:jsonData})
@@ -27,27 +27,26 @@ import {Card} from 'react-bootstrap'
 
     render() {
         return (
-            <section className="services">
-            <div className="services-center">
-
-               
-
+        <div class="row">
             {this.state.services.map((product,index) =>{
-                
-                return <article key={index} className="service">
-                        <Card style={{textAlign:'left'}}>
-                
-                            <Card.Img   variant="top" src={product.categoryThumbnail} />
-                            <Card.Body>
-                            <Card.Title>{product.categoryName}</Card.Title>
-                        </Card.Body>
-                            
 
-                        </Card>
-             </article>
-                })}
-              </div> 
-  </section>    
+                return(
+                <div class="col-md-4"  key={index}>
+
+                <Link to={`/products/${product._id}`}>
+
+                  <div class="card">
+                  <div class="image-holder">
+                    <img src={product.categoryThumbnail} class="card-img-top" alt="..."/>
+                  </div>
+                  <div class="holder" style={{marginTop:'-30px',width:'100%'}}>
+                      <h5 class="card-title">{product.categoryName}</h5>
+                  </div>
+                  </div>
+              </Link>
+                </div>
+           )})}
+        </div>
 
         )
     }

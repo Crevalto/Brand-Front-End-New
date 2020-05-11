@@ -3,7 +3,7 @@ import './Navigation.css'
 export class Navigation extends Component {
     render() {
         return (
-            <div>
+            <div class="navigation-body paddertop">
                 <nav className="navigation">
                     <div className="navigation__logo">
                         <h2>Crevalto</h2>

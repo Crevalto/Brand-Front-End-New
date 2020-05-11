@@ -1,9 +1,11 @@
+.paddertop{
+  padding-top: 85px;
+}
 .verify_otp
 {
   background: rgba(99, 39, 128, 0.21);
   background-attachment: fixed;
   height: 100vh;
-  padding: 100px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -22,6 +24,7 @@ input[type=number] {
   padding: 30px;
   border-top:5px solid #632780;
   align-content: center;
+  margin-top: 100px;
 }
 .verify_otp .card-mail h2{
   color:#632780;
@@ -33,6 +36,16 @@ input[type=number] {
   padding-top: 0px;
 }
 .verify_otp input{
+  border:none !important;
+  border-bottom: 3px solid #6027814d !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color:#602781 !important;
+  font-size: 18px !important;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight:700;
+  letter-spacing: 2px;
+  background: transparent !important;
   width:15%;
   margin:10px;
   font-size: 36px !important;
@@ -40,7 +53,13 @@ input[type=number] {
 }
 .verify_otp input::placeholder{
   font-size: 36px;
+  color: #6027814d !important;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  opacity: 1;
+  letter-spacing: 1px;
 }
+
 .verify_otp input:focus{
   outline: 0;
 }
@@ -81,4 +100,9 @@ input[type=number] {
 }
 .verify_otp a:hover{
   color:inherit;
+}
+
+.verify_otp input:focus
+{
+  border-bottom: 3px solid #602781 !important;
 }

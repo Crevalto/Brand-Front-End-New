@@ -8,11 +8,11 @@ import Landing from './components/landing/Landing'
 import Pagenotfound from './components/404/pagenotfound'
 import Greeting from './components/greeting/greeting'
 import Verify from './components/verify_otp/verify_otp'
+import Products from './components/products/product'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch } from 'react-router-dom';
 
 import Merchant from './components/map_merchant/Mapmerchant'
-
 
 
 function App() {
@@ -20,13 +20,14 @@ function App() {
     <div>
         <Navig/>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={Landing}/>
+          <Route exact path="/greeting" component={Greeting}/>
+          <Route exact path="/home" component={Home}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/merchant" component={Merchant}/>
-          <Route exact path="/landing" component={Landing}/>
-          <Route exact path="/greeting" component={Greeting}/>
-          <Route exact path="/verify" component={Verify}/>
+          <Route  path="/verify/:slug" component={Verify}/>
+          <Route  path="/products/:slug" component={Products}/>
           <Route component={Pagenotfound}/>
       </Switch>
 
