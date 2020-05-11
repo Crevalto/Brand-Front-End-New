@@ -12,14 +12,26 @@ class Navig extends Component {
     this.handleChange=this.handleChange.bind(this);
     this.handleclick=this.handleclick.bind(this);
     this.changetoggle=this.changetoggle.bind(this);
+    this.logout=this.logout.bind(this);
+    if(localStorage.getItem('loggedin')==null){
+        localStorage.setItem('loggedin',false);
+    }
+
+    if(localStorage.getItem('compname')==null){
+        localStorage.setItem('compname',"");  
+    }
+    
+
+
     this.state={
-      loggedin:false,
+      loggedin: localStorage.getItem('loggedin'),
       credentials:'',
       email:'',
       password:'',
       popoverOpen:false,
-      cmpname:''
+      cmpname: localStorage.getItem('compname')
     }
+
 
   }
 
@@ -51,12 +63,24 @@ class Navig extends Component {
                 }
                 else{
                   this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:response.name,loggedin:true});
+<<<<<<< HEAD
 
+=======
+                  localStorage.setItem('loggedin',true);
+                  localStorage.setItem('compname',response.name)
+>>>>>>> master
                   alert("Logged in ")
                 }
   })
   }
 
+
+  logout(){
+    localStorage.setItem('loggedin',false)
+    localStorage.setItem('compname',"")
+
+    this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:"",loggedin:"false"})
+  }
 
   toggle (){
 
@@ -69,7 +93,8 @@ changetoggle(){
 }
 
   render(){
-  return (
+  console.log(this.state.loggedin)
+    return (
         <div class="navig">
             <div class="row">
               <div class="col-md-2">
@@ -107,7 +132,9 @@ changetoggle(){
                   <Nav.Link href="/cart">Cart</Nav.Link>
                   </Nav>
 
-{this.state.loggedin===false?
+{
+this.state.loggedin === "false"
+?
       <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
         <PopoverHeader>Sign In</PopoverHeader>
         <PopoverBody>
@@ -133,9 +160,9 @@ changetoggle(){
       </Popover>
 :
 <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
-<PopoverHeader>Sign In</PopoverHeader>
+<PopoverHeader style={{textTransform:'capitalize'}}>Welcome {this.state.cmpname}</PopoverHeader>
 <PopoverBody>
-        Welcome {this.state.cmpname}
+        Do You want to <h6 style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</h6>
 </PopoverBody>
 </Popover>
   }
