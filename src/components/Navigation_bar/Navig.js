@@ -63,12 +63,8 @@ class Navig extends Component {
                 }
                 else{
                   this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:response.name,loggedin:true});
-<<<<<<< HEAD
-
-=======
                   localStorage.setItem('loggedin',true);
                   localStorage.setItem('compname',response.name)
->>>>>>> master
                   alert("Logged in ")
                 }
   })
