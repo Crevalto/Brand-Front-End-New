@@ -32,8 +32,11 @@ box-shadow:0px 2px 15px  purple;
   margin-top:15px;
 }
 .navig a:hover{
-  color:#9456ab !important;
+  color:#6c2d80 !important;
   transition: all .3s ease-out;
+}
+.navig a:active,.navig a:focus{
+  color:#6c2d80 !important;
 }
 
 .popovereff:hover{
@@ -113,6 +116,7 @@ box-shadow: inset 0px 0 10px #44444463 !important;
 }
 .popover{
   box-shadow: 0px 0px 10px #444444;
+  width:300px;
 }
 .popover-body .btn:hover{
   background: #632780 !important;
@@ -130,4 +134,18 @@ box-shadow: inset 0px 0 10px #44444463 !important;
   color:white;
   font-family: 'Open Sans Condensed',sans-serif;
   font-weight: 700;
+}
+.popover-body a{
+  color:#444444;
+  font-family: 'Open Sans';
+  font-weight: 700;
+
+}
+a.popovereff{
+  width:100% !important;
+  padding:10px 30px 10px 0px;
+}
+p#status{
+  color:red;
+  text-align: center;
 }
