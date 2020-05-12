@@ -15,7 +15,7 @@ constructor(){
     }
 }
     componentDidMount(){
-        this.setState({catid: this.props.pid }, () => {
+      this.setState({catid: this.props.pid }, () => {
        
           this.fetchproduct();
         
@@ -40,7 +40,9 @@ constructor(){
         .then(res =>res.json())
         .catch(error => console.error("Show me error that cannot be specify",error))
         .then(response =>{ console.log("Success:",response)
-              if(response.status===true){
+              
+        if(response.status===true){
+              
                 this.setState({products:response.products})
               }else{
                 alert("PAGE NOT FOUND API ERROR CHECK BACKEND")
