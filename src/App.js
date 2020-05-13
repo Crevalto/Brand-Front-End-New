@@ -11,14 +11,11 @@ import Verify from './components/verify_otp/verify_otp'
 import Products from './components/products/product'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch } from 'react-router-dom';
-
 import Merchant from './components/map_merchant/Mapmerchant'
-
-
 function App() {
   return (
     <div>
-        <Navig/>
+      <Navig/>
         <Switch>
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
@@ -29,8 +26,7 @@ function App() {
           <Route  path="/verify/:slug" component={Verify}/>
           <Route  path="/products/:slug" component={Products}/>
           <Route component={Pagenotfound}/>
-      </Switch>
-
+      </Switch>       
       </div>
   );
 }

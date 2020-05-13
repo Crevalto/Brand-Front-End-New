@@ -3,8 +3,6 @@ import {Jumbotron,Row,Col} from 'react-bootstrap'
 //import ReactPlayer from 'react-player'
 import "./home.css"
 import Prodcat from './prodcat.js'
-
-
 function Home() {
   return (
     <div className="dback paddertop">
@@ -31,7 +29,6 @@ function Home() {
             <br/>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum, orci sed consectetur rhoncus, ipsum lectus convallis lacus, eu mollis ante ante sed dui. Maecenas consectetur lectus non mauris suscipit, ac porta risus scelerisque. Praesent eu rhoncus massa. Vivamus eu dolor sit amet turpis malesuada eleifend.
-
             </p>
           </div>
         </div>
