@@ -14,7 +14,6 @@ import Dashboard from './components/dashboard/dashboard'
 import { Route, Switch } from 'react-router-dom';
 import Merchant from './components/map_merchant/Mapmerchant'
 import Cart from './components/cart/cartdis'
-
 function App() {
   return (
     <div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //import {Card} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import logo from '../images/white_bg_noname.jpg'
 import './dashboard.css'
  class prodcat extends Component {
@@ -73,10 +73,10 @@ import './dashboard.css'
                       </div>
                       <div class="col-md-5">
                         <div class="social_cards_dash twitter">
-                          <a>/sudarsansudar</a>
+                          <a href="/">/sudarsansudar</a>
                         </div>
                         <div class="social_cards_dash youtube">
-                          <a>/sudarsansudar</a>
+                          <a href="/">/sudarsansudar</a>
                         </div>
                       </div>
                     </div>
