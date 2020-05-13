@@ -17,7 +17,8 @@ import './dashboard.css'
          color:'#5f1874'
        },
        initstate:false
-   }
+    }
+
    componentDidMount(){
         const url='https://crevaltobkend.herokuapp.com/brand/users/profile/'+this.props.match.params.slug ;
         var bearer='Bearer'+localStorage.getItem('token')
