@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
-import logo from '../images/no_bg_noname.png';
+import logo from '../images/purple_bg_noname.jpg';
 import {  Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import './Navig.css'
