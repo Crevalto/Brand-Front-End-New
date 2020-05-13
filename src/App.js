@@ -11,6 +11,8 @@ import Verify from './components/verify_otp/verify_otp'
 import Products from './components/products/product'
 import { Route, Switch } from 'react-router-dom';
 import Merchant from './components/map_merchant/Mapmerchant'
+import Cart from './components/cart/cartdis'
+
 function App() {
   return (
     <div>
@@ -19,6 +21,7 @@ function App() {
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
           <Route exact path="/home" component={Home}/>
+          <Route exact path="/cart" component={Cart}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/merchant" component={Merchant}/>

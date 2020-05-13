@@ -175,8 +175,8 @@ changetoggle(){
                           <a className="popovereff" href="/" >Payments</a>
                           <br/>
                           <a className="popovereff" href="/">Your Orders</a>
-                          <br/>
-                          <a style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</a>
+                          <hr/>
+                          <h6 style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</h6>
                   </PopoverBody>
                   </Popover>
                     }
