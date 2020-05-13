@@ -10,7 +10,7 @@ render(){
     <div className="products-body paddertop">
         
             
-              <Productdisp pid={this.props.match.params.prod} />
+              <Productdisp pid={this.props.match.params.slug} />
             
         
      
