@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans+Condensed:wght@300;700&family=Oswald:wght@300&family=Righteous&display=swap');
 .dashboard-body{
-  background: white;
+  background: whitesmoke;
   height: 100vh;
   padding-top: 150px;
 }
@@ -8,9 +8,10 @@
   padding:10px;
 }
 .card-dash{
-  background: whitesmoke;
+  background: white;
   height: 100%;
   box-shadow: 0px 0px 10px #44444499;
+  margin:10px;
 }
 .card-dash img{
   width:100px;
@@ -20,7 +21,6 @@
   padding:10px;
 }
 .card-dash .col-md-2{
-  background: #632680;
   text-align: center;
   padding:0px;
 }
@@ -57,9 +57,11 @@
 */
 .card-dash h2{
   text-transform: capitalize;
-  font-family:'Open Sans',sans-serif;
+  font-family:'Roboto',sans-serif;
   margin: 0px;
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 0px 0px 1px #969696fa;
+  font-size: 48px;
   padding: 0px
 }
 .card-dash h4{
@@ -74,12 +76,15 @@
   margin-bottom: 20px;
   padding:0px;
   transition: all .2s ease-out;
+  box-shadow: 0px 8px 10px #44444473;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .inner_cards_dash:hover{
-  box-shadow: 0px 0px 10px #44444473;
+  box-shadow: 0px 0px 10px #444444;
   transition: all .2s ease-out;
 }
+
 .inner_cards_dash h6{
   font-family:'Open Sans Condensed',sans-serif;
   font-weight: 700;
@@ -88,11 +93,14 @@
 }
 .inner_card_dash_header{
   border-bottom: 1px solid #dadada;
-  background: #632680;
   margin:0px;
   height: 20%;
   padding:10px 0px  10px 15px;
   border-radius: 5px 5px 0px 0px;
+}
+.inner_card_dash_header svg{
+  margin-top:-20px;
+  color:white;
 }
 .inner_card_dash_body{
   border:1px solid #80808042;
@@ -100,32 +108,32 @@
   background: white;
   padding:10px;
 }
-.inner_cards_dash h5{
+.inner_cards_dash input{
   font-size: 18px;
   color:black;
   font-weight: 300 !important;
   margin:0px;
   font-family: 'Oswald', sans-serif !important;
+  border:0px;
+  width:100%;
 }
-.twitter{
-  border-left:10px solid #38a1f2;
-  background-color: white;
+.inner_cards_dash input:focus{
+  outline: none;
+}
+.twitter .inner_card_dash_header{
+  background:#38a1f2;
   padding:10px;
 }
-
-.youtube{
-  border-left:10px solid #c00;
-  background-color: white;
-  margin-top:10px;
-  padding:10px;
-}
-
-.social_cards_dash a{
-  font-size: 18px;
-  color:black;
-  font-family: 'Oswald', sans-serif !important;
-}
-.social_cards_dash:hover{
-  box-shadow: 3px 0px 5px #44444473;
+.twitter:hover{
+  box-shadow: 0px 0px 10px #38a1f2;
   transition: all .2s ease-out;
+}
+
+.youtube  .inner_card_dash_header{
+  background:#c00;
+  padding:10px;
+}
+
+.youtube:hover{
+  box-shadow: 0px 0px 10px #c00;
 }

@@ -168,7 +168,7 @@ changetoggle(){
                   <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                   <PopoverHeader style={{textTransform:'capitalize'}}>Welcome, {this.state.cmpname}</PopoverHeader>
                   <PopoverBody  style={{lineHeight:'2rem'}}>
-                          <a className="popovereff" href="/">Dashboard</a>
+                          <Link className="popovereff"  to={`/dashboard/${this.state.cmpname}`} >Dashboard</Link>
                           <br/>
                           <a className="popovereff" href="/">CSR</a>
                           <br/>
