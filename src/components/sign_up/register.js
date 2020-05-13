@@ -15,8 +15,9 @@ constructor(){
         Address:'',
         email:'',
         accountPassword:'',
-        Password:''
-    }
+        Password:'',
+        Color:''
+      }
 }
 handleChange = event =>{
     this.setState({[event.target.name]:event.target.value})
@@ -42,7 +43,7 @@ handleSubmit = event =>{
     phoneNo: 9455445548,
     brandAssets: {
         brandLogoSrc: "logo",
-        brandColor: "yellow",
+        brandColor: this.state.Color,
         brandSoundTrack: "piano"
     }
 
@@ -115,6 +116,9 @@ headers:{'Content-Type':'application/json'}
                    </div>
                    <div class="form-group">
                      <input type="password" class="form-control" name="Password" id="cpswrd" placeholder="Confirm Password" onChange={this.handleChange} required/>
+                   </div>
+                   <div class="form-group">
+                     <input type="text" class="form-control" name="Color" id="color" placeholder="Color" onChange={this.handleChange} required/>
                    </div>
                    <div class="form-group">
                    <input type="file" id="myFile" name="brandLogoSrc" values=""  onChange={this.handleChange}/>
