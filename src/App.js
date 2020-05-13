@@ -12,7 +12,7 @@ import Products from './components/products/product'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch } from 'react-router-dom';
 
-import Merchant from './components/map_merchant/Mapmerchant'
+// import Merchant from './components/map_merchant/Mapmerchant'
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/home" component={Home}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
-          <Route exact path="/merchant" component={Merchant}/>
+          {/* <Route exact path="/merchant" component={Merchant}/> */}
           <Route  path="/verify/:slug" component={Verify}/>
           <Route  path="/products/:slug" component={Products}/>
           <Route component={Pagenotfound}/>
