@@ -15,6 +15,8 @@ constructor(){
     }
 }
     componentDidMount(){
+
+      console.log(this.props.pid)
       this.setState({catid: this.props.pid }, () => {
        
           this.fetchproduct();
