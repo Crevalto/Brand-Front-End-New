@@ -13,7 +13,7 @@ export class Cart extends Component {
     }
     
 componentDidMount(){
-
+  
     const url = 'https://crevaltobkend.herokuapp.com/brand/getcartitems';
 
 
