@@ -21,7 +21,7 @@ import './dashboard.css'
                     </ul>
                   </div>
                   <div class="col-md-9">
-                    <h2>{localStorage.getItem('compname')}</h2>
+                    <h2>Google</h2>
                     <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus nisi in commodo gravida.</h4>
                     <hr/>
                     <div class="row">
