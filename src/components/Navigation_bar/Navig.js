@@ -69,6 +69,7 @@ class Navig extends Component {
                   document.getElementById("status").innerHTML = "Logged in";
                   this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:response.name,loggedin:true});
                   localStorage.setItem('loggedin',true);
+                  localStorage.setItem('token',response.token)
                   localStorage.setItem('compname',response.name)
 
                 }
@@ -100,8 +101,7 @@ changetoggle(){
             <div class="row">
               <div class="col-md-2">
                 <img class="pull-left" src={logo} alt="logo"/>
-                <h2 class="pull-left">Crevalto</h2>
-              </div>
+                              </div>
               <div class="col-md-7">
                 <form>
                   <input type="input" name="search" placeholder="SEARCH"/>

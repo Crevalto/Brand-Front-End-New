@@ -10,12 +10,9 @@ import Greeting from './components/greeting/greeting'
 import Verify from './components/verify_otp/verify_otp'
 import Products from './components/products/product'
 import Dashboard from './components/dashboard/dashboard'
-//import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Route, Switch } from 'react-router-dom';
-
 import Merchant from './components/map_merchant/Mapmerchant'
-
-
 
 function App() {
   return (

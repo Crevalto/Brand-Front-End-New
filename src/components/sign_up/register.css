@@ -14,6 +14,11 @@
       box-shadow: 0px 0px 15px #6327808a;
       width:75%;
   }
+
+.modalsty{
+  margin-top: 50px;
+}
+
   .body_signup .card_signup h2
   {
     font-family: 'Open Sans Condensed', sans-serif;
