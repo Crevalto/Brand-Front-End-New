@@ -101,7 +101,7 @@ changetoggle(){
             <div class="row">
               <div class="col-md-2">
                 <img class="pull-left" src={logo} alt="logo"/>
-                 <h2> Crevalto </h2>
+                <h2>Crevalto</h2>
               </div>
               <div class="col-md-7">
                 <form>
