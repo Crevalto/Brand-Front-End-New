@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
 import logo from '../images/purple_bg_noname.jpg';
-import {  Popover, PopoverHeader, PopoverBody } from 'reactstrap'
+import {Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import './Navig.css'
 
@@ -101,7 +101,8 @@ changetoggle(){
             <div class="row">
               <div class="col-md-2">
                 <img class="pull-left" src={logo} alt="logo"/>
-                              </div>
+                 <h2> Crevalto </h2>
+              </div>
               <div class="col-md-7">
                 <form>
                   <input type="input" name="search" placeholder="SEARCH"/>
@@ -168,15 +169,15 @@ changetoggle(){
                   <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                   <PopoverHeader style={{textTransform:'capitalize'}}>Welcome, {this.state.cmpname}</PopoverHeader>
                   <PopoverBody  style={{lineHeight:'2rem'}}>
-                          <a className="popovereff" href="/">Dashboard</a>
+                          <Link className="popovereff"  to={`/dashboard/${this.state.cmpname}`} >Dashboard</Link>
                           <br/>
                           <a className="popovereff" href="/">CSR</a>
                           <br/>
                           <a className="popovereff" href="/" >Payments</a>
                           <br/>
                           <a className="popovereff" href="/">Your Orders</a>
-                          <br/>
-                          <a style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</a>
+                          <hr/>
+                          <h6 style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</h6>
                   </PopoverBody>
                   </Popover>
                     }
