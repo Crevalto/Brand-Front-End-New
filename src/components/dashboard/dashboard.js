@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //import {Card} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import logo from '../images/white_bg_noname.jpg'
 import './dashboard.css'
 
@@ -13,7 +13,8 @@ import './dashboard.css'
        brandBackgroundGround:'',
        brandColor:'',
        initstate:false
-   }
+    }
+
    componentDidMount(){
         const url='https://crevaltobkend.herokuapp.com/brand/users/profile/'+this.props.match.params.slug ;
         var bearer='Bearer'+localStorage.getItem('token')
