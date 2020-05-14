@@ -12,7 +12,7 @@ import Products from './components/products/product'
 import Dashboard from './components/dashboard/dashboard'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch } from 'react-router-dom';
-
+import Cart from './components/cart/cartdis'
 import Merchant from './components/map_merchant/Mapmerchant'
 
 
@@ -25,6 +25,7 @@ function App() {
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
           <Route exact path="/home" component={Home}/>
+          <Route exact path="/cart" component={Cart}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/merchant" component={Merchant}/>

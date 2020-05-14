@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Modal,Button} from 'react-bootstrap'
-
+import {MdLocationOn,MdDescription} from 'react-icons/md'
+import {GiPriceTag} from 'react-icons/gi'
 
 export default class productsdisp extends Component {
 constructor(){
@@ -136,9 +137,9 @@ constructor(){
         <Modal.Title>{this.state.modalproduct.pname}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{this.state.modalproduct.pdescription}</Modal.Body>
-        <Modal.Body><h5>StockAddress:</h5>{this.state.modalproduct.padd}
-        <h5>SalePrice:</h5>{this.state.modalproduct.pprice}
-        <h5> Description:</h5>{this.state.modalproduct.pdescription}
+        <Modal.Body><h5><MdLocationOn size="20" color="purple"/>StockAddress:</h5>{this.state.modalproduct.padd}
+        <h5><GiPriceTag color="purple" size="20"/>SalePrice:</h5>{this.state.modalproduct.pprice}
+        <h5><MdDescription size="20" color="purple"/> Description:</h5>{this.state.modalproduct.pdescription}
 
         <h5> Quantity:</h5>{this.state.modalproduct.pqty}
         <h5> Size:</h5>{this.state.modalproduct.psize}

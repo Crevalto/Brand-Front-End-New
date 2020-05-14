@@ -2,6 +2,7 @@
 .dashboard-body{
   background: whitesmoke;
   height: 100vh;
+  overflow-x: hidden;
   padding-top: 150px;
 }
 .dashboard-body .container-fluid{
