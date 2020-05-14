@@ -7,10 +7,12 @@ constructor(){
     super()
     this.handleClose=this.handleClose.bind(this);
     this.handleShow=this.handleShow.bind(this);
+    this.addproduct=this.addproduct.bind(this);
     this.state={
         catid:"",
         products:[],
-        show:false
+        show:false,
+        modalproduct:[]
 
     }
 }
@@ -50,20 +52,68 @@ constructor(){
               }else{
                 alert("PAGE NOT FOUND API ERROR CHECK BACKEND")
               }
+
+              
       })
 
 
       }
 
     handleClose = () => this.setState({show:false});
-     handleShow = () => this.setState({show:true});
+    handleShow = (e) => {
+      
 
+      const { param } = e.target.dataset;
+      console.log(param)
+      this.setState({
+      show:true,
+      modalproduct:JSON.parse(param)
+      
+      });
+    }
+    
+    addproduct(e){
+      
+      const { param } = e.target.dataset;
+      console.log(JSON.parse(param).id)
+
+      const url = 'https://crevaltobkend.herokuapp.com/brand/addtocart';
+      var data = {
+
+        itemsRefs: JSON.parse(param).id,
+        itemQuants: JSON.parse(param).qty
+      
+      }
+  
+      var bearer='Bearer'+localStorage.getItem('token')
+      console.log(bearer)
+      console.log(data);  
+          fetch(url,{
+          method:'POST',
+          body:JSON.stringify(data),
+      headers:{
+        'Authorization':bearer,
+        'Content-Type':'application/json'}
+      })
+      .then(res =>res.json())
+      .catch(error => console.error("Show me error that cannot be specify",error))
+      .then(response =>{ console.log("Success:",response)
+            
+      if(response.status===true){
+        alert(response.message)    
+          }else{
+              alert(response.error)
+            }
+    })
+
+      }
 
     render() {
     
       return (
             <div class="row">
             {this.state.products.map((product,index) =>{
+        
         return(
                <div class="col-md-4">
             <div class="card" >
@@ -71,26 +121,31 @@ constructor(){
                 <div class="card-body">
                   <h5 class="card-title">{product.productName}</h5>
             <p class="card-text">{product.description}</p>
-                  <Button onClick={this.handleShow} class="btn">View more</Button>
+                  <Button  data-param={JSON.stringify({"pid":product._id,"pname":product.productName,"pdescription":product.description,"padd":product.stockAddress,"pqty":product.quantity,"pprice":product.salePrice,"psize":product.size})} onClick={this.handleShow} class="btn">View more</Button>
                 </div>
             </div>
              
 
+
+      </div>
+
+)})}
+
 <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{product.productName}</Modal.Title>
+        <Modal.Title>{this.state.modalproduct.pname}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{product.description}</Modal.Body>
-        <Modal.Body><h5>StockAddress:</h5>{product.stockAddress}
-        <h5>SalePrice:</h5>{product.salePrice}
-        <h5> Description:</h5>{product.description}
+        <Modal.Body>{this.state.modalproduct.pdescription}</Modal.Body>
+        <Modal.Body><h5>StockAddress:</h5>{this.state.modalproduct.padd}
+        <h5>SalePrice:</h5>{this.state.modalproduct.pprice}
+        <h5> Description:</h5>{this.state.modalproduct.pdescription}
 
-        <h5> Quantity:</h5>{product.quantity}
-        <h5> Size:</h5>{product.size}
+        <h5> Quantity:</h5>{this.state.modalproduct.pqty}
+        <h5> Size:</h5>{this.state.modalproduct.psize}
         </Modal.Body>
         <Modal.Footer>
         
-          <Button variant="secondary" onClick={this.handleClose}>
+          <Button variant="secondary" data-param={JSON.stringify({"id": this.state.modalproduct.pid,"qty": this.state.modalproduct.pqty})} onClick={this.addproduct}>
            Add to Cart
           </Button>
           <Button variant="primary" onClick={this.handleClose}>
@@ -98,9 +153,6 @@ constructor(){
           </Button>
         </Modal.Footer>
       </Modal>
-      </div>
-
-)})}
             </div>
         )
     }

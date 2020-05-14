@@ -168,15 +168,15 @@ changetoggle(){
                   <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                   <PopoverHeader style={{textTransform:'capitalize'}}>Welcome, {this.state.cmpname}</PopoverHeader>
                   <PopoverBody  style={{lineHeight:'2rem'}}>
-                          <a className="popovereff" href="/">Dashboard</a>
+                          <Link className="popovereff"  to={`/dashboard/${this.state.cmpname}`} >Dashboard</Link>
                           <br/>
                           <a className="popovereff" href="/">CSR</a>
                           <br/>
                           <a className="popovereff" href="/" >Payments</a>
                           <br/>
                           <a className="popovereff" href="/">Your Orders</a>
-                          <br/>
-                          <a style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</a>
+                          <hr/>
+                          <h6 style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</h6>
                   </PopoverBody>
                   </Popover>
                     }
