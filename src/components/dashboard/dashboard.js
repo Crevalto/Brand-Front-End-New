@@ -10,12 +10,8 @@ import './dashboard.css'
        services:[],
        regno:'',
        cinno:'',
-       brandBackgroundGround:{
-         background:'#5f1874'
-       },
-       brandColor:{
-         color:'#5f1874'
-       },
+       brandBackgroundGround:'',
+       brandColor:'',
        initstate:false
     }
 
@@ -36,7 +32,9 @@ import './dashboard.css'
          console.log(this.state.services)
          this.setState({cinno:this.state.services.bid.cinNo})
          this.setState({regno:this.state.services.bid.regNo})
-
+         this.setState({regno:this.state.services.bid.regNo})
+         this.setState({brandBackgroundGround:this.state.services.brandAssets.brandColor.bgColor})
+         this.setState({brandColor:this.state.services.brandAssets.brandColor.fgColor})
        })
        .catch((error) => {
          // handle your errors here
@@ -51,7 +49,7 @@ import './dashboard.css'
             <div class="col-md-1"></div>
             <div class="col-md-10">
               <div class="row card-dash">
-                  <div class="col-md-2" style={this.state.brandBackgroundGround}>
+                  <div class="col-md-2" style={{background:this.state.brandBackgroundGround}}>
                     <img src={logo} alt="Brand logo"/>
                     <ul>
                       <li class="active">Link1</li>
@@ -61,13 +59,13 @@ import './dashboard.css'
                     </ul>
                   </div>
                   <div class="col-md-9">
-                    <h2 style={this.state.brandColor}>{localStorage.getItem('compname')}</h2>
+                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
 
                     <hr/>
                     <div class="row">
                       <div class="col-md-4">
                         <div class="inner_cards_dash">
-                          <div class="inner_card_dash_header" style={this.state.brandBackgroundGround}>
+                          <div class="inner_card_dash_header" style={{background:this.state.brandBackgroundGround}}>
                             <h6>Email-id</h6>
                           </div>
                           <div class="inner_card_dash_body">
@@ -77,7 +75,7 @@ import './dashboard.css'
                       </div>
                       <div class="col-md-4">
                         <div class="inner_cards_dash">
-                          <div class="inner_card_dash_header" style={this.state.brandBackgroundGround}>
+                          <div class="inner_card_dash_header" style={{background:this.state.brandBackgroundGround}}>
                             <h6>Phone no</h6>
                           </div>
                           <div class="inner_card_dash_body">
@@ -87,7 +85,7 @@ import './dashboard.css'
                       </div>
                       <div class="col-md-4">
                         <div class="inner_cards_dash">
-                          <div class="inner_card_dash_header" style={this.state.brandBackgroundGround}>
+                          <div class="inner_card_dash_header" style={{background:this.state.brandBackgroundGround}}>
                             <h6>Cin number</h6>
                           </div>
                           <div class="inner_card_dash_body">
@@ -99,7 +97,7 @@ import './dashboard.css'
                     <div class="row">
                       <div class="col-md-4">
                         <div class="inner_cards_dash">
-                          <div class="inner_card_dash_header" style={this.state.brandBackgroundGround}>
+                          <div class="inner_card_dash_header" style={{background:this.state.brandBackgroundGround}}>
                             <h6>Reg number</h6>
                           </div>
                           <div class="inner_card_dash_body">
@@ -109,7 +107,7 @@ import './dashboard.css'
                       </div>
                       <div class="col-md-4">
                         <div class="inner_cards_dash">
-                          <div class="inner_card_dash_header" style={this.state.brandBackgroundGround}>
+                          <div class="inner_card_dash_header" style={{background:this.state.brandBackgroundGround}}>
                             <h6>Address</h6>
                           </div>
                           <div class="inner_card_dash_body">
