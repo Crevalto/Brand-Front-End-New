@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+//import WrappedMap from './components/Map/Map.js'
 import Home from './components/home/Home'
 import Navig from './components/Navigation_bar/Navig'
 import Login from './components/login/login'
@@ -38,3 +39,4 @@ function App() {
   );
 }
 export default App;
+
