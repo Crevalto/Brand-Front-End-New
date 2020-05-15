@@ -2,7 +2,7 @@ import React from 'react'
 
 function pagenotfound() {
     return (
-        <div paddertop>
+        <div  class="paddertop">
             404 PageNotFound
         </div>
     )
