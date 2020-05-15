@@ -59,8 +59,18 @@ import './dashboard.css'
                     </ul>
                   </div>
                   <div class="col-md-9">
+<<<<<<< HEAD
                     <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
 
+=======
+<<<<<<< HEAD
+                    <h2>Google</h2>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus nisi in commodo gravida.</h4>
+=======
+                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
+
+>>>>>>> f8ab1ce405a89f8b8cdb6580f12001255a40e757
+>>>>>>> master
                     <hr/>
                     <div class="row">
                       <div class="col-md-4">

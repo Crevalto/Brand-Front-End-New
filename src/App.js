@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+//import WrappedMap from './components/Map/Map.js'
 import Home from './components/home/Home'
 import Navig from './components/Navigation_bar/Navig'
 import Login from './components/login/login'
@@ -14,7 +15,7 @@ import Dashboard from './components/dashboard/dashboard'
 import { Route, Switch } from 'react-router-dom';
 import Cart from './components/cart/cartdis'
 import Merchant from './components/map_merchant/Mapmerchant'
-
+import Map from './components/map/mapgs'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/cart" component={Cart}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
+          <Route exact path="/map" component={Map}/>
           <Route exact path="/merchant" component={Merchant}/>
           <Route  path="/verify/:slug" component={Verify}/>
           <Route  path="/products/:slug" component={Products}/>
@@ -38,3 +40,4 @@ function App() {
   );
 }
 export default App;
+
