@@ -8,12 +8,14 @@ class Home extends Component {
 render(){
   return (
     <div className="products-body paddertop">
-        
-            
+        <div class="products-banner">
+            <h1>Products</h1>
+            <br/>
+        </div>
               <Productdisp pid={this.props.match.params.slug} />
-            
-        
-     
+
+
+
     </div>
   );
 }
