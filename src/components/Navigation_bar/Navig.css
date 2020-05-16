@@ -146,6 +146,10 @@ box-shadow: inset 0px 0 10px #44444463 !important;
   font-weight: 700;
 
 }
+.navig svg{
+    width:1.5em;
+    height:1.5em;
+}
 a.popovereff{
   width:100% !important;
   padding:10px 30px 10px 0px;

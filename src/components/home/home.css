@@ -74,7 +74,7 @@
 
 }
 .dback .card .image-holder{
-  width:342px;
+  width:100%;
   height:342px;
   overflow: hidden;
 }
