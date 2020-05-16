@@ -43,7 +43,7 @@
   background: white;
   color:#444444;
   transition: all .2s ease-out;
-  box-shadow: -2px 2px 3px #444444;
+  box-shadow: -2px 2px 2px #444444a8;
 }
 .card-dash .col-md-9{
   padding-top:40px;
@@ -58,10 +58,9 @@
 */
 .card-dash h2{
   text-transform: capitalize;
-  font-family:'Roboto',sans-serif;
+  font-family:'Oswald',sans-serif;
   margin: 0px;
   font-weight: 700;
-  text-shadow: 0px 0px 1px #969696fa;
   font-size: 48px;
   padding: 0px
 }
