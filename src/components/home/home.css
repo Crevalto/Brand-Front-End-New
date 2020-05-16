@@ -65,7 +65,7 @@
 }
 .dback .card img{
   margin:0px auto;
-  background:;
+  
   color:white;
   width:342px;
   height:342px;
@@ -74,7 +74,7 @@
 
 }
 .dback .card .image-holder{
-  width:342px;
+  width:100%;
   height:342px;
   overflow: hidden;
 }

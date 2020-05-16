@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
 import logo from '../images/purple_bg_noname.jpg';
 import {Popover, PopoverHeader, PopoverBody } from 'reactstrap'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
+import {IoIosCart} from "react-icons/io";
 import './Navig.css'
 
 
@@ -80,7 +81,6 @@ class Navig extends Component {
   logout(){
     localStorage.setItem('loggedin',false)
     localStorage.setItem('compname',"")
-
     this.setState({popoverOpen:!(this.state.popoverOpen),cmpname:"",loggedin:"false"})
   }
 
@@ -135,7 +135,9 @@ changetoggle(){
                     <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 008 15z"/>
                     </svg>
                     </Nav.Link>
-                    <Nav.Link href="/cart">Cart</Nav.Link>
+                    <Nav.Link href="/cart">
+                      <IoIosCart/>
+                    </Nav.Link>
                     </Nav>
 
                   {
@@ -176,8 +178,8 @@ changetoggle(){
                           <a className="popovereff" href="/" >Payments</a>
                           <br/>
                           <a className="popovereff" href="/">Your Orders</a>
-                          <hr/>
-                          <h6 style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</h6>
+                          <br/>
+                          <a style={{cursor:'pointer',color:'red'}} onClick={this.logout}>Logout</a>
                   </PopoverBody>
                   </Popover>
                     }
