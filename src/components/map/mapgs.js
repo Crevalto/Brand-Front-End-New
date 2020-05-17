@@ -34,7 +34,7 @@ class Map extends Component {
         viewport: {
             ...this.state.viewport,
             width: window.innerWidth,
-            height: window.innerHeight-85,
+            height:window.innerHeight-85,
             latitude: 10.790483,
             longitude: 78.704674,
             zoom: 12,
