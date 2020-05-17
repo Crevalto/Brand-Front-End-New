@@ -98,11 +98,11 @@ changetoggle(){
 }
 
 
-  handleClose = () =>{ 
+  handleClose = () =>{
     this.setState({show:false});
     this.setState({popoverOpen:!(this.state.popoverOpen)});
   }
- 
+
   handleShow () {
     this.setState({show:true})
     this.setState({popoverOpen:!(this.state.popoverOpen)});
@@ -185,7 +185,7 @@ changetoggle(){
                   <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                   <PopoverHeader style={{textTransform:'capitalize'}}>Welcome, {this.state.cmpname}</PopoverHeader>
                   <PopoverBody  style={{lineHeight:'2rem'}}>
-                   
+
                           <a style={{cursor:'pointer'}} onClick={this.handleShow} className="popovereff" >Dashboard</a>
                           <br/>
                           <a className="popovereff" href="/">CSR</a>
@@ -200,10 +200,10 @@ changetoggle(){
                     }
 
 
-<Modal size="lg" show={this.state.show} onHide={this.handleClose}>
+<Modal size="lg" show={this.state.show} onHide={this.handleClose} centered>
         <Modal.Body style={{padding:'0px '}}><Dashboard/></Modal.Body>
-        
-</Modal>                       
+
+</Modal>
 
               </div>
             </div>
