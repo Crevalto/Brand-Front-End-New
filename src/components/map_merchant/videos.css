@@ -11,12 +11,12 @@ background-color: purple;
     
     border-spacing: 15rem;
     padding: 8px;
-    
+    display: 'flex';    
     background-attachment: fixed;
 }
 .design .border{
     box-shadow:#620b80 0px 0px 10px ;
     color: purple;
-   
+   display: 'flex';
     
 }

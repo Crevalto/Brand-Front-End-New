@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+//import WrappedMap from './components/Map/Map.js'
 import Home from './components/home/Home'
 import Navig from './components/Navigation_bar/Navig'
 import Login from './components/login/login'
@@ -20,7 +21,7 @@ import Map from './components/map/mapgs'
 function App() {
   return (
     <div>
-        <Navig/>
+      <Navig/>
         <Switch>
           <Route exact path="/" component={Landing}/>
           <Route exact path="/greeting" component={Greeting}/>
@@ -34,9 +35,9 @@ function App() {
           <Route  path="/products/:slug" component={Products}/>
           <Route  path="/dashboard/:slug" component={Dashboard}/>
           <Route component={Pagenotfound}/>
-      </Switch>
-
+      </Switch>       
       </div>
   );
 }
 export default App;
+

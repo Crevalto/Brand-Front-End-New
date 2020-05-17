@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //import {Link} from 'react-router-dom'
 import logo from '../images/white_bg_noname.jpg'
 import './dashboard.css'
-import {FaPenFancy} from 'react-icons/fa'
+import {MdEdit} from 'react-icons/md'
 
  class dashboard extends Component {
 constructor(){
@@ -63,7 +63,7 @@ constructor(){
                     </ul>
                   </div>
                   <div class="col-md-9">
-                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}{' '}<FaPenFancy size="25" onClick={this.changeEdit}/></h2>
+                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}{' '}<MdEdit size="20" style={{float :'right',marginTop:'30px'}} onClick={this.changeEdit}/></h2>
                     <hr/>
                     <div class="row">
                       <div class="col-md-4">
