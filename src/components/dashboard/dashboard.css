@@ -6,13 +6,13 @@
   padding-top: 150px;
 }
 .dashboard-body .container-fluid{
-  padding:10px;
+  
 }
 .card-dash{
   background: white;
   height: 100%;
   box-shadow: 0px 0px 10px #44444499;
-  margin:10px;
+  border-radius: 2px;
 }
 .card-dash img{
   width:100px;

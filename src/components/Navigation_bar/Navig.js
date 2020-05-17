@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import {Nav,Form,Button,Row,Col} from 'react-bootstrap'
+import {Nav,Form,Button,Row,Col,Modal} from 'react-bootstrap'
 import logo from '../images/purple_bg_noname.jpg';
 import {Popover, PopoverHeader, PopoverBody } from 'reactstrap'
 import {Link,withRouter} from 'react-router-dom'
 import {IoIosCart} from "react-icons/io";
 import './Navig.css'
-
+import Dashboard from '../dashboard/dashboard'
 
 class Navig extends Component {
   constructor(){
@@ -15,6 +15,8 @@ class Navig extends Component {
     this.handleclick=this.handleclick.bind(this);
     this.changetoggle=this.changetoggle.bind(this);
     this.logout=this.logout.bind(this);
+    this.handleClose=this.handleClose.bind(this);
+    this.handleShow=this.handleShow.bind(this)
     if(localStorage.getItem('loggedin')==null){
         localStorage.setItem('loggedin',false);
     }
@@ -26,6 +28,7 @@ class Navig extends Component {
 
 
     this.state={
+      show:false,
       loggedin: localStorage.getItem('loggedin'),
       credentials:'',
       email:'',
@@ -94,6 +97,17 @@ changetoggle(){
 
 }
 
+
+  handleClose = () =>{ 
+    this.setState({show:false});
+    this.setState({popoverOpen:!(this.state.popoverOpen)});
+  }
+ 
+  handleShow () {
+    this.setState({show:true})
+    this.setState({popoverOpen:!(this.state.popoverOpen)});
+  }
+
   render(){
   console.log(this.state.loggedin)
     return (
@@ -130,7 +144,7 @@ changetoggle(){
                       <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 002 6c0 4.314 6 10 6 10zm0-7a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                     </svg>
                     </Nav.Link>
-                    <Nav.Link href="/cart">
+                    <Nav.Link >
                     <svg class="bi bi-chat-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 008 15z"/>
                     </svg>
@@ -171,7 +185,8 @@ changetoggle(){
                   <Popover placement="bottom" isOpen={this.state.popoverOpen} target="Popover1" toggle={this.toggle}>
                   <PopoverHeader style={{textTransform:'capitalize'}}>Welcome, {this.state.cmpname}</PopoverHeader>
                   <PopoverBody  style={{lineHeight:'2rem'}}>
-                          <Link className="popovereff"  to={`/dashboard/${this.state.cmpname}`} >Dashboard</Link>
+                   
+                          <a style={{cursor:'pointer'}} onClick={this.handleShow} className="popovereff" >Dashboard</a>
                           <br/>
                           <a className="popovereff" href="/">CSR</a>
                           <br/>
@@ -183,6 +198,12 @@ changetoggle(){
                   </PopoverBody>
                   </Popover>
                     }
+
+
+<Modal size="lg" show={this.state.show} onHide={this.handleClose}>
+        <Modal.Body style={{padding:'0px '}}><Dashboard/></Modal.Body>
+        
+</Modal>                       
 
               </div>
             </div>

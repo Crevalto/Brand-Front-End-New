@@ -3,10 +3,14 @@ import React, { Component } from 'react'
 //import {Link} from 'react-router-dom'
 import logo from '../images/white_bg_noname.jpg'
 import './dashboard.css'
+import {FaPenFancy} from 'react-icons/fa'
 
-
- class prodcat extends Component {
-   state={
+ class dashboard extends Component {
+constructor(){
+  super()
+  this.changeEdit=this.changeEdit.bind(this);
+  this.state={
+       edits:true,
        services:[],
        regno:'',
        cinno:'',
@@ -14,9 +18,13 @@ import './dashboard.css'
        brandColor:'',
        initstate:false
     }
+  }
+    changeEdit(){
+      this.setState({edits:false})
+    }
 
    componentDidMount(){
-        const url='https://crevaltobkend.herokuapp.com/brand/users/profile/'+this.props.match.params.slug ;
+        const url='https://crevaltobkend.herokuapp.com/brand/users/profile/'+localStorage.getItem('compname') ;
         var bearer='Bearer'+localStorage.getItem('token')
         fetch(url,{
             method:'GET',
@@ -44,23 +52,18 @@ import './dashboard.css'
    }
     render(){
         return (
-        <div class="dashboard-body paddertop">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
               <div class="row card-dash">
                   <div class="col-md-2" style={{background:this.state.brandBackgroundGround}}>
                     <img src={logo} alt="Brand logo"/>
                     <ul>
-                      <li class="active">Link1</li>
-                      <li>Link2</li>
+                      <li class="active">Profile</li>
+                      <li>CSR</li>
                       <li>Link3</li>
                       <li>Link4</li>
                     </ul>
                   </div>
                   <div class="col-md-9">
-                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
-
+                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}{' '}<FaPenFancy size="25" onClick={this.changeEdit}/></h2>
                     <hr/>
                     <div class="row">
                       <div class="col-md-4">
@@ -69,7 +72,7 @@ import './dashboard.css'
                             <h6>Email-id</h6>
                           </div>
                           <div class="inner_card_dash_body">
-                            <input type="text" defaultValue={this.state.services.bemail}/>
+                            <input type="text" defaultValue={this.state.services.bemail} disabled={this.state.edits}/>
                           </div>
                         </div>
                       </div>
@@ -79,7 +82,7 @@ import './dashboard.css'
                             <h6>Phone no</h6>
                           </div>
                           <div class="inner_card_dash_body">
-                            <input type="number" defaultValue={this.state.services.phn_no}/>
+                            <input type="number" defaultValue={this.state.services.phn_no} disabled={this.state.edits} />
                           </div>
                         </div>
                       </div>
@@ -89,7 +92,7 @@ import './dashboard.css'
                             <h6>Cin number</h6>
                           </div>
                           <div class="inner_card_dash_body">
-                            <input type="number" defaultValue={this.state.cinno}/>
+                            <input type="number" defaultValue={this.state.cinno} disabled={this.state.edits} />
                           </div>
                         </div>
                       </div>
@@ -101,7 +104,7 @@ import './dashboard.css'
                             <h6>Reg number</h6>
                           </div>
                           <div class="inner_card_dash_body">
-                          <input type="number" defaultValue={this.state.regno}/>
+                          <input type="number" defaultValue={this.state.regno} disabled={this.state.edits} />
                           </div>
                         </div>
                       </div>
@@ -111,7 +114,7 @@ import './dashboard.css'
                             <h6>Address</h6>
                           </div>
                           <div class="inner_card_dash_body">
-                            <input type="text" defaultValue={this.state.services.baddress}/>
+                            <input type="text" defaultValue={this.state.services.baddress} disabled={this.state.edits} />
                           </div>
                         </div>
                       </div>
@@ -141,12 +144,8 @@ import './dashboard.css'
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-        </div>
 
         )
     }
 }
-export default prodcat
+export default dashboard
