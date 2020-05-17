@@ -38,13 +38,8 @@ constructor(){
           categoryId : this.state.catid
           
         }
-<<<<<<< HEAD
-        
-        console.log(data);  
-=======
 
         console.log(data);
->>>>>>> 5d8270442e43e38967a8fbe2caf86d7467f6b099
             fetch(url,{
             method:'POST',
             body:JSON.stringify(data),
@@ -53,11 +48,6 @@ constructor(){
         .then(res =>res.json())
         .catch(error => console.error("Show me error that cannot be specify",error))
         .then(response =>{ console.log("Success:",response)
-<<<<<<< HEAD
-        console.log(this.state.catid)    
-=======
-
->>>>>>> 5d8270442e43e38967a8fbe2caf86d7467f6b099
         if(response.status===true){
 
                 this.setState({products:response.products})

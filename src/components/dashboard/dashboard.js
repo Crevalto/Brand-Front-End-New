@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import logo from '../images/white_bg_noname.jpg'
 import './dashboard.css'
 
+
  class prodcat extends Component {
    state={
        services:[],
@@ -59,10 +60,7 @@ import './dashboard.css'
                   </div>
                   <div class="col-md-9">
                     <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
-                    <h2>Google</h2>
-                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus nisi in commodo gravida.</h4>
 
-                    <h2 style={{color:this.state.brandBackgroundGround}}>{localStorage.getItem('compname')}</h2>
                     <hr/>
                     <div class="row">
                       <div class="col-md-4">
