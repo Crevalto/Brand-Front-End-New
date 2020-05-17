@@ -7,6 +7,7 @@ import img1 from '../images/normalview.png'
 import img2 from '../images/satiliteview.png'
 import img3 from '../images/darkmap.png'
 //import d3 from 'd3-ease';
+import {withRouter} from 'react-router-dom'
 class Map extends Component {
 
     constructor(){
@@ -16,6 +17,7 @@ class Map extends Component {
         this.renderTooltip=this.renderTooltip.bind(this)
         this.changelocation=this.changelocation.bind(this)
         this.handleChange=this.handleChange.bind(this)
+        this.gotomap=this.gotomap.bind(this)
         this.state = {
             viewport: {
                 width: window.innerWidth,
@@ -27,6 +29,11 @@ class Map extends Component {
             mapstyle:'mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc',
             place:""
         }
+    }
+
+    gotomap(){
+      console.log('hello')
+      this.props.history.push("/merchant");
     }
 
     componentDidMount(){
@@ -98,7 +105,7 @@ attributionControl={true} customAttribution={true}
       onViewportChange={this.onViewportChange}>
 
 {Dat.map((loc,index)=>(
-<Marker latitude={loc.lat} longitude={loc.lng}><MdLocationOn size="40" color={loc.color}/></Marker>
+<Marker latitude={loc.lat} longitude={loc.lng} ><MdLocationOn size="40" onClick={this.gotomap} color={loc.color}/></Marker>
 ))}
 
 
@@ -155,4 +162,4 @@ attributionControl={true} customAttribution={true}
   )}
 
 }
-export default Map
+export default withRouter( Map)

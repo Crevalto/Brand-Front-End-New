@@ -1,0 +1,7 @@
+.carddesign{
+    box-shadow: #620b80 0px 10px 15px;
+}
+.bg{
+    background-image: url("/Images/bubble2.png");
+    background-attachment: fixed;
+}

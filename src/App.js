@@ -16,7 +16,7 @@ import { Route, Switch } from 'react-router-dom';
 import Cart from './components/cart/cartdis'
 import Merchant from './components/map_merchant/Mapmerchant'
 import Map from './components/map/mapgs'
-
+import Mapping from './components/Mapping/Mapping'
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route exact path="/greeting" component={Greeting}/>
           <Route exact path="/home" component={Home}/>
           <Route exact path="/cart" component={Cart}/>
+          <Route exact path="/mapping" component={Mapping}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/map" component={Map}/>

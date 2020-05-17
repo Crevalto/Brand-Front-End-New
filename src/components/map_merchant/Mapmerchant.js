@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import Data from './Json/fetch.json';
+import Data from './fetch.json';
 import ReactPlayer from 'react-player';
 import {Card,Button} from 'react-bootstrap';
-import './video.css';
+import './videos.css';
 import Grid from '@material-ui/core/Grid';
 class Mapmerchant extends Component{
   render(){
