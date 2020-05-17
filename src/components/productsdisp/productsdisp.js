@@ -36,6 +36,7 @@ constructor(){
         const url = 'https://crevaltobkend.herokuapp.com/brand/getproducts';
         var data = {
           categoryId : this.state.catid
+          
         }
 
         console.log(data);
@@ -47,7 +48,6 @@ constructor(){
         .then(res =>res.json())
         .catch(error => console.error("Show me error that cannot be specify",error))
         .then(response =>{ console.log("Success:",response)
-
         if(response.status===true){
 
                 this.setState({products:response.products})

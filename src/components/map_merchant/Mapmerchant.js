@@ -1,18 +1,18 @@
 import React,{Component} from 'react';
-import Data from './fetch.json';
+import Data from './Json/fetch.json';
 import ReactPlayer from 'react-player';
 import {Card,Button} from 'react-bootstrap';
-import './videos.css';
+import './video.css';
 import Grid from '@material-ui/core/Grid';
 class Mapmerchant extends Component{
   render(){
-    return(
-      <div className="design paddertop">
-        <Grid  container spacing={12} style={{padding:'0px'}}>
+    return( 
+      <div className="design">
+        <Grid  container spacing={12} style={{padding:'30px'}}>
           {Data.map((detail,index)=>{
             return <div >
-              <Grid item lg={3} style={{padding:'15px'}} >
-                <Card className="border" border="dark"   style={{width:'100%'}}>
+              <Grid item xl={3} style={{padding:'12px'}} >              
+                <Card className="border" border="dark"   style={{width:'25rem'}}>
                   <Card.Body>
                     <ReactPlayer playing width="card.innerWidth" height="card.innerHeight" loop muted url={detail.videourl} />
                       <Card.Title>{detail["video details"]["video name"]}</Card.Title>
@@ -22,7 +22,7 @@ class Mapmerchant extends Component{
                         </Card.Text>
                       <Button  className="luck" variant="outline-dark">View the merchants products</Button>
                   </Card.Body>
-                </Card>
+                </Card> 
               </Grid>
         </div>
     }
