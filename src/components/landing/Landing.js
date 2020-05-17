@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom'
       <br/>
       <h1>EXTEND YOUR ARMS TO THE NEED</h1>
       <br/>
-     <Link to="/home"> <button  type="button" class="btn btn-danger-home">Join the movement <span class="glyphicon glyphicon-forward" className="sp" aria-hidden="true"></span></button></Link>
+     <Link to="/map"> <button  type="button" class="btn btn-danger-home">Join the movement <span class="glyphicon glyphicon-forward" className="sp" aria-hidden="true"></span></button></Link>
     </div>
   </div>
     </div>
