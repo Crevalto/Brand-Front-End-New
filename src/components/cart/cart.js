@@ -30,9 +30,7 @@ componentDidMount(){
           
     if(response.status===true){    
       this.setState({products:response.cart})
-        }else{
-            
-          }
+        }
   })
 
 

@@ -8,7 +8,8 @@ constructor(){
   super()
   this.state={
     cartitems:[],
-      total:0
+      total:0,
+      products:[]
   }
 }
 
@@ -35,17 +36,15 @@ componentDidMount()
 })
 
  .then(dothis =>{
-  var products = this.state.cartitems;
-          var tot=this.state.total
+  var products = this.state.products;
+  var tot=this.state.total
           if(products.length!==0)
           {for (var i = 0; i < products.length; i++) {
           
-          tot=tot+(products[i].item.salePrice*products[i].item.quantity)
-          
+          tot=tot+(products[i].item.salePrice)
           }
           this.setState({total:tot});
           }
-          console.log(this.state.total)
     
         })
 }
@@ -76,11 +75,10 @@ componentDidMount()
                     <div  style={{backgroundColor:'#6326809c',padding:'1rem',color:'white',fontWeight:'2rem',textTransform:'capitalize' }} >Order summary </div>
                           <div className  = "p-4">
                             <ul className  = "list-unstyled mb-4">
-                              <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>₹78222</strong></li>
-                              <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Shipping and handling(10%)</strong><strong>₹4454</strong></li>
-                              <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Tax(15%)</strong><strong>₹45454</strong></li>
+                              <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>₹{this.state.total}</strong></li>
+                              <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Tax(18%)</strong><strong>₹{(this.state.total*18)/100}</strong></li>
                               <li className  = "d-flex justify-content-between py-3 border-bottom"><strong className="text-muted">Total</strong>
-                                <h5 className  = "font-weight-bold">₹100</h5>
+                                <h5 className  = "font-weight-bold">₹{(this.state.total)+((this.state.total*18)/100)}</h5>
                               </li>
                             </ul><Button varient="primary"  block style={{backgroundColor:'#6326809c',borderRadius:'30px',border:'0px',padding:'10px'}} >Procceed to checkout</Button>
                           </div>
