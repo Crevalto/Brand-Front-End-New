@@ -1,99 +1,91 @@
-.body_signup{
-    text-align: center;
-    background: url("../images/Helping-Hand.jpg");/*rgba(99, 39, 128, 0.2)*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment:fixed;
-  }
-  .body_signup .card_signup
-  {
-      background:whitesmoke;
-      padding:50px;
-      margin:50px auto;
-      border:5px solid #6327808a;
-      box-shadow: 0px 0px 15px #6327808a;
-      width:75%;
-  }
+.body_signup {
+  text-align: center;
+  background: url("../images/Helping-Hand.jpg"); /*rgba(99, 39, 128, 0.2)*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.body_signup .card_signup {
+  background: whitesmoke;
+  padding: 50px;
+  margin: 50px auto;
+  border: 5px solid #6327808a;
+  box-shadow: 0px 0px 15px #6327808a;
+  width: 75%;
+}
 
-.modalsty{
+.modalsty {
   margin-top: 50px;
 }
 
-  .body_signup .card_signup h2
-  {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 700;
-    color:#602781;
-  }
-  .body_signup .row{
-    margin:0px !important;
-    padding-top: 10px;
-    padding-bottom: 0px;
-  }
-  .body_signup .card_signup img
-  {
-    width:150px;
-    border-radius:100px;
-    padding:10px;
-    margin-top: 20px;
-    border:2px solid #632780;
-  }
-  .body_signup form
-  {
-    padding:10px 0px 20px 0px;
-  }
-  .body_signup .form-control
-  {
-    margin-top:30px !important;
-    margin-bottom: 40px;
-  }
-  .body_signup .btn-primary{
-    background: transparent;
-    border:3px solid purple;
-    color:#602781;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    margin-top: 20px;
-    transition: all .2s linear;
-    text-transform: uppercase;
-  }
-  .body_signup .btn-primary:hover
-  {
-    background-color: #602781;
-    color:white;
-    border-color: #602781;
-    transition: all .3s ease-out;
-  }
-  .body_signup input{
-    border:none !important;
-    border-bottom: 3px solid #6027814d !important;
-    border-radius: 0px !important;
-    box-shadow: none !important;
-    color:#602781 !important;
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
-    font-size: 18px !important;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight:700;
-    background: transparent;
-    width:100%;
-    letter-spacing: 2px;
-  }
-  .body_signup input:focus
-  {
-    border-bottom: 3px solid #602781 !important;
-    background: transparent;
-  }
-  .body_signup ::placeholder {
+.body_signup .card_signup h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  color: #602781;
+}
+.body_signup .row {
+  margin: 0px !important;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+.body_signup .card_signup img {
+  width: 150px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #632780;
+}
+.body_signup form {
+  padding: 10px 0px 20px 0px;
+}
+.body_signup .form-control {
+  margin-top: 30px !important;
+  margin-bottom: 40px;
+}
+.body_signup .btn-primary {
+  background: transparent;
+  border: 3px solid purple;
+  color: #602781;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+}
+.body_signup .btn-primary:hover {
+  background-color: #602781;
+  color: white;
+  border-color: #602781;
+  transition: all 0.3s ease-out;
+}
+.body_signup input {
+  border: none !important;
+  border-bottom: 3px solid #6027814d !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  color: #602781 !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  font-size: 18px !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  background: transparent;
+  width: 100%;
+  letter-spacing: 2px;
+}
+.body_signup input:focus {
+  border-bottom: 3px solid #602781 !important;
+  background: transparent;
+}
+.body_signup ::placeholder {
   color: #6027814d !important;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
   font-size: 18px;
   opacity: 1;
   letter-spacing: 1px;
 }
-.body_signup input:focus>::placeholder
-{
-  color:#602781 !important;
+.body_signup input:focus > ::placeholder {
+  color: #602781 !important;
 }

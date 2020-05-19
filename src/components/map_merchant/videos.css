@@ -1,53 +1,51 @@
-.design .crop{
-    align-content: center;
-
+.design .crop {
+  align-content: center;
 }
-.design .luck{
+.design .luck {
   margin-left: 10px;
   margin-bottom: 10px;
-  border:2px solid #9456ab;
+  border: 2px solid #9456ab;
   font-family: "Open Sans Condensed";
-  color:#9456ab;
+  color: #9456ab;
   font-weight: 700;
 }
-.design .luck:hover{
-    background:#9456ab;
-    color:white;
+.design .luck:hover {
+  background: #9456ab;
+  color: white;
 }
-.design{
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-spacing: 15rem;
-    display: 'flex';
-    background-attachment: fixed;
+.design {
+  font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+  border-spacing: 15rem;
+  display: "flex";
+  background-attachment: fixed;
 }
-.design .border{
-    box-shadow:#9456ab 0px 0px 10px ;
+.design .border {
+  box-shadow: #9456ab 0px 0px 10px;
 
-   display: 'flex';
-
+  display: "flex";
 }
-.design .card-body{
-  padding:0px !important;
+.design .card-body {
+  padding: 0px !important;
   background: whitesmoke;
-  border:2px solid #9456ab;
-  color:#9456ab;
-
+  border: 2px solid #9456ab;
+  color: #9456ab;
 }
-.design .card-body .card-title{
-  font-family: 'Open Sans Condensed',sans-serif;
+.design .card-body .card-title {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
-  margin:10px;
-  font-size:30px;
+  margin: 10px;
+  font-size: 30px;
 }
-.design .card-body svg{
-  margin-left:10px;
+.design .card-body svg {
+  margin-left: 10px;
   margin-top: 5px;
   margin-right: 5px;
-  width:14px;
+  width: 14px;
   height: 14px;
 }
-.design .card-body p{
+.design .card-body p {
   font-weight: 700;
-  font-size:16px;
-  font-family: 'Open Sans';
+  font-size: 16px;
+  font-family: "Open Sans";
 }
