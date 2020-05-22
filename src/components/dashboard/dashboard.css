@@ -1,52 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans+Condensed:wght@300;700&family=Oswald:wght@300&family=Righteous&display=swap');
-.dashboard-body{
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans+Condensed:wght@300;700&family=Oswald:wght@300&family=Righteous&display=swap");
+.dashboard-body {
   background: whitesmoke;
   height: 100vh;
   overflow-x: hidden;
   padding-top: 150px;
 }
-.dashboard-body .container-fluid{
-  
-}
-.card-dash{
+.card-dash {
   background: white;
   height: 100%;
   box-shadow: 0px 0px 10px #44444499;
   border-radius: 2px;
 }
-.card-dash img{
-  width:100px;
+.card-dash img {
+  width: 100px;
   margin-top: 20px;
   border-radius: 100px;
   background: white;
-  padding:10px;
+  padding: 10px;
 }
-.card-dash .col-md-2{
+.card-dash .col-md-2 {
   text-align: center;
-  padding:0px;
+  padding: 0px;
 }
-.card-dash ul{
+.card-dash ul {
   list-style-type: none;
-  padding:0px;
-  margin-top:30px;
-  color:white;
-  font-family: 'Open Sans Condensed',sans-serif;
-  font-weight:700;
+  padding: 0px;
+  margin-top: 30px;
+  color: white;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
 }
-.card-dash ul li{
-  padding-bottom:10px;
-  padding-top:10px;
-  margin-top:20px;
-  transition: all .2s ease-out;
+.card-dash ul li {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 20px;
+  transition: all 0.2s ease-out;
 }
-.card-dash ul li.active,.card-dash ul li:hover{
+.card-dash ul li.active,
+.card-dash ul li:hover {
   background: white;
-  color:#444444;
-  transition: all .2s ease-out;
+  color: #444444;
+  transition: all 0.2s ease-out;
   box-shadow: -2px 2px 2px #444444a8;
 }
-.card-dash .col-md-9{
-  padding-top:40px;
+.card-dash .col-md-9 {
+  padding-top: 40px;
 }
 /*
 .dashboard-body .col-md-1{
@@ -56,84 +54,84 @@
   background: #63268073;
 }
 */
-.card-dash h2{
+.card-dash h2 {
   text-transform: capitalize;
-  font-family:'Oswald',sans-serif;
+  font-family: "Oswald", sans-serif;
   margin: 0px;
   font-weight: 700;
   font-size: 48px;
-  padding: 0px
+  padding: 0px;
 }
-.card-dash h4{
-  font-family: 'Open Sans';
+.card-dash h4 {
+  font-family: "Open Sans";
   font-size: 18px;
   margin: 0px;
   margin-top: 10px;
   padding: 0px;
 }
-.inner_cards_dash{
-  width:100%;
+.inner_cards_dash {
+  width: 100%;
   margin-bottom: 20px;
-  padding:0px;
-  transition: all .2s ease-out;
+  padding: 0px;
+  transition: all 0.2s ease-out;
   box-shadow: 0px 8px 10px #44444473;
   border-radius: 5px 5px 0px 0px;
 }
 
-.inner_cards_dash:hover{
+.inner_cards_dash:hover {
   box-shadow: 0px 0px 10px #444444;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.inner_cards_dash h6{
-  font-family:'Open Sans Condensed',sans-serif;
+.inner_cards_dash h6 {
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
   margin: 0px;
-  color:white;
+  color: white;
 }
-.inner_card_dash_header{
+.inner_card_dash_header {
   border-bottom: 1px solid #dadada;
-  margin:0px;
+  margin: 0px;
   height: 20%;
-  padding:10px 0px  10px 15px;
+  padding: 10px 0px 10px 15px;
   border-radius: 5px 5px 0px 0px;
 }
-.inner_card_dash_header svg{
-  margin-top:-20px;
-  color:white;
+.inner_card_dash_header svg {
+  margin-top: -20px;
+  color: white;
 }
-.inner_card_dash_body{
-  border:1px solid #80808042;
-  border-top:0px !important;
+.inner_card_dash_body {
+  border: 1px solid #80808042;
+  border-top: 0px !important;
   background: white;
-  padding:10px;
+  padding: 10px;
 }
-.inner_cards_dash input{
+.inner_cards_dash input {
   font-size: 18px;
-  color:black;
+  color: black;
   font-weight: 300 !important;
-  margin:0px;
-  font-family: 'Oswald', sans-serif !important;
-  border:0px;
-  width:100%;
+  margin: 0px;
+  font-family: "Oswald", sans-serif !important;
+  border: 0px;
+  width: 100%;
 }
-.inner_cards_dash input:focus{
+.inner_cards_dash input:focus {
   outline: none;
 }
-.twitter .inner_card_dash_header{
+.twitter .inner_card_dash_header {
   box-shadow: 0px 0px 50px #38a1f2 inset;
-  padding:10px;
+  padding: 10px;
 }
-.twitter:hover{
+.twitter:hover {
   box-shadow: 0px 0px 10px #38a1f2;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.youtube  .inner_card_dash_header{
-box-shadow: 0px 0px 50px #c00 inset;
-  padding:10px;
+.youtube .inner_card_dash_header {
+  box-shadow: 0px 0px 50px #c00 inset;
+  padding: 10px;
 }
 
-.youtube:hover{
+.youtube:hover {
   box-shadow: 0px 0px 10px #c00;
 }

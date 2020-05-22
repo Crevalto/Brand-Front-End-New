@@ -1,17 +1,17 @@
-.payment-body .payment-options{
-    margin-top: 3rem ;
-    margin-left: 3rem;
+.payment-body .payment-options {
+  margin-top: 3rem;
+  margin-left: 3rem;
 }
-.payment-body .payment-options__item{
-    text-decoration: none;
-    margin-left: 3rem;
-    border: 2px solid black;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    color: #610B80;
+.payment-body .payment-options__item {
+  text-decoration: none;
+  margin-left: 3rem;
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #610b80;
 }
-.payment-body .payment-options__item:hover{
-    text-decoration: none;
-    color: white;
-    background-color: #610B80;
+.payment-body .payment-options__item:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #610b80;
 }

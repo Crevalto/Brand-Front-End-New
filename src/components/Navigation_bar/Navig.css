@@ -1,160 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-.navig a{
-    font-weight: 700;
-    padding-left: 12px;
-    padding-right: 12px;
-    color:#9456ab ;
-    transition: all .3s linear;
-    margin-right:5px;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+.navig a {
+  font-weight: 700;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #9456ab;
+  transition: all 0.3s linear;
+  margin-right: 5px;
 }
 
-.navig .nav_item{
-  color:#620b80 !important;
+.navig .nav_item {
+  color: #620b80 !important;
 }
 
-.navig .sh{
-background-color: white;
-box-shadow:0px 2px 15px  purple;
+.navig .sh {
+  background-color: white;
+  box-shadow: 0px 2px 15px purple;
 }
-.navig ::placeholder{
+.navig ::placeholder {
   font-size: 20px;
 }
-.navig{
-  z-index:100;
+.navig {
+  z-index: 100;
   position: fixed;
-  width:100%;
+  width: 100%;
   box-shadow: 0px 0px 10px #44444494;
-  background:#F5EEF8;
-  padding:8px 5px 8px 8px;
+  background: #f5eef8;
+  padding: 8px 5px 8px 8px;
   text-align: center;
-  color:#9456ab!important;
+  color: #9456ab !important;
 }
-.navig .smalls{
-  margin-top:10px;
-  margin-left:30px;
+.navig .smalls {
+  margin-top: 10px;
+  margin-left: 30px;
 }
-.navig a:hover{
-  color:#6c2d80 !important;
-  transition: all .3s ease-out;
+.navig a:hover {
+  color: #6c2d80 !important;
+  transition: all 0.3s ease-out;
 }
-.navig a:active,.navig a:focus{
-  color:#6c2d80 !important;
+.navig a:active,
+.navig a:focus {
+  color: #6c2d80 !important;
 }
 
-.popovereff:hover{
+.popovereff:hover {
   text-decoration: none;
-  color:#9456ab !important;
-  transition: all .3s ease-out;
-
+  color: #9456ab !important;
+  transition: all 0.3s ease-out;
 }
 
-.navig form{
-  padding-bottom:0px;
+.navig form {
+  padding-bottom: 0px;
 }
-.navig img{
-  padding:5px;
+.navig img {
+  padding: 5px;
   width: 60px;
   margin: 5px;
   padding: 5px;
   background: #632680;
   border-radius: 100px;
 }
-.navig h2{
-  font-family: 'Dancing Script', cursive;
+.navig h2 {
+  font-family: "Dancing Script", cursive;
   font-weight: 700 !important;
   margin: 10px;
-  margin-top:15px;
+  margin-top: 15px;
   font-size: 32px;
   font-weight: 500;
 }
 .navig ::placeholder {
-color: #44444463!important;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 700;
-font-size: 18px;
-opacity: 1;
-letter-spacing: 1px;
+  color: #44444463 !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 1;
+  letter-spacing: 1px;
 }
-.navig input{
-  width:100%;
+.navig input {
+  width: 100%;
   background-color: white !important;
-  border:0px solid white !important;
+  border: 0px solid white !important;
   border-radius: 25px 25px 25px 25px !important;
-  padding:10px;
+  padding: 10px;
   padding-left: 20px;
-  padding-bottom:9px;
+  padding-bottom: 9px;
   font-size: 18px !important;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400 !important;
-  color:black;
+  color: black;
   letter-spacing: 2px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
   margin-top: 10px;
-box-shadow: inset 0px 0 10px #44444463 !important;
+  box-shadow: inset 0px 0 10px #44444463 !important;
 }
-.navig input:focus{
+.navig input:focus {
   outline: none;
 }
-.navig .btn{
+.navig .btn {
   background-color: whitesmoke;
   visibility: hidden;
-  padding:10px;
-  margin-top:-3px;
-  border:0px white solid;
-  width:0%;
-  border-radius:0px 25px 25px 0px !important;
+  padding: 10px;
+  margin-top: -3px;
+  border: 0px white solid;
+  width: 0%;
+  border-radius: 0px 25px 25px 0px !important;
 }
-.popover-body input{
+.popover-body input {
   box-shadow: inset 0px 0px 3px #444444 !important;
 }
-.popover-body input:focus{
-  outline:none !important;
+.popover-body input:focus {
+  outline: none !important;
   box-shadow: inset 0px 0px 3px #444444 !important;
-  border-color:inherit;
+  border-color: inherit;
 }
-.popover-body .btn{
+.popover-body .btn {
   background: #9456ab;
-  color:white;
-  border:none;
-  font-family: 'Open Sans Condensed',sans-serif;
+  color: white;
+  border: none;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
 }
-.popover{
+.popover {
   box-shadow: 0px 0px 10px #444444;
-  width:300px;
+  width: 300px;
 }
-.popover-body .btn:hover{
+.popover-body .btn:hover {
   background: #632780 !important;
-  color:white !important;
+  color: white !important;
 }
-.popover-body .btn:active ,.popover-body .btn:focus{
+.popover-body .btn:active,
+.popover-body .btn:focus {
   background: #632780 !important;
-  color:white !important;
+  color: white !important;
   outline: none !important;
-  border-color:none;
+  border-color: none;
   box-shadow: none !important;
 }
-.popover-header{
+.popover-header {
   background: #9456ab;
-  color:white;
-  font-family: 'Open Sans Condensed',sans-serif;
+  color: white;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
 }
-.popover-body a{
-  color:#444444;
-  font-family: 'Open Sans';
+.popover-body a {
+  color: #444444;
+  font-family: "Open Sans";
   font-weight: 700;
-
 }
-.navig svg{
-    width:1.5em;
-    height:1.5em;
+.navig svg {
+  width: 1.5em;
+  height: 1.5em;
 }
-a.popovereff{
-  width:100% !important;
-  padding:10px 30px 10px 0px;
+a.popovereff {
+  width: 100% !important;
+  padding: 10px 30px 10px 0px;
 }
-p#status{
-  color:red;
+p#status {
+  color: red;
   text-align: center;
 }
