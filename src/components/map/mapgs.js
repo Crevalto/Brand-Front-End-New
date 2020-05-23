@@ -36,7 +36,7 @@ class Map extends Component {
 
   gotomap() {
     console.log("hello");
-    this.props.history.push("/merchant");
+    this.props.history.push("/mapping");
   }
 
   componentDidMount() {

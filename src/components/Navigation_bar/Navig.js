@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Nav, Form, Button, Row, Col, Modal } from "react-bootstrap";
 import logo from "../images/purple_bg_noname.jpg";
 import { Popover, PopoverHeader, PopoverBody } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { IoIosCart } from "react-icons/io";
 import "./Navig.css";
 import Dashboard from "../dashboard/dashboard";
@@ -86,6 +86,8 @@ class Navig extends Component {
       cmpname: "",
       loggedin: "false",
     });
+
+    this.props.history.push("/");
   }
 
   toggle() {
@@ -330,4 +332,4 @@ class Navig extends Component {
     );
   }
 }
-export default Navig;
+export default withRouter(Navig);
