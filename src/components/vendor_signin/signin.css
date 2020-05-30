@@ -1,0 +1,22 @@
+.sign {
+  background-color: #70809017;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 200px;
+}
+
+.sign .cover {
+  background-color: rgba(167, 72, 223, 0.527);
+  margin: 0px;
+  padding: 0px;
+
+  border-radius: 11px;
+}
+
+.sign .details {
+  margin-top: 150px;
+  text-align: center;
+}

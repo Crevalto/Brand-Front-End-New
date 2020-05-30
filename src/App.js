@@ -17,13 +17,18 @@ import Cart from "./components/cart/cartdis";
 import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
 import Mapping from "./components/Mapping/Mapping";
+import Single from "./components/SingleShare/SingleShare";
+import Vensin from "./components/vendor_signin/vendorsignin";
+import Dropzone from "./components/vendor_signin/signin2";
 
 function App() {
   return (
     <div>
-      <Navig />
       <Switch>
+        <Route exact path="/drop" component={Dropzone} />
         <Route exact path="/" component={Landing} />
+        <Route exact path="/single" component={Single} />
+        <Route exact path="/sin" component={Vensin} />
         <Route exact path="/greeting" component={Greeting} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/cart" component={Cart} />
