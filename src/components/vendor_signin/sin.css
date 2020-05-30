@@ -13,19 +13,19 @@
 
   background-attachment: fixed;
 }
-input,
-button {
+.reg_body input,
+.reg_body button {
   border: none;
   outline: none;
   background: none;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
-.tip {
+.reg_body .tip {
   font-size: 20px;
   margin: 40px auto 50px;
   text-align: center;
 }
-.cont {
+.reg_body .cont {
   box-shadow: 10px 10px 5px #39373eb0;
   overflow: hidden;
   position: relative;
@@ -34,14 +34,14 @@ button {
   margin: 50px auto 50px;
   background: #fff;
 }
-.form {
+.reg_body .form {
   position: relative;
   width: 640px;
   height: 100%;
   transition: transform 1.2s ease-in-out;
   padding: 50px 30px 0;
 }
-.sub-cont {
+.reg_body .sub-cont {
   overflow: hidden;
   position: absolute;
   left: 640px;
@@ -52,10 +52,10 @@ button {
   background: #fff;
   transition: transform 1.2s ease-in-out;
 }
-.cont.s--signup .sub-cont {
+.reg_body .cont.s--signup .sub-cont {
   transform: translate3d(-640px, 0, 0);
 }
-button {
+.reg_body button {
   display: block;
   margin: 0 auto;
   width: 260px;
@@ -65,7 +65,7 @@ button {
   font-size: 15px;
   cursor: pointer;
 }
-.img {
+.reg_body .img {
   overflow: hidden;
   z-index: 2;
   position: absolute;
@@ -75,7 +75,7 @@ button {
   height: 100%;
   padding-top: 360px;
 }
-.img:before {
+.reg_body .img:before {
   content: "";
   position: absolute;
   right: 0;
@@ -86,7 +86,7 @@ button {
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }
-.img:after {
+.reg_body .img:after {
   content: "";
   position: absolute;
   left: 0;
@@ -95,10 +95,10 @@ button {
   height: 100%;
   background: #812bd054;
 }
-.cont.s--signup .img:before {
+.reg_body .cont.s--signup .img:before {
   transform: translate3d(640px, 0, 0);
 }
-.img__text {
+.reg_body .img__text {
   z-index: 2;
   position: absolute;
   left: 0;
@@ -109,24 +109,24 @@ button {
   color: #fff;
   transition: transform 1.2s ease-in-out;
 }
-.img__text h2 {
+.reg_body .img__text h2 {
   margin-bottom: 10px;
   font-weight: normal;
 }
-.img__text p {
+.reg_body .img__text p {
   font-size: 14px;
   line-height: 1.5;
 }
-.cont.s--signup .img__text.m--up {
+.reg_body .cont.s--signup .img__text.m--up {
   transform: translateX(520px);
 }
-.img__text.m--in {
+.reg_body .img__text.m--in {
   transform: translateX(-520px);
 }
-.cont.s--signup .img__text.m--in {
+.reg_body .cont.s--signup .img__text.m--in {
   transform: translateX(0);
 }
-.img__btn {
+.reg_body .img__btn {
   overflow: hidden;
   z-index: 2;
   position: relative;
@@ -139,7 +139,7 @@ button {
   font-size: 15px;
   cursor: pointer;
 }
-.img__btn:after {
+.reg_body .img__btn:after {
   content: "";
   z-index: 2;
   position: absolute;
@@ -150,7 +150,7 @@ button {
   border: 2px solid #fff;
   border-radius: 30px;
 }
-.img__btn span {
+.reg_body .img__btn span {
   position: absolute;
   left: 0;
   top: 0;
@@ -162,32 +162,32 @@ button {
   transition: transform 1.2s;
 }
 
-.img__btn span.m--in {
+.reg_body .img__btn span.m--in {
   transform: translateY(-72px);
 }
-.cont.s--signup .img__btn span.m--in {
+.reg_body .cont.s--signup .img__btn span.m--in {
   transform: translateY(0);
 }
-.cont.s--signup .img__btn span.m--up {
+.reg_body .cont.s--signup .img__btn span.m--up {
   transform: translateY(72px);
 }
-h2 {
+.reg_body h2 {
   width: 100%;
   font-size: 26px;
   text-align: center;
 }
-label {
+.reg_body label {
   display: block;
   width: 260px;
   margin: 25px auto 0;
   text-align: center;
 }
-label span {
+.reg_body label span {
   font-size: 12px;
   color: #cfcfcf;
   text-transform: uppercase;
 }
-input {
+.reg_body input {
   display: block;
   width: 100%;
   margin-top: 5px;
@@ -196,51 +196,51 @@ input {
   border-bottom: 1px solid rgba(238, 22, 191, 0.801);
   text-align: center;
 }
-.forgot-pass {
+.reg_body .forgot-pass {
   margin-top: 15px;
   text-align: center;
   font-size: 12px;
   color: #cfcfcf;
 }
-.submit {
+.reg_body .submit {
   margin-top: 40px;
   margin-bottom: 20px;
   background: purple;
   text-transform: uppercase;
 }
-.fb-btn {
+.reg_body .fb-btn {
   border: 2px solid #d3dae9;
   color: #8fa1c7;
 }
-.fb-btn span {
+.reg_body .fb-btn span {
   font-weight: bold;
   color: #455a81;
 }
-.sign-in {
+.reg_body .sign-in {
   transition-timing-function: ease-out;
 }
-.cont.s--signup .sign-in {
+.reg_body .cont.s--signup .sign-in {
   transition-timing-function: ease-in-out;
   transition-duration: 1.2s;
   transform: translate3d(640px, 0, 0);
 }
-.sign-up {
+.reg_body .sign-up {
   transform: translate3d(-900px, 0, 0);
 }
-.cont.s--signup .sign-up {
+.reg_body .cont.s--signup .sign-up {
   transform: translate3d(0, 0, 0);
 }
-.icon-link {
+.reg_body .icon-link {
   position: absolute;
   left: 5px;
   bottom: 5px;
   width: 32px;
 }
-.icon-link img {
+.reg_body .icon-link img {
   width: 100%;
   vertical-align: top;
 }
-.icon-link--twitter {
+.reg_body .icon-link--twitter {
   left: auto;
   right: 5px;
 }

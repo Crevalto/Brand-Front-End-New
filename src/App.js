@@ -24,6 +24,7 @@ import Dropzone from "./components/vendor_signin/signin2";
 function App() {
   return (
     <div>
+      <Navig />
       <Switch>
         <Route exact path="/drop" component={Dropzone} />
         <Route exact path="/" component={Landing} />

@@ -70,6 +70,7 @@ function Dropbox(props) {
     <section>
       <div onClick={handleShow} style={props.thumbsContainer}>
         {thumbs}
+        {props.message}
       </div>
 
       <Modal show={show} onHide={handleClose} size="lg">

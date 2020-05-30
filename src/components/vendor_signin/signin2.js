@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DropBox from "./Dropbox";
 import { Jumbotron } from "react-bootstrap";
 import "./signin.css";
+import { MdAddAPhoto } from "react-icons/md";
 class signin2 extends Component {
   render() {
     const thumbsContainer_cover = {
@@ -72,6 +73,20 @@ class signin2 extends Component {
             thumb={thumb_cover}
             thumbsContainer={thumbsContainer_cover}
             img={img_cover}
+            message={
+              <h2
+                style={{
+                  color: "white",
+                  width: "100%",
+                  textAlign: "center",
+                  alignSelf: "center",
+                }}
+              >
+                <MdAddAPhoto />
+                <br />
+                Add Cover Photo
+              </h2>
+            }
           />
         </Jumbotron>
         <DropBox
