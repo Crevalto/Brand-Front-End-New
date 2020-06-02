@@ -8,6 +8,15 @@
   margin-right: 5px;
 }
 
+.navig p {
+  font-weight: 700;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #9456ab;
+  transition: all 0.3s linear;
+  margin-right: 5px;
+}
+
 .navig .nav_item {
   color: #620b80 !important;
 }

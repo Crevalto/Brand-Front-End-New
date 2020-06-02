@@ -14,7 +14,6 @@ class vendor_signin extends Component {
     return (
       <div className="reg_body">
         <div class="paddertop">
-          {" "}
           <div class="cont">
             <div class="form sign-in">
               <img src={logo} alt="logo" width="100px" height="100px" />

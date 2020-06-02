@@ -4,13 +4,6 @@ import { Modal, Button } from "react-bootstrap";
 import "./Dropbox.css";
 import { BsCloudUpload } from "react-icons/bs";
 
-const thumbsContainerBefore = {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  marginTop: 16,
-};
-
 const thumbInner = {
   display: "flex",
   minWidth: 0,
@@ -19,6 +12,8 @@ const thumbInner = {
 
 function Dropbox(props) {
   const [files, setFiles] = useState([]);
+  const [message, setMessage] = useState(props.message);
+
   console.log(files);
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -41,6 +36,7 @@ function Dropbox(props) {
           )
         )
       );
+      setMessage("");
       setShow(false);
     },
   });
@@ -48,7 +44,7 @@ function Dropbox(props) {
   const thumbs = files.map((file) => (
     <div style={props.thumb} key={file.name}>
       <div style={thumbInner}>
-        <img src={file.preview} style={props.img} />
+        <img src={file.preview} style={props.img} alt="" />
       </div>
     </div>
   ));
@@ -70,7 +66,7 @@ function Dropbox(props) {
     <section>
       <div onClick={handleShow} style={props.thumbsContainer}>
         {thumbs}
-        {props.message}
+        {message}
       </div>
 
       <Modal show={show} onHide={handleClose} size="lg">

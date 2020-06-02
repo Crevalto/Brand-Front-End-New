@@ -286,13 +286,13 @@ class Navig extends Component {
                   Welcome, {this.state.cmpname}
                 </PopoverHeader>
                 <PopoverBody style={{ lineHeight: "2rem" }}>
-                  <a
+                  <p
                     style={{ cursor: "pointer" }}
                     onClick={this.handleShow}
                     className="popovereff"
                   >
                     Dashboard
-                  </a>
+                  </p>
                   <br />
                   <a className="popovereff" href="/">
                     CSR
@@ -306,12 +306,12 @@ class Navig extends Component {
                     Your Orders
                   </a>
                   <br />
-                  <a
+                  <p
                     style={{ cursor: "pointer", color: "red" }}
                     onClick={this.logout}
                   >
                     Logout
-                  </a>
+                  </p>
                 </PopoverBody>
               </Popover>
             )}

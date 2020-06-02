@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardColumns, Jumbotron } from "react-bootstrap";
-import ReactPlayer from "react-player";
 import "./products.css";
-import banner from "../images/maping_banner.jpg";
 import Shirt from "../images/shirt.jpeg";
 export default class Mapping extends Component {
   render() {
