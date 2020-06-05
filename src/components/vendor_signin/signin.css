@@ -1,0 +1,45 @@
+.backgroundSign {
+  background-color: #f2f3f5;
+  padding-top: 85px;
+  overflow: hidden;
+}
+
+.sign {
+  background-color: white;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+.sign .cover {
+  background-color: rgba(167, 72, 223, 0.527);
+  margin: 0px;
+  padding: 0px;
+  border-radius: 11px;
+}
+
+.sign .details {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.detailsCard {
+  margin-left: 80px;
+  margin-top: 40px;
+}
+
+.addproductcard {
+  margin-top: 40px;
+  
+}
+.AddingProducts {
+  cursor: "pointer";
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+}

@@ -1,176 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 
-.dback .jum{
-    background: linear-gradient(
-      #6621cc80,
-      #6621cc80), url("https://i1.wp.com/www.deltacommunitychurch.co.za/wp-content/uploads/2019/01/Heart-in-hands-gift.jpg?ssl=1") center/cover no-repeat;
-  height:450px;
-    border-radius: 0rem !important;
-    padding-top: 25px;
-    box-shadow: 0px 5px 10px #777777;
+.dback .jum {
+  background: linear-gradient(#6621cc80, #6621cc80),
+    url("https://i1.wp.com/www.deltacommunitychurch.co.za/wp-content/uploads/2019/01/Heart-in-hands-gift.jpg?ssl=1")
+      center/cover no-repeat;
+  height: 450px;
+  border-radius: 0rem !important;
+  padding-top: 25px;
+  box-shadow: 0px 5px 10px #777777;
 }
 /*
 ),*/
 
-.dback .colsty{
+.dback .colsty {
   max-width: 6% !important;
 }
 
-.dback .prod{
-
-    margin: 3rem;
-    font-size: 50px;
-    font-family: 'Acme', sans-serif;
+.dback .prod {
+  margin: 3rem;
+  font-size: 50px;
+  font-family: "Acme", sans-serif;
 }
 
-.dback{
+.dback {
   overflow: hidden;
   background: whitesmoke;
 }
-.dback .round{
+.dback .round {
   background: whitesmoke;
   height: 400px;
-  width:400px;
+  width: 400px;
   border-radius: 500px;
-  padding:50px;
-  box-shadow:inset 0px 0px 50px #6327806b;
+  padding: 50px;
+  box-shadow: inset 0px 0px 50px #6327806b;
   margin-bottom: 0px;
 }
-.dback h2.pquote{
+.dback h2.pquote {
   color: #9456ab !important;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 50px;
-  margin:0px;
+  margin: 0px;
   font-weight: 700;
   line-height: 70px;
 }
 
-.dback .layer{
-    width:100% !important;
-    height: 100% !important;
+.dback .layer {
+  width: 100% !important;
+  height: 100% !important;
 }
 
-.dback .card{
-  margin:30px;
-  box-shadow:0px 0px 30px #44444454;
+.dback .card {
+  margin: 30px;
+  box-shadow: 0px 0px 30px #44444454;
   text-align: center !important;
-  background: white ;
+  background: white;
   overflow: hidden;
-  padding:0px;
+  padding: 0px;
   z-index: 0;
 }
-.dback .card img{
-  margin:0px auto;
-  background:;
-  color:white;
-  width:342px;
-  height:342px;
-  z-index: 1;
-  transition: all .2s linear;
+.dback .card img {
+  margin: 0px auto;
 
+  color: white;
+  width: 342px;
+  height: 342px;
+  z-index: 1;
+  transition: all 0.2s linear;
 }
-.dback .card .image-holder{
-  width:342px;
-  height:342px;
+.dback .card .image-holder {
+  width: 100%;
+  height: 342px;
   overflow: hidden;
 }
-.dback .card img:hover{
+.dback .card img:hover {
   transform: scale(1.1);
-  content: 'Black';
-  transition: all .4s linear;
+  content: "Black";
+  transition: all 0.4s linear;
 }
-.dback .holder{
-  z-index:2;
+.dback .holder {
+  z-index: 2;
 }
-.dback h5{
-  font-family:'Open Sans Condensed','sans-serif';
-  font-weight:700;
-  font-size:24px;
-  color:white;
+.dback h5 {
+  font-family: "Open Sans Condensed", "sans-serif";
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
   background: #44444491;
-  width:100%;
-  margin:0px auto;
-  padding:7px 20px 5px 20px;
-  border-radius:0px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 7px 20px 5px 20px;
+  border-radius: 0px;
   text-transform: uppercase;
 }
-.dback .btn{
+.dback .btn {
   background: white;
-  color:#632780;
-  font-family:'Open Sans Condensed','sans-serif';
-  font-weight:700;
+  color: #632780;
+  font-family: "Open Sans Condensed", "sans-serif";
+  font-weight: 700;
 }
-.dback .col-md-12 h2{
-  margin:10px;
-  font-family: 'Righteous','cursive';
+.dback .col-md-12 h2 {
+  margin: 10px;
+  font-family: "Righteous", "cursive";
   font-size: 80px;
-  color:whitesmoke;
+  color: whitesmoke;
   text-align: center;
   text-shadow: 0px 3px 2px #00000059;
 }
-  .dback h3{
-    font-family: 'Open Sans Condensed','sans-serif';
-    font-weight: 700;
-    font-size: 34px;
-    text-transform: uppercase;
-    color:#632780;
-    margin: 20px 0px;
-  }
-  .dback a:hover{
-    text-decoration: none;
-  }
-  .dback .card-selection{
-    width:80%;
-    margin:50px auto;
-    background: white;
-    border-top:8px solid #9456ab;
-    box-shadow: 0px 5px 5px #44444442;
-    text-align: center;
-    padding:20px 30px 20px 30px;
-  }
-  .dback .card-selection svg{
-    margin-top:20px;
-    color:#9456ab;
-    background: white;
-     width:5em;
-     height:5em;
-    padding:20px;
-    border-radius: 5em;
-    border:2px solid #9456ab;
-  }
-  .dback .card-selection h4{
-    margin-top:10px;
-    color:#9456ab;
-    font-family: 'Open Sans Condensed';
-    font-weight: 700;
-  }
-  .dback .card-selection p{
-    color:#444444;
-    font-family: 'Open Sans';
-    font-size: 18px;
-  }
-  .dback .categories{
-    width:100%;
-    margin-top: 50px;
-    background-color: #e1cfe8;
-    padding-top:50px;
-    background-attachment: fixed;
-  }
-  .dback .categories h6{
-    text-align: center;
-    margin-top: 0px;
-    font-size: 20px;
-    color:#444444;
-    font-family: 'Open Sans',sans-serif;
-  }
-  .dback .special_border{
-    border-bottom: 2px white solid;
-    padding-bottom: 50px;
-    margin-bottom: 30px;
-  }
+.dback h3 {
+  font-family: "Open Sans Condensed", "sans-serif";
+  font-weight: 700;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: #632780;
+  margin: 20px 0px;
+}
+.dback a:hover {
+  text-decoration: none;
+}
+.dback .card-selection {
+  width: 80%;
+  margin: 50px auto;
+  background: white;
+  border-top: 8px solid #9456ab;
+  box-shadow: 0px 5px 5px #44444442;
+  text-align: center;
+  padding: 20px 30px 20px 30px;
+}
+.dback .card-selection svg {
+  margin-top: 20px;
+  color: #9456ab;
+  background: white;
+  width: 5em;
+  height: 5em;
+  padding: 20px;
+  border-radius: 5em;
+  border: 2px solid #9456ab;
+}
+.dback .card-selection h4 {
+  margin-top: 10px;
+  color: #9456ab;
+  font-family: "Open Sans Condensed";
+  font-weight: 700;
+}
+.dback .card-selection p {
+  color: #444444;
+  font-family: "Open Sans";
+  font-size: 18px;
+}
+.dback .categories {
+  width: 100%;
+  margin-top: 50px;
+  background-color: #e1cfe8;
+  padding-top: 50px;
+  background-attachment: fixed;
+}
+.dback .categories h6 {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 20px;
+  color: #444444;
+  font-family: "Open Sans", sans-serif;
+}
+.dback .special_border {
+  border-bottom: 2px white solid;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+}
 
-  /*end of services */
+/*end of services */

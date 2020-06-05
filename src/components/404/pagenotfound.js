@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function pagenotfound() {
-    return (
-        <div paddertop>
-            404 PageNotFound
-        </div>
-    )
+  return <div class="paddertop">404 PageNotFound</div>;
 }
 
-export default pagenotfound
+export default pagenotfound;

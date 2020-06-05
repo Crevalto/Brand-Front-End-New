@@ -1,8 +1,7 @@
-.paddertop{
+.paddertop {
   padding-top: 85px;
 }
-.verify_otp
-{
+.verify_otp {
   background: rgba(99, 39, 128, 0.21);
   background-attachment: fixed;
   height: 100vh;
@@ -14,95 +13,93 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-.verify_otp .card-mail
-{
+.verify_otp .card-mail {
   background: white;
   text-align: center;
   padding: 30px;
-  border-top:5px solid #632780;
+  border-top: 5px solid #632780;
   align-content: center;
   margin-top: 100px;
 }
-.verify_otp .card-mail h2{
-  color:#632780;
-  font-family: 'Open Sans Condensed', sans-serif;
+.verify_otp .card-mail h2 {
+  color: #632780;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
-.verify_otp .card-mail form{
+.verify_otp .card-mail form {
   padding-top: 0px;
 }
-.verify_otp input{
-  border:none !important;
+.verify_otp input {
+  border: none !important;
   border-bottom: 3px solid #6027814d !important;
   border-radius: 0px !important;
   box-shadow: none !important;
-  color:#602781 !important;
+  color: #602781 !important;
   font-size: 18px !important;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight:700;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
   letter-spacing: 2px;
   background: transparent !important;
-  width:15%;
-  margin:10px;
+  width: 15%;
+  margin: 10px;
   font-size: 36px !important;
   text-align: center;
 }
-.verify_otp input::placeholder{
+.verify_otp input::placeholder {
   font-size: 36px;
   color: #6027814d !important;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
   opacity: 1;
   letter-spacing: 1px;
 }
 
-.verify_otp input:focus{
+.verify_otp input:focus {
   outline: 0;
 }
-.verify_otp .btn{
-  color:#632780;
+.verify_otp .btn {
+  color: #632780;
   background-color: white;
-  border:3px #632780 solid;
-  padding:5px 10px 5px 10px;
-  width:100%;
-  margin:10px 0px;
-  font-family: 'Open Sans Condensed','sans-serif';
+  border: 3px #632780 solid;
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+  margin: 10px 0px;
+  font-family: "Open Sans Condensed", "sans-serif";
   font-weight: 700;
 }
-.verify_otp .btn:active{
+.verify_otp .btn:active {
   box-shadow: none;
 }
-.verify_otp p#status{
-  color:red;
+.verify_otp p#status {
+  color: red;
   text-transform: uppercase;
 }
-.verify_otp .btn:hover{
+.verify_otp .btn:hover {
   background: #632780;
-  color:white;
+  color: white;
 }
-.verify_otp .card-mail p{
-  font-family: 'Open Sans Condensed', sans-serif;
-  color:#8e59a9;
+.verify_otp .card-mail p {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #8e59a9;
   font-size: 18px;
   line-height: 1.5em;
 }
-.verify_otp .card-mail h1{
-  margin-bottom:0px;
-  padding-bottom:0px;
-  color:#632780;
+.verify_otp .card-mail h1 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  color: #632780;
 }
-.verify_otp a{
-  color:inherit;
+.verify_otp a {
+  color: inherit;
 }
-.verify_otp a:hover{
-  color:inherit;
+.verify_otp a:hover {
+  color: inherit;
 }
 
-.verify_otp input:focus
-{
+.verify_otp input:focus {
   border-bottom: 3px solid #602781 !important;
 }

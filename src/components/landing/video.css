@@ -1,53 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans+Condensed:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans+Condensed:wght@300;700&display=swap");
 
-.body-landing
-{
-  padding:0px;
-  margin:0px;
+.body-landing {
+  padding: 0px;
+  margin: 0px;
   overflow: hidden;
 }
-.body-landing .video{
-     min-height: 100% !important;
-     min-width: 100% !important;
-     position: fixed !important;
-     z-index:1000 !important;
+.body-landing .video {
+  min-height: 100% !important;
+  min-width: 100% !important;
+  position: fixed !important;
+  z-index: 1000 !important;
 }
 
-.body-landing .row{
-   color:white;
-   z-index:1001;
-   position:relative;
-   padding:30px;
-   min-height: 100%;
-   text-align: center;
-   overflow: hidden;
- }
+.body-landing .row {
+  color: white;
+  z-index: 1001;
+  position: relative;
+  padding: 30px;
+  min-height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
 
-.body-landing .card-home
- {
-   z-index: 1002;
-   position: fixed;
-   bottom:0 !important;
-   width:100%;
- }
-.body-landing .card-home h1{
-   font-family: 'Anton', sans-serif;
-   font-size: 60px;
- }
-.body-landing .btn-danger-home
- {
-   background: none;
-   border:3px solid white !important;
-   font-family: 'Open Sans Condensed', sans-serif !important;
-   font-size: 24px !important;
-   font-weight: 700;
-   margin-bottom: 2rem;
-   color:white !important;
-   text-transform: uppercase;
-   transition: all .8s ease-out;
- }
-.body-landing .btn-danger-home:hover{
-   background: #6621cc80;
-   border-color: #6621cc80;
-   transition: all .8s ease-out;
- }
+.body-landing .card-home {
+  z-index: 1002;
+  position: fixed;
+  bottom: 0 !important;
+  width: 100%;
+}
+.body-landing .card-home h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 60px;
+}
+.body-landing .btn-danger-home {
+  background: none;
+  border: 3px solid white !important;
+  font-family: "Open Sans Condensed", sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white !important;
+  text-transform: uppercase;
+  transition: all 0.8s ease-out;
+}
+.body-landing .btn-danger-home:hover {
+  background: #6621cc80;
+  border-color: #6621cc80;
+  transition: all 0.8s ease-out;
+}
