@@ -20,6 +20,7 @@ import Mapping from "./components/Mapping/Mapping";
 import Single from "./components/SingleShare/SingleShare";
 import Vensin from "./components/vendor_signin/vendorsignin";
 import Dropzone from "./components/vendor_signin/signin2";
+import Profile from "./components/profile/profile";
 import csr from "./components/csr/csr";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Navig />
       <Switch>
         <Route exact path="/csr" component={csr} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/drop" component={Dropzone} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />

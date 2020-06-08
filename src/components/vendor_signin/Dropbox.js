@@ -14,8 +14,6 @@ function Dropbox(props) {
   const [files, setFiles] = useState([]);
   const [message, setMessage] = useState(props.message);
 
-  console.log(files);
-
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
