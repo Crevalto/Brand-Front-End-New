@@ -1,32 +1,87 @@
 import React, { Component } from "react";
 import DropBox from "./Dropbox";
-import icon_add from "../images/icon_add.svg";
-import {
-  Jumbotron,
-  Card,
-  Form,
-  Col,
-  Row,
-  Modal,
-  Button,
-} from "react-bootstrap";
+import { Jumbotron, Card, Form, Col, Row, Modal } from "react-bootstrap";
 import "./signin.css";
-import { MdAddAPhoto } from "react-icons/md";
+import { MdAddShoppingCart, MdAddAPhoto } from "react-icons/md";
 import { TiUserAdd } from "react-icons/ti";
+import "./ChooseType.css";
+import ChooseCategories from "./chooseCategories";
+import ChooseType from "./ChooseType";
+import FillDetails from "./fillDetails";
 
 class signin2 extends Component {
   constructor() {
     super();
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
+    this.handleClosexl = this.handleClosexl.bind(this);
+    this.handleShowxl = this.handleShowxl.bind(this);
+    this.onchangeCategory = this.onchangeCategory.bind(this);
+    this.onchangeType = this.onchangeType.bind(this);
+    this.improveState = this.improveState.bind(this);
     this.state = {
+      showxl: false,
       show: false,
+      profile: "",
+      cover: "",
+      product: [
+        {
+          product_category: "",
+          product_type: "",
+          product_name: "",
+        },
+      ],
+      productBundle: [],
     };
   }
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
 
+  handleClosexl = () => this.setState({ showxl: false });
+  handleShowxl = () => {
+    this.setState({
+      showxl: true,
+      product: [
+        {
+          product_category: "",
+          product_type: "",
+          product_name: "",
+        },
+      ],
+    });
+  };
+
+  onchangeCategory(Categ) {
+    this.setState({
+      product: [
+        {
+          product_category: Categ,
+          product_type: "",
+          product_name: "",
+        },
+      ],
+    });
+  }
+
+  onchangeType(productType) {
+    console.log(productType);
+    this.setState({
+      product: [
+        {
+          product_category: this.state.product[0].product_category,
+          product_type: productType,
+          product_name: "",
+        },
+      ],
+    });
+  }
+
+  improveState(drop, drop1) {
+    this.setState({ [drop]: drop1 });
+  }
+
   render() {
+    console.log(this.state.product[0].product_type);
     const thumbsContainer_cover = {
       display: "flex",
       border: "3px solid white",
@@ -86,13 +141,14 @@ class signin2 extends Component {
       height: "100%",
     };
 
-    console.log(JSON.parse(localStorage.getItem("cover")));
+    console.log(this.state.product);
     return (
       <div className="backgroundSign">
         <div className="sign">
           <Jumbotron className="cover">
             <DropBox
               imgname="cover"
+              improveState={this.improveState}
               thumb={thumb_cover}
               thumbsContainer={thumbsContainer_cover}
               img={img_cover}
@@ -115,6 +171,7 @@ class signin2 extends Component {
           </Jumbotron>
           <DropBox
             imgname="profile"
+            improveState={this.improveState}
             thumb={thumb_profile}
             thumbsContainer={thumbsContainer_profile}
             img={img_profile}
@@ -196,28 +253,54 @@ class signin2 extends Component {
               </Card>
             </div>
           </Col>
-          <Col md={5}>
+          <Col md={8}>
             <Card className="addproductcard">
               <Card.Body>
                 <b>NEW ADD PRODUCT</b>
-                <Card className="AddingProducts" onClick={this.handleShow}>
+                <Card className="AddingProducts" onClick={this.handleShowxl}>
                   <Card.Body>
-                    <img width="150" height="150" src={icon_add} />
+                    <MdAddShoppingCart size="40" color="violet" />
                     <br />
                     Click & Add Product
                   </Card.Body>
                 </Card>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                  <Modal.Body>
-                  <button type="button" to ="/#" class="btn btn-primary btn-lg">Mens</button>
-                  <button type="button" to ="/#" class="btn btn-primary btn-lg">Womens</button>
-                  <button type="button" to ="/#" class="btn btn-primary btn-lg">Kid's</button>
-
-
-                    
-                    
-                  </Modal.Body>
+                <Modal
+                  backdrop="static"
+                  size="lg"
+                  show={this.state.showxl}
+                  onHide={this.handleClosexl}
+                >
+                  {this.state.product[0].product_category === "" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "white" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <ChooseCategories
+                        changeCategory={this.onchangeCategory}
+                      />
+                    </Modal.Body>
+                  ) : this.state.product[0].product_type === "" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "#dedede" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <ChooseType onchangeType={this.onchangeType} />
+                    </Modal.Body>
+                  ) : (
+                    <Modal.Body>
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <FillDetails
+                        categtype={this.state.product[0].product_type}
+                      />
+                    </Modal.Body>
+                  )}
                 </Modal>
               </Card.Body>
             </Card>

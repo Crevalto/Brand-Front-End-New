@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./sin.css";
+import "./vendorsin.css";
 import logo from "../images/no_bg_noname.png";
 class vendor_signin extends Component {
   constructor() {
@@ -10,6 +10,7 @@ class vendor_signin extends Component {
   toggle() {
     document.querySelector(".cont").classList.toggle("s--signup");
   }
+
   render() {
     return (
       <div className="reg_body">
@@ -49,9 +50,11 @@ class vendor_signin extends Component {
                   <span class="m--in">Sign In</span>
                 </div>
               </div>
-              <div class="form sign-up">
+
+              <div class="signup">
                 <img src={logo} alt="logo" width="100px" height="100px" />
                 <h2>Let's built your Shop,</h2>
+
                 <label>
                   <span>Name</span>
                   <input type="text" />
@@ -59,6 +62,10 @@ class vendor_signin extends Component {
                 <label>
                   <span>Email</span>
                   <input type="email" />
+                </label>
+                <label>
+                  <span>GST Number</span>
+                  <input type="text" />
                 </label>
                 <label>
                   <span>Password</span>

@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Metal+Mania&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap");
 .backgroundSign {
   background-color: #f2f3f5;
   padding-top: 85px;
@@ -35,11 +39,114 @@
 
 .addproductcard {
   margin-top: 40px;
-  
+  min-height: 650px;
+  margin-bottom: 50px;
+  border: 0px;
+  border-radius: 11px;
+  margin-right: 80px;
 }
+
+.categoryMen {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+.categoryKids {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.categoryWomen {
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.categoryMen :hover {
+  transform: scale(1.1);
+}
+
+.categoryWomen :hover {
+  transform: scale(1.1);
+}
+
+.categoryKids :hover {
+  transform: scale(1.1);
+}
+
 .AddingProducts {
   cursor: "pointer";
-  width: 200px;
   margin: 20px;
   text-align: center;
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    min-height: 550px;
+    max-width: 1000px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 90%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+}
+.overlayKids {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 95%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+.categoryMen:hover .overlay {
+  opacity: 1;
+}
+
+.categoryWomen:hover .overlay {
+  opacity: 1;
+}
+
+.categoryKids:hover .overlayKids {
+  opacity: 1;
+}
+
+.progresscont {
+  padding-top: 20px;
+  padding-left: 10%;
+  padding-bottom: 25px;
+}
+
+.addProdTitle {
+  font-family: "Rancho", cursive;
+}
+
+.modalclosing {
+  font-size: 18px;
+  position: absolute;
+  right: 27px;
+  cursor: pointer;
+  top: 30px;
 }

@@ -18,18 +18,18 @@ import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
 import Mapping from "./components/Mapping/Mapping";
 import Single from "./components/SingleShare/SingleShare";
-import Vensin from "./components/vendor_signin/vendorsignin";
-import Dropzone from "./components/vendor_signin/signin2";
+
+import VendorLogin from "./components/vendor_signin/vendorsignin";
+import VendorSignIn from "./components/vendor_signin/signin";
+import Mesdet from "./components/vendor_signin/mesdet";
 
 function App() {
   return (
     <div>
       <Navig />
       <Switch>
-        <Route exact path="/drop" component={Dropzone} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />
-        <Route exact path="/sin" component={Vensin} />
         <Route exact path="/greeting" component={Greeting} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/cart" component={Cart} />
@@ -41,6 +41,11 @@ function App() {
         <Route path="/verify/:slug" component={Verify} />
         <Route path="/products/:slug" component={Products} />
         <Route path="/dashboard/:slug" component={Dashboard} />
+
+        <Route exact path="/vendorlogin" component={VendorLogin} />
+        <Route exact path="/vendorsignin" component={VendorSignIn} />
+        <Route exact path="/vera12" component={Mesdet} />
+
         <Route component={Pagenotfound} />
       </Switch>
     </div>

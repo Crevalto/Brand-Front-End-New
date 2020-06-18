@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Dat from "./data.json";
 import ReactMapGL, {
   Marker,
   NavigationControl,
@@ -10,7 +9,6 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import img1 from "../images/normalview.png";
 import img2 from "../images/satiliteview.png";
 import img3 from "../images/darkmap.png";
-//import d3 from 'd3-ease';
 import { withRouter } from "react-router-dom";
 class Map extends Component {
   constructor() {
@@ -31,6 +29,7 @@ class Map extends Component {
       },
       mapstyle: "mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc",
       place: "",
+      locations: [],
     };
   }
 
@@ -52,6 +51,16 @@ class Map extends Component {
         transitionInterpolator: new FlyToInterpolator(),
       },
     });
+
+    fetch("https://crevaltoserver.herokuapp.com/v1/brand/getlocations")
+      .then((response) => response.json())
+      .then((jsonData) => {
+        this.setState({ locations: jsonData });
+        console.log(this.state.locations[0].addressCoordinates);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   handleChange(e) {
@@ -86,6 +95,7 @@ class Map extends Component {
   }
 
   render() {
+    console.log(this.state.locations);
     return (
       <div className="paddertop" style={{ overflow: "hidden" }}>
         <ReactMapGL
@@ -96,13 +106,22 @@ class Map extends Component {
           mapStyle={this.state.mapstyle}
           onViewportChange={this.onViewportChange}
         >
-          {Dat.map((loc, index) => (
-            <Marker latitude={loc.lat} longitude={loc.lng}>
-              <MdLocationOn
-                size="40"
-                onClick={this.gotomap}
-                color={loc.color}
-              />
+          {this.state.locations.map((loc, index) => (
+            <Marker
+              latitude={parseFloat(loc.addressCoordinates.latitude)}
+              longitude={parseFloat(loc.addressCoordinates.longitude)}
+            >
+              <OverlayTrigger
+                key="top"
+                placement="top"
+                overlay={<Tooltip id="tooltip-top">{loc.companyName}</Tooltip>}
+              >
+                <MdLocationOn
+                  size="40"
+                  onClick={this.gotomap}
+                  color={loc.color}
+                />
+              </OverlayTrigger>
             </Marker>
           ))}
 
