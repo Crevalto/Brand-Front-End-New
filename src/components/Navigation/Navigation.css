@@ -1,15 +1,42 @@
 .navigation-body .navigation{
     display: flex;
-    background-color: #610B80;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.349);
-    color: white;
+    background-color: #f5eef8;
+    position: fixed;
+    z-index: 100;
+    padding: 8px 5px 8px 8px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #44444494; 
+    color: #9456ab;
     justify-content: space-between;
-    padding: 0.7rem;
+    /* padding: 0.7rem; */
     align-items: center;
 }
 .navigation-body .navigation__link{
-    color: white;
+    color: #b162ce;
+    /* color: #9456ab; */
     text-decoration: none;
-    margin: 2rem;
-    font-size: 1.2rem;
+    margin: 1.3rem;
+    font-weight: 500;
+    font-size: 22px;
 }
+.navigation-body .navigation .navigation__logo h2{
+    font-family: "Dancing Script", cursive;
+    font-weight: 700 ;
+    font-size: 32px;
+    display: inline;
+    padding: 25px;
+}
+.vertical-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+.navigation-body .navigation .navigation__logo img {
+    padding: 5px;
+    width: 55px;
+    background: #632680;
+    border-radius: 100px;
+  }
+.navigation__link:hover {
+    color:#6c2d80 ;
+  }
