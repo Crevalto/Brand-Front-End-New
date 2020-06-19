@@ -1,17 +1,15 @@
-// tie,belt
-
 import React, { useState, Fragment } from "react";
 
-import "bootstrap/dist/css/bootstrap.css";
-
-const koko1 = () => {
+const Shoes = () => {
+  // this will create
   const [inputFields, setInputFields] = useState([
-    { color: "", width: "", length: "", quantity: "", amt: "" },
+    { color: "", size: "", quantity: "", amt: "" },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
-    values.push({ color: "", width: "", length: "", quantity: "", amt: "" });
+
+    values.push({ color: "", size: "", quantity: "", amt: "" });
     setInputFields(values);
   };
 
@@ -25,10 +23,8 @@ const koko1 = () => {
     const values = [...inputFields];
     if (event.target.name === "color") {
       values[index].color = event.target.value;
-    } else if (event.target.name === "width") {
-      values[index].width = event.target.value;
-    } else if (event.target.name === "length") {
-      values[index].length = event.target.value;
+    } else if (event.target.name === "size") {
+      values[index].size = event.target.value;
     } else if (event.target.name === "quantity") {
       values[index].quantity = event.target.value;
     } else {
@@ -47,6 +43,13 @@ const koko1 = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
+          <button
+            className="btn btn-link"
+            type="button"
+            onClick={() => handleAddFields()}
+          >
+            Add
+          </button>
           {inputFields.map((inputField, index) => (
             <Fragment key={`${inputField}~${index}`}>
               <div className="form-group col-sm-6">
@@ -61,27 +64,45 @@ const koko1 = () => {
                 />
               </div>
               <div className="form-group col-sm-4">
-                <lable>size</lable>
-                <br />
-                <label htmlFor="width">width</label>
+                <label htmlFor="size">size</label>
                 <input
-                  type="number"
+                  list="bro"
+                  name="size"
                   className="form-control"
-                  id="width"
-                  name="width"
-                  value={inputField.width}
+                  value={inputField.size}
                   onChange={(event) => handleInputChange(index, event)}
+                  placeholder="Enter or Choose Size"
                 />
-
-                <label htmlFor="length">length</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="length"
-                  name="length"
-                  value={inputField.length}
-                  onChange={(event) => handleInputChange(index, event)}
-                />
+                <datalist id="bro">
+                  <option value="1" />
+                  <option value="1.5" />
+                  <option value="2" />
+                  <option value="2.5" />
+                  <option value="3" />
+                  <option value="3.5" />
+                  <option value="4" />
+                  <option value="4.5" />
+                  <option value="5" />
+                  <option value="5.5" />
+                  <option value="6" />
+                  <option value="6.5" />
+                  <option value="7" />
+                  <option value="7.5" />
+                  <option value="8" />
+                  <option value="8.5" />
+                  <option value="9" />
+                  <option value="9.5" />
+                  <option value="10" />
+                  <option value="10.5" />
+                  <option value="11" />
+                  <option value="11.5" />
+                  <option value="12" />
+                  <option value="12.5" />
+                  <option value="13" />
+                  <option value="13.5" />
+                  <option value="14" />
+                  <option value="14.5" />
+                </datalist>
               </div>
               <div className="form-group col-sm-4">
                 <label htmlFor="quantity">Quantity</label>
@@ -115,13 +136,6 @@ const koko1 = () => {
                 >
                   Remove
                 </button>
-                <button
-                  className="btn btn-link"
-                  type="button"
-                  onClick={() => handleAddFields()}
-                >
-                  Add
-                </button>
               </div>
             </Fragment>
           ))}
@@ -135,9 +149,8 @@ const koko1 = () => {
             Save
           </button>
         </div>
-        <br />
       </form>
     </>
   );
 };
-export default koko1;
+export default Shoes;

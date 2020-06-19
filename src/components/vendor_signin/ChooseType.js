@@ -9,6 +9,7 @@ export default class ChooseType extends Component {
     const param = e.target.dataset.param;
     this.props.onchangeType(param);
   }
+
   render() {
     return (
       <div className="type-choose">

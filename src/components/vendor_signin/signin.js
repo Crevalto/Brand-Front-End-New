@@ -9,6 +9,10 @@ import ChooseCategories from "./chooseCategories";
 import ChooseType from "./ChooseType";
 import FillDetails from "./fillDetails";
 
+import Sizeadd from "./SizePrice/Sizeadd";
+import Tie from "./SizePrice/tie";
+import Shoes from "./SizePrice/shoes";
+
 class signin2 extends Component {
   constructor() {
     super();
@@ -19,18 +23,18 @@ class signin2 extends Component {
     this.onchangeCategory = this.onchangeCategory.bind(this);
     this.onchangeType = this.onchangeType.bind(this);
     this.improveState = this.improveState.bind(this);
+    this.onchangedetails = this.onchangedetails.bind(this);
+    this.onPreviousdetails = this.onPreviousdetails.bind(this);
     this.state = {
       showxl: false,
       show: false,
       profile: "",
       cover: "",
-      product: [
-        {
-          product_category: "",
-          product_type: "",
-          product_name: "",
-        },
-      ],
+      product: {
+        product_category: "",
+        product_type: "",
+        product_details: "",
+      },
       productBundle: [],
     };
   }
@@ -41,38 +45,53 @@ class signin2 extends Component {
   handleShowxl = () => {
     this.setState({
       showxl: true,
-      product: [
-        {
-          product_category: "",
-          product_type: "",
-          product_name: "",
-        },
-      ],
+      product: {
+        product_category: "",
+        product_type: "",
+        product_details: "",
+      },
     });
   };
 
   onchangeCategory(Categ) {
     this.setState({
-      product: [
-        {
-          product_category: Categ,
-          product_type: "",
-          product_name: "",
-        },
-      ],
+      product: {
+        product_category: Categ,
+        product_type: "",
+        product_details: "",
+      },
     });
   }
 
   onchangeType(productType) {
     console.log(productType);
     this.setState({
-      product: [
-        {
-          product_category: this.state.product[0].product_category,
-          product_type: productType,
-          product_name: "",
-        },
-      ],
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: productType,
+        product_details: "",
+      },
+    });
+  }
+
+  onchangedetails(filleddetails) {
+    console.log(filleddetails);
+    this.setState({
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: this.state.product.product_type,
+        product_details: JSON.parse(filleddetails),
+      },
+    });
+  }
+
+  onPreviousdetails() {
+    this.setState({
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: "",
+        product_details: "",
+      },
     });
   }
 
@@ -81,7 +100,7 @@ class signin2 extends Component {
   }
 
   render() {
-    console.log(this.state.product[0].product_type);
+    console.log(this.state.product.product_type);
     const thumbsContainer_cover = {
       display: "flex",
       border: "3px solid white",
@@ -271,7 +290,7 @@ class signin2 extends Component {
                   show={this.state.showxl}
                   onHide={this.handleClosexl}
                 >
-                  {this.state.product[0].product_category === "" ? (
+                  {this.state.product.product_category === "" ? (
                     <Modal.Body
                       style={{ margin: "10px", backgroundColor: "white" }}
                     >
@@ -282,7 +301,7 @@ class signin2 extends Component {
                         changeCategory={this.onchangeCategory}
                       />
                     </Modal.Body>
-                  ) : this.state.product[0].product_type === "" ? (
+                  ) : this.state.product.product_type === "" ? (
                     <Modal.Body
                       style={{ margin: "10px", backgroundColor: "#dedede" }}
                     >
@@ -291,15 +310,24 @@ class signin2 extends Component {
                       </h6>
                       <ChooseType onchangeType={this.onchangeType} />
                     </Modal.Body>
-                  ) : (
+                  ) : this.state.product.product_details === "" ? (
                     <Modal.Body>
                       <h6 onClick={this.handleClosexl} className="modalclosing">
                         X
                       </h6>
                       <FillDetails
-                        categtype={this.state.product[0].product_type}
+                        onPreviousfilldetails={this.onPreviousdetails}
+                        onchangefilldetails={this.onchangedetails}
+                        categtype={this.state.product.product_type}
                       />
                     </Modal.Body>
+                  ) : this.state.product.product_category === "tie" ||
+                    this.state.product.product_category === "belt" ? (
+                    <Tie />
+                  ) : this.state.product.product_category === "shoes" ? (
+                    <Shoes />
+                  ) : (
+                    <Sizeadd />
                   )}
                 </Modal>
               </Card.Body>

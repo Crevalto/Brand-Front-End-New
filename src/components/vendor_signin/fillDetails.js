@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, ThemeProvider } from "react-bootstrap";
 import "./filldetails.css";
 export default class fillDetails extends Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleCheckChange = this.handleCheckChange.bind(this);
+    this.onsubmit = this.onsubmit.bind(this);
+    this.onprevious = this.onprevious.bind(this);
     this.state = {
       cattype: "",
-      productdetails: [],
     };
   }
 
@@ -20,20 +22,51 @@ export default class fillDetails extends Component {
 
   handleChange = (event) => {
     this.setState({
-      productdetails: [
-        {
-          [event.target.name]: event.target.value,
-        },
-      ],
+      [event.target.name]: event.target.value,
     });
   };
 
+  onprevious() {
+    this.props.onPreviousfilldetails();
+  }
+
+  handleCheckChange = (event) => {
+    if (this.state[event.target.name]) {
+      const temp = this.state[event.target.name];
+      if (this.state[event.target.name].includes(event.target.value)) {
+        const index = temp.indexOf(event.target.value);
+        temp.splice(index, 1);
+        this.setState({
+          [event.target.name]: temp,
+        });
+      } else {
+        temp.push(event.target.value);
+        this.setState({
+          [event.target.name]: temp,
+        });
+      }
+    } else {
+      this.setState({
+        [event.target.name]: [event.target.value],
+      });
+    }
+  };
+
+  onsubmit() {
+    let det = JSON.stringify(this.state);
+    delete det["cattype"];
+    console.log(det);
+    this.props.onchangefilldetails(det);
+  }
   render() {
     console.log(this.state);
     return (
       <div className="filldetails">
-        <h1 className="addProdTitle" stlye={{ color: "white" }}>
-          Fill Product details
+        <h1
+          className="addProdTitle"
+          style={{ paddingTop: "20px", textAlign: "center" }}
+        >
+          Fill {this.state.cattype} details
         </h1>
 
         <h6>Product Name</h6>
@@ -88,19 +121,39 @@ export default class fillDetails extends Component {
 
         <h6>Occasion</h6>
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            value="Evening"
+            name="Occassion"
+            onChange={this.handleCheckChange}
+          />
           <span>Evening</span>
         </label>
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Occassion"
+            value="Ceremony"
+            onChange={this.handleCheckChange}
+          />
           <span>Ceremony</span>
         </label>
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Occassion"
+            value="Casual"
+            onChange={this.handleCheckChange}
+          />
           <span>Casual</span>
         </label>
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Occassion"
+            value="Business"
+            onChange={this.handleCheckChange}
+          />
           <span>Business</span>
         </label>
 
@@ -111,6 +164,7 @@ export default class fillDetails extends Component {
               class="form-control"
               list="neckline"
               name="neckline"
+              onChange={this.handleChange}
               style={{ width: "220px" }}
               placeholder="Choose or Enter Neckline"
             />
@@ -134,23 +188,48 @@ export default class fillDetails extends Component {
 
             <h6>Sleeve Type </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="3/4 Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>3/4 Sleeve</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Half Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Half Sleeve</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Long Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Long Sleeve</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Short Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Short Sleeve</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Sleeveless"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Sleeveless</span>
             </label>
           </div>
@@ -158,20 +237,41 @@ export default class fillDetails extends Component {
           <div>
             <h6>Shirt Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="shirttype"
+                value="Formal Shirt"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Formal Shirt</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="shirttype"
+                value="Casual Shirt"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Casual Shirt</span>
             </label>
+
             <h6>Sleeve Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Half Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Half Sleeve</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                value="Long Sleeve"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Long Sleeve</span>
             </label>
           </div>
@@ -179,11 +279,21 @@ export default class fillDetails extends Component {
           <div>
             <h6>Trocer Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="tracktype"
+                value="Formal Trocer"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Formal Trocer</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="tracktype"
+                value="Casual Trocer"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Casual Trocer</span>
             </label>
             <br />
@@ -192,6 +302,7 @@ export default class fillDetails extends Component {
               class="form-control"
               list="trocerstyle"
               name="trocerstyle"
+              onChange={this.handleChange}
               style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
@@ -216,6 +327,7 @@ export default class fillDetails extends Component {
             <input
               class="form-control"
               list="closer"
+              onChange={this.handleChange}
               name="closer"
               style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
@@ -233,78 +345,118 @@ export default class fillDetails extends Component {
           <div>
             <h6>Tie Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                onChange={this.handleChange}
+                value="Neck Tie"
+                type="radio"
+              />
               <span>Neck Tie</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="sleeve"
+                onChange={this.handleChange}
+                value="Bow Tie"
+                type="radio"
+              />
               <span>Bow Tie</span>
             </label>
-            <h6>Length</h6>
+            {/* <h6>Length</h6>
             <input
               class="form-control"
+              name="length"
+              onChange={this.handleChange}
               type="number"
               placeholder="Enter Length in inches"
             />
             <h6>Width</h6>
             <input
               class="form-control"
+              name="width"
+              onChange={this.handleChange}
               type="number"
               placeholder="Enter Width in inches"
-            />
+            /> */}
           </div>
         ) : this.state.cattype === "shoes" ? (
           <div>
-            <h4>Shoes Type: </h4>
-            <input list="shoes" name="shoes" />
-            <datalist>
-              <option value="Formal Shoes" />
-              <option values="Cshoes" />
-            </datalist>
+            <h6>Shoes Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="shoetype"
+                onChange={this.handleChange}
+                type="radio"
+                value=""
+              />
               <span>Formal shoes</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="shoetype"
+                value="Casual Shoes"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Casual Shoes</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="shoetype"
+                onChange={this.handleChange}
+                type="radio"
+                value="Sport Shoes"
+              />
               <span>Sport Shoes</span>
             </label>
             <h6>size</h6>
             <input
               type="number"
+              onChange={this.handleChange}
+              name="size"
               class="form-control"
               placeholder="Enter in inches"
             />
           </div>
         ) : this.state.cattype === "belt" ? (
           <div>
-            <h6>Length</h6>
+            {/* <h6>Length</h6>
             <input
               type="number"
               class="form-control"
+              name="length"
+              onChange={this.handleChange}
               placeholder="Enter Length in inches"
             />
 
             <h6>Width</h6>
             <input
               type="number"
+              onChange={this.handleChange}
+              name="width"
               class="form-control"
               placeholder="Enter Width in inches"
-            />
+            /> */}
           </div>
         ) : this.state.cattype === "pants" ? (
           <div>
             <h6>Pant Type: </h6>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="panttype"
+                onChange={this.handleChange}
+                value="Formal Pants"
+                type="radio"
+              />
               <span>Formal Pants</span>
             </label>
             <label>
-              <input name="sleeve" type="radio" />
+              <input
+                name="panttype"
+                value="Casual Pants"
+                onChange={this.handleChange}
+                type="radio"
+              />
               <span>Casual Pants</span>
             </label>
             <br />
@@ -312,11 +464,12 @@ export default class fillDetails extends Component {
             <input
               list="trocerstyle"
               class="form-control"
-              name="trocerstyle"
+              name="pantstyle"
+              onChange={this.handleChange}
               style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
-            <datalist id="trocerstyle">
+            <datalist id="pantstyle">
               <option value="Boot Cut" />
               <option value="Boyfriend" />
               <option value="Capri" />
@@ -337,6 +490,7 @@ export default class fillDetails extends Component {
             <input
               list="closer"
               name="closer"
+              onChange={this.handleChange}
               class="form-control"
               style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
@@ -354,7 +508,8 @@ export default class fillDetails extends Component {
           <div></div>
         )}
         <Modal.Footer className="fill-modal-footer">
-          <Button>Proceed</Button>
+          <Button onClick={this.onprevious}>Previous</Button>
+          <Button onClick={this.onsubmit}>Proceed</Button>
         </Modal.Footer>
       </div>
     );
