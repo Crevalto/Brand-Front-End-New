@@ -36,7 +36,7 @@ class Map extends Component {
     };
   }
 componentDidMount(){
-  const url="http://3.6.30.8:2454/brand/getlocations"
+  const url="https://crevaltoserver.herokuapp.com/v1/brand/getlocations"
 fetch(url,{
   method: "GET",
   headers:{
@@ -45,10 +45,14 @@ fetch(url,{
 })
 .then((response)=>response.json())
 .then((jsonData)=>{
-  this.setState({locations:jsonData.locations});
+  console.log(jsonData)
+  this.setState({locations:jsonData});
+    
 }
 )
 .then((run)=> {
+ console.log("hello")
+   console.log(this.state.locations)  
   this.setState({
     viewport: {
       ...this.state.viewport,
@@ -71,8 +75,6 @@ gotomap() {
     console.log("hello");
     this.props.history.push("/mapping");
   }
-
-  
 
   handleChange(e) {
     this.setState({ [e.target.name]: [e.target.value] });
@@ -106,7 +108,8 @@ gotomap() {
   }
 
   render() {
-    return (
+   console.log(this.state.locations)
+  return (
       <div className="paddertop" style={{ overflow: "hidden" }}>
         <ReactMapGL
           attributionControl={true}
@@ -118,7 +121,7 @@ gotomap() {
         >
           {this.state.locations.map((loc, index) => (
            
-           <Marker latitude={loc.lat} longitude={loc.lon}>
+           <Marker latitude={loc.addressCoordinates.latitude} longitude={loc.addressCoordinates.longitude}>
               <MdLocationOn
                 size="40"
                 onClick={this.gotomap}

@@ -17,12 +17,15 @@ import Cart from "./components/cart/cartdis";
 import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
 import Mapping from "./components/Mapping/Mapping";
+import Dashboards from "./components/Vendor/Dashboards";
 
 function App() {
-  return (
+  return (<div>
     <div>
-      <Navig />
+  <Navig/>
+  </div>
       <Switch>
+        <Route exact path="/" component={Dashboards} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/greeting" component={Greeting} />
         <Route exact path="/home" component={Home} />
