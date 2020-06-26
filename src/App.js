@@ -17,7 +17,14 @@ import Cart from "./components/cart/cartdis";
 import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
 import Mapping from "./components/Mapping/Mapping";
-import Dashboards from "./components/Vendor/Dashboards";
+import Single from "./components/SingleShare/SingleShare";
+
+import VendorLogin from "./components/vendor_signin/vendorsignin";
+import VendorSignIn from "./components/vendor_signin/signin";
+import Mesdet from "./components/vendor_signin/mesdet";
+
+import Profile from "./components/profile/profile";
+import csr from "./components/csr/csr";
 
 function App() {
   return (<div>
@@ -27,6 +34,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Dashboards} />
         <Route exact path="/" component={Landing} />
+        <Route exact path="/single" component={Single} />
         <Route exact path="/greeting" component={Greeting} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/cart" component={Cart} />
@@ -38,6 +46,13 @@ function App() {
         <Route path="/verify/:slug" component={Verify} />
         <Route path="/products/:slug" component={Products} />
         <Route path="/dashboard/:slug" component={Dashboard} />
+        <Route exact path="/csr" component={csr} />
+        <Route exact path="/profile" component={Profile} />
+
+        <Route exact path="/vendorlogin" component={VendorLogin} />
+        <Route exact path="/vendorsignin" component={VendorSignIn} />
+        <Route exact path="/vera12" component={Mesdet} />
+
         <Route component={Pagenotfound} />
       </Switch>
     </div>

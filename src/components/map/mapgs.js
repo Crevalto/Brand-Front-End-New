@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import Dat from "./data.json";
 import ReactMapGL, {
   Marker,
   NavigationControl,
@@ -10,7 +9,6 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import img1 from "../images/normalview.png";
 import img2 from "../images/satiliteview.png";
 import img3 from "../images/darkmap.png";
-//import d3 from 'd3-ease';
 import { withRouter } from "react-router-dom";
 class Map extends Component {
   constructor() {
@@ -33,6 +31,7 @@ class Map extends Component {
       },
       mapstyle: "mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc",
       place: "",
+      locations: [],
     };
   }
 componentDidMount(){
@@ -76,6 +75,31 @@ gotomap() {
     this.props.history.push("/mapping");
   }
 
+  componentDidMount() {
+    this.setState({
+      viewport: {
+        ...this.state.viewport,
+        width: window.innerWidth,
+        height: window.innerHeight - 85,
+        latitude: 10.790483,
+        longitude: 78.704674,
+        zoom: 12,
+        transitionDuration: 5000,
+        transitionInterpolator: new FlyToInterpolator(),
+      },
+    });
+
+    fetch("https://crevaltoserver.herokuapp.com/v1/brand/getlocations")
+      .then((response) => response.json())
+      .then((jsonData) => {
+        this.setState({ locations: jsonData });
+        console.log(this.state.locations[0].addressCoordinates);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   handleChange(e) {
     this.setState({ [e.target.name]: [e.target.value] });
   }
@@ -108,8 +132,8 @@ gotomap() {
   }
 
   render() {
-   console.log(this.state.locations)
-  return (
+    console.log(this.state.locations);
+    return (
       <div className="paddertop" style={{ overflow: "hidden" }}>
         <ReactMapGL
           attributionControl={true}
@@ -120,13 +144,21 @@ gotomap() {
           onViewportChange={this.onViewportChange}
         >
           {this.state.locations.map((loc, index) => (
-           
-           <Marker latitude={loc.addressCoordinates.latitude} longitude={loc.addressCoordinates.longitude}>
-              <MdLocationOn
-                size="40"
-                onClick={this.gotomap}
-                color="#620b80"
-              />
+            <Marker
+              latitude={parseFloat(loc.addressCoordinates.latitude)}
+              longitude={parseFloat(loc.addressCoordinates.longitude)}
+            >
+              <OverlayTrigger
+                key="top"
+                placement="top"
+                overlay={<Tooltip id="tooltip-top">{loc.companyName}</Tooltip>}
+              >
+                <MdLocationOn
+                  size="40"
+                  onClick={this.gotomap}
+                  color={loc.color}
+                />
+              </OverlayTrigger>
             </Marker>
            ))}
 

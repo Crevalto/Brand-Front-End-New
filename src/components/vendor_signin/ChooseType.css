@@ -1,0 +1,122 @@
+.type-choose {
+  position: relative;
+  height: 550px;
+}
+.choose-type {
+  display: flex;
+}
+
+.choose-type .pants {
+  position: absolute;
+  width: 160px;
+  height: 307px;
+  top: 196.5px;
+  left: 0.5px;
+}
+
+.choose-type .tshirt {
+  position: absolute;
+  width: 220px;
+  height: 281px;
+  top: 66px;
+  left: 136px;
+}
+.choose-type .belt {
+  position: absolute;
+  width: 126px;
+  height: 70px;
+  top: 98px;
+  left: 8px;
+}
+.choose-type .shirt {
+  position: absolute;
+  width: 200px;
+  height: 365px;
+  top: 98px;
+  left: 326.5px;
+}
+.choose-type .track {
+  position: absolute;
+  width: 314px;
+  height: 333px;
+  top: 0.5px;
+  left: 470px;
+}
+.choose-type .tie {
+  position: absolute;
+  width: 304px;
+  height: 220px;
+  top: 347.5px;
+  left: 114.5px;
+}
+
+.choose-type .shoes {
+  position: absolute;
+  width: 200px;
+  height: 195px;
+  top: 376px;
+  left: 506.5px;
+}
+.choose-type .coat {
+  position: absolute;
+  width: 407px;
+  height: 386px;
+  top: 187.5px;
+  left: 603.5px;
+}
+
+.choose-type .bow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 25.5px;
+  left: 766.5px;
+  transform: rotate(20deg);
+}
+
+.choose-type .pants:hover {
+  transform: scale(1.1);
+}
+.choose-type .tshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type .belt:hover {
+  transform: scale(1.1);
+}
+.choose-type .shirt:hover {
+  transform: scale(1.1);
+}
+.choose-type .track:hover {
+  transform: scale(1.1);
+}
+.choose-type .tie:hover {
+  transform: scale(1.1);
+}
+.choose-type .shoes:hover {
+  transform: scale(1.1);
+}
+.choose-type .coat:hover {
+  transform: scale(1.1);
+}
+.choose-type .bow:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 90%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+.choose-type .belt-overlay:hover .overlay {
+  opacity: 1;
+}
