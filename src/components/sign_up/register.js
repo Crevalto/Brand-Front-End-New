@@ -57,7 +57,7 @@ class Signup extends Component {
         console.error("Show me error that cannot be specify", error)
       )
       .then((response) => {
-        console.log("Success:", response.status);
+        console.log("Success:", response);
         this.setState({
           responses_otp: response.otp,
           responses_status: response.status,
