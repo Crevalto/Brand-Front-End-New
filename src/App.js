@@ -23,14 +23,15 @@ import VendorLogin from "./components/vendor_signin/vendorsignin";
 import VendorSignIn from "./components/vendor_signin/signin";
 import Mesdet from "./components/vendor_signin/mesdet";
 
-import Profile from "./components/profile/profile";
+//import Profile from "./components/profile/profile";
 import csr from "./components/csr/csr";
-
+import Row from "./components/vendor_signin/row";
 function App() {
   return (
     <div>
       <Navig />
       <Switch>
+        <Route exact path="/row" component={Row} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />
         <Route exact path="/greeting" component={Greeting} />
@@ -45,8 +46,8 @@ function App() {
         <Route path="/products/:slug" component={Products} />
         <Route path="/dashboard/:slug" component={Dashboard} />
         <Route exact path="/csr" component={csr} />
-        <Route exact path="/profile" component={Profile} />
-
+        {/*        <Route exact path="/profile" component={Profile} />
+         */}
         <Route exact path="/vendorlogin" component={VendorLogin} />
         <Route exact path="/vendorsignin" component={VendorSignIn} />
         <Route exact path="/vera12" component={Mesdet} />

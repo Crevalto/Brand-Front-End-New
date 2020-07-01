@@ -11,7 +11,7 @@ class afterreg extends Component {
         <br />
         <br />
         <h4 class="alert-heading">Thank you ! for Registering in Creavlto</h4>
-        <p>Your request is in progress! </p>
+        <p>Your request is in progress!</p>
         <p>
           your details are validating and we will be sending an email within 24
           hours regards registration successful

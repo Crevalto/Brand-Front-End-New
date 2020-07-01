@@ -37,17 +37,18 @@
 }
 .choose-type .track {
   position: absolute;
-  width: 314px;
-  height: 333px;
-  top: 0.5px;
-  left: 470px;
+  width: 230px;
+  height: 305px;
+  top: 1.5px;
+  transform: rotate(5deg);
+  left: 545px;
 }
 .choose-type .tie {
   position: absolute;
-  width: 304px;
-  height: 220px;
-  top: 347.5px;
-  left: 114.5px;
+  width: 164px;
+  height: 156px;
+  top: 376.5px;
+  left: 193.5px;
 }
 
 .choose-type .shoes {
@@ -59,10 +60,10 @@
 }
 .choose-type .coat {
   position: absolute;
-  width: 407px;
-  height: 386px;
-  top: 187.5px;
-  left: 603.5px;
+  width: 241px;
+  height: 326px;
+  top: 229.5px;
+  left: 714.5px;
 }
 
 .choose-type .bow {

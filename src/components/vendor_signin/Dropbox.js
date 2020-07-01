@@ -17,23 +17,19 @@ function Dropbox(props) {
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        )
-      );
+      setFiles([
+        Object.assign(acceptedFiles[0], {
+          preview: URL.createObjectURL(acceptedFiles[0]),
+        }),
+      ]);
 
       props.improveState(
         props.imgname,
-        JSON.stringify(
-          acceptedFiles.map((file) =>
-            Object.assign(file, {
-              preview: URL.createObjectURL(file),
-            })
-          )
-        )
+        JSON.stringify([
+          Object.assign(acceptedFiles[0], {
+            preview: URL.createObjectURL(acceptedFiles[0]),
+          }),
+        ])
       );
       setMessage("");
       setShow(false);

@@ -1,0 +1,14 @@
+.hello {
+  justify-content: center;
+  text-align: center;
+}
+
+.hello .fill-modal-footer {
+  margin-top: 20px;
+}
+
+.hello .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

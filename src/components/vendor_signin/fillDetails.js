@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Modal, ThemeProvider } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import "./filldetails.css";
 export default class fillDetails extends Component {
   constructor() {
