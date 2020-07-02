@@ -8,7 +8,7 @@ import "./ChooseType.css";
 import ChooseCategories from "./chooseCategories";
 import ChooseType from "./ChooseType";
 import FillDetails from "./fillDetails";
-
+import ImageDrop from "./row";
 import Sizeadd from "./SizePrice/Sizeadd";
 import Tie from "./SizePrice/tie";
 import Shoes from "./SizePrice/shoes";
@@ -25,6 +25,10 @@ class signin2 extends Component {
     this.improveState = this.improveState.bind(this);
     this.onchangedetails = this.onchangedetails.bind(this);
     this.onPreviousdetails = this.onPreviousdetails.bind(this);
+    this.sizeaddback = this.sizeaddback.bind(this);
+    this.sizeaddchange = this.sizeaddchange.bind(this);
+    this.imageaddchange = this.imageaddchange.bind(this);
+    this.imageaddback = this.imageaddback.bind(this);
     this.state = {
       showxl: false,
       show: false,
@@ -34,6 +38,8 @@ class signin2 extends Component {
         product_category: "",
         product_type: "",
         product_details: "",
+        size_color_price: "",
+        images: "",
       },
       productBundle: [],
     };
@@ -49,6 +55,8 @@ class signin2 extends Component {
         product_category: "",
         product_type: "",
         product_details: "",
+        size_color_price: "",
+        images: "",
       },
     });
   };
@@ -59,6 +67,8 @@ class signin2 extends Component {
         product_category: Categ,
         product_type: "",
         product_details: "",
+        size_color_price: "",
+        images: "",
       },
     });
   }
@@ -70,6 +80,8 @@ class signin2 extends Component {
         product_category: this.state.product.product_category,
         product_type: productType,
         product_details: "",
+        size_color_price: "",
+        images: "",
       },
     });
   }
@@ -81,6 +93,8 @@ class signin2 extends Component {
         product_category: this.state.product.product_category,
         product_type: this.state.product.product_type,
         product_details: JSON.parse(filleddetails),
+        size_color_price: "",
+        images: "",
       },
     });
   }
@@ -91,6 +105,77 @@ class signin2 extends Component {
         product_category: this.state.product.product_category,
         product_type: "",
         product_details: "",
+        size_color_price: "",
+        images: "",
+      },
+    });
+  }
+
+  sizeaddchange(size_col) {
+    this.setState({
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: this.state.product.product_type,
+        product_details: this.state.product.product_details,
+        size_color_price: size_col,
+        images: "",
+      },
+    });
+  }
+
+  sizeaddback() {
+    this.setState({
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: this.state.product.product_type,
+        product_details: "",
+        size_color_price: "",
+        images: "",
+      },
+    });
+  }
+
+  imageaddchange(imagefile) {
+    console.log(imagefile);
+    this.setState(
+      {
+        product: {
+          product_category: this.state.product.product_category,
+          product_type: this.state.product.product_type,
+          product_details: this.state.product.product_details,
+          size_color_price: this.state.product.size_color_price,
+          images: imagefile,
+        },
+      },
+      () => {
+        var temp = this.state.productBundle;
+        temp.push(this.state.product);
+        this.setState({
+          productBundle: temp,
+        });
+      },
+      () => {
+        this.setState({
+          product: {
+            product_category: "",
+            product_type: "",
+            product_details: "",
+            size_color_price: "",
+            images: "",
+          },
+        });
+      }
+    );
+  }
+
+  imageaddback() {
+    this.setState({
+      product: {
+        product_category: this.state.product.product_category,
+        product_type: this.state.product.product_type,
+        product_details: this.state.product.product_details,
+        size_color_price: "",
+        images: "",
       },
     });
   }
@@ -100,7 +185,6 @@ class signin2 extends Component {
   }
 
   render() {
-    console.log(this.state.product.product_type);
     const thumbsContainer_cover = {
       display: "flex",
       border: "3px solid white",
@@ -159,8 +243,8 @@ class signin2 extends Component {
       borderRadius: "100%",
       height: "100%",
     };
+    console.log(this.state);
 
-    console.log(this.state.product);
     return (
       <div className="backgroundSign">
         <div className="sign">
@@ -283,7 +367,31 @@ class signin2 extends Component {
                     Click & Add Product
                   </Card.Body>
                 </Card>
-
+                <Row style={{ margin: "5px" }}>
+                  {this.state.productBundle.map((pro, index) => {
+                    return (
+                      <div>
+                        <Col md={2}>
+                          <Card
+                            style={{
+                              width: "16rem",
+                              height: "400px",
+                              marginTop: "10px",
+                            }}
+                          >
+                            <Card.Body style={{ padding: "0.75rem" }}>
+                              <img
+                                style={{ width: "100%", height: "100%" }}
+                                src={pro.images[0].preview}
+                                alt="preview"
+                              />
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      </div>
+                    );
+                  })}
+                </Row>
                 <Modal
                   backdrop="static"
                   size="lg"
@@ -321,13 +429,41 @@ class signin2 extends Component {
                         categtype={this.state.product.product_type}
                       />
                     </Modal.Body>
-                  ) : this.state.product.product_category === "tie" ||
-                    this.state.product.product_category === "belt" ? (
-                    <Tie />
-                  ) : this.state.product.product_category === "shoes" ? (
-                    <Shoes />
+                  ) : this.state.product.size_color_price === "" ? (
+                    this.state.product.product_type === "tie" ||
+                    this.state.product.product_type === "belt" ? (
+                      <Modal.Body>
+                        <Tie
+                          onsizeaddchange={this.sizeaddchange}
+                          onsizeaddback={this.sizeaddback}
+                        />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "shoes" ? (
+                      <Modal.Body>
+                        <Shoes
+                          onsizeaddchange={this.sizeaddchange}
+                          onsizeaddback={this.sizeaddback}
+                        />
+                      </Modal.Body>
+                    ) : (
+                      <Modal.Body>
+                        <Sizeadd
+                          onsizeaddchange={this.sizeaddchange}
+                          onsizeaddback={this.sizeaddback}
+                        />
+                      </Modal.Body>
+                    )
+                  ) : this.state.product.images === "" ? (
+                    <Modal.Body>
+                      <ImageDrop
+                        imageaddchange={this.imageaddchange}
+                        imageaddback={this.imageaddback}
+                      />
+                    </Modal.Body>
                   ) : (
-                    <Sizeadd />
+                    <Modal.Header closeButton>
+                      "Product Added Successfully"
+                    </Modal.Header>
                   )}
                 </Modal>
               </Card.Body>

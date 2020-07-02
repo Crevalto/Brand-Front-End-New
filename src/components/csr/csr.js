@@ -10,11 +10,12 @@ export default class csr extends Component {
   }
 
   handleImage = (e) => {
+    console.log(e.target.files);
     this.state.video.push(URL.createObjectURL(e.target.files[0]));
     e.target.files = null;
   };
   onSubmit = (e) => {
-    this.setState({ on: true });
+    //this.setState({ on: true });
   };
   render() {
     return (
@@ -54,11 +55,18 @@ export default class csr extends Component {
         </div>
 
         <div className="csr__preview">
-          {this.state.on === true
-            ? this.state.video.map((url) => {
-                return <iframe src={url} className="csr__preview--video" />;
-              })
-            : ""}
+          {
+            //this.state.on === true
+            this.state.video.map((url) => {
+              return (
+                <iframe
+                  src={url}
+                  title="csrpreview"
+                  className="csr__preview--video"
+                />
+              );
+            })
+          }
         </div>
       </div>
     );
