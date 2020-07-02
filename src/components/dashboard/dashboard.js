@@ -4,17 +4,23 @@ import React, { Component } from "react";
 import logo from "../images/white_bg_noname.jpg";
 import "./dashboard.css";
 import { MdEdit } from "react-icons/md";
-
+//import Dash from "./Dash.js";
+import Dashprofile from "./Dashprofile"
+import Dash from "./Dash"
+import {Row,Col} from "react-bootstrap"
 class dashboard extends Component {
-  constructor() {
+  
+constructor() {
     super();
     this.changeEdit = this.changeEdit.bind(this);
+    this.changestate=this.changestate.bind(this);
     this.state = {
       edits: true,
       services: [],
       regno: "",
       cinno: "",
       brandBackgroundGround: "",
+          dash:"profile",
       brandColor: "",
       initstate: false,
     };
@@ -55,6 +61,13 @@ class dashboard extends Component {
         console.error(error);
       });
   }
+  
+  
+  changestate(e){
+    var param=e.target.dataset.param;
+    console.log(param)
+   this.setState({dash:param})
+  }
   render() {
     return (
       <div class="row card-dash">
@@ -64,13 +77,15 @@ class dashboard extends Component {
         >
           <img src={logo} alt="Brand logo" />
           <ul>
-            <li class="active">Profile</li>
+            <li data-param="profile" onClick={this.changestate} >Profile</li>
+            <li data-param="chart" onClick={this.changestate} >Chart</li>
             <li>CSR</li>
-            <li>Link3</li>
             <li>Link4</li>
           </ul>
         </div>
         <div class="col-md-9">
+       
+        <div id="hide">
           <h2 style={{ color: this.state.brandBackgroundGround }}>
             {localStorage.getItem("compname")}{" "}
             <MdEdit
@@ -80,119 +95,10 @@ class dashboard extends Component {
             />
           </h2>
           <hr />
-          <div class="row">
-            <div class="col-md-4">
-              <div class="inner_cards_dash">
-                <div
-                  class="inner_card_dash_header"
-                  style={{ background: this.state.brandBackgroundGround }}
-                >
-                  <h6>Email-id</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input
-                    type="text"
-                    defaultValue={this.state.services.bemail}
-                    disabled={this.state.edits}
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="inner_cards_dash">
-                <div
-                  class="inner_card_dash_header"
-                  style={{ background: this.state.brandBackgroundGround }}
-                >
-                  <h6>Phone no</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input
-                    type="number"
-                    defaultValue={this.state.services.phn_no}
-                    disabled={this.state.edits}
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="inner_cards_dash">
-                <div
-                  class="inner_card_dash_header"
-                  style={{ background: this.state.brandBackgroundGround }}
-                >
-                  <h6>Cin number</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input
-                    type="number"
-                    defaultValue={this.state.cinno}
-                    disabled={this.state.edits}
-                  />
-                </div>
-              </div>
-            </div>
+          {this.state.dash==="profile"?<Dashprofile/>:this.state.dash==="chart"?<Dash/>:""}
+            
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="inner_cards_dash">
-                <div
-                  class="inner_card_dash_header"
-                  style={{ background: this.state.brandBackgroundGround }}
-                >
-                  <h6>Reg number</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input
-                    type="number"
-                    defaultValue={this.state.regno}
-                    disabled={this.state.edits}
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="inner_cards_dash">
-                <div
-                  class="inner_card_dash_header"
-                  style={{ background: this.state.brandBackgroundGround }}
-                >
-                  <h6>Address</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input
-                    type="text"
-                    defaultValue={this.state.services.baddress}
-                    disabled={this.state.edits}
-                  />
-                </div>
-              </div>
-            </div>
           </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-4">
-              <div class="inner_cards_dash twitter">
-                <div class="inner_card_dash_header">
-                  <h6>Twitter</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input type="text" defaultValue="" />
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="inner_cards_dash youtube">
-                <div class="inner_card_dash_header">
-                  <h6>Youtube</h6>
-                </div>
-                <div class="inner_card_dash_body">
-                  <input type="text" defaultValue="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

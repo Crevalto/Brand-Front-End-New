@@ -12,7 +12,8 @@ class vendor_signin extends Component {
       password:"",
       npassword:"",
       name:"",
-      gstno:""
+      gstno:"",
+      token:""
     }
   }
   handleChange=(event)=>{
@@ -20,7 +21,8 @@ class vendor_signin extends Component {
   }
   handleSubmit=(event)=>{
     event.preventDefault();
-    const url="http://crevaltoserver.herokuapp.com/v1/vendor/login"
+    const cookies=new Cookies();
+    const url="http://Crevalto-server.herokuapp.com/v1/vendor/login"
     var Data={
       email:this.state.email,
       password:this.state.password
@@ -35,7 +37,7 @@ class vendor_signin extends Component {
         console.error("Show me error that cannot be specify", error)
       )
     .then((response)=>{
-      console.log(response)
+      console.log("Success",response)
       console.log(this.state.email)
       this.props.history.push("/vendorsignin");
     }) 

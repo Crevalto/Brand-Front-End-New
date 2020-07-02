@@ -40,6 +40,7 @@ export default class csr extends Component {
             </dl>
           </div>
         </div>
+        <hr/>
         <div className="csr__video">
           <h4 className="csr__instructions--title">Upload Your Video</h4>
           <input
