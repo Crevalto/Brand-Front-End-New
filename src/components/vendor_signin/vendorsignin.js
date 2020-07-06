@@ -52,8 +52,7 @@ class vendor_signin extends Component {
       GSTNO:this.state.gstno,
       Password:this.state.password,
   }
-  
-  fetch(url,{
+    fetch(url,{
     method: "POST",
     body : JSON.stringify(data),
     headers :{"Content-Type": "application/json" },

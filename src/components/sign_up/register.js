@@ -6,6 +6,8 @@ import { withRouter } from "react-router-dom";
 class Signup extends Component {
   constructor() {
     super();
+    this.handleChange=this.handleChange.bind(this)
+    this.handleSubmit=this.handleSubmit.bind(this)
     this.state = {
       responses_otp: "",
       responses_status: "",

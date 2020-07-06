@@ -11,6 +11,7 @@ class Dashprofile extends Component{
       brandBackgroundGround: "",
       brandColor: "",
       initstate: false,
+      cnt: ""    
     };
   }
   changeEdit() {
@@ -18,10 +19,26 @@ class Dashprofile extends Component{
   }
 
   componentDidMount() {
+     const link="https://apicrevalto.herokuapp.com/v1/brand/empcount";
     const url =
       "https://crevaltobkend.herokuapp.com/brand/users/profile/" +
       localStorage.getItem("compname");
     var bearer = "Bearer" + localStorage.getItem("token");
+    fetch(link,{
+        method:"GET",
+        headers:{
+        "Content-Type":"application/json ;charset=utf-8"
+    }})
+      .then((response)=>response.json())
+      .then((response)=>{
+        console.log(response)
+        if(response.status===true){
+          this.setState({cnt:response.totalemployees})
+        
+        console.log(this.state.cnt)
+        
+        }
+      })
     fetch(url, {
       method: "GET",
       headers: {
@@ -43,11 +60,14 @@ class Dashprofile extends Component{
         this.setState({
           brandColor: this.state.services.brandAssets.brandColor.fgColor,
         });
+        
       })
       .catch((error) => {
         // handle your errors here
         console.error(error);
       });
+      
+
   }
   
     render(){
@@ -135,7 +155,7 @@ class Dashprofile extends Component{
                 <div class="inner_card_dash_body">
                   <input
                     type="number"
-                    value="16"
+                    value={this.state.cnt}
                   />
                 </div>
               </div>

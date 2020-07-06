@@ -16,9 +16,9 @@ import { Route, Switch } from "react-router-dom";
 import Cart from "./components/cart/cartdis";
 import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
+import Veera from "./components/Veera"
 import Mapping from "./components/Mapping/Mapping";
 import Single from "./components/SingleShare/SingleShare";
-
 import VendorLogin from "./components/vendor_signin/vendorsignin";
 import VendorSignIn from "./components/vendor_signin/signin";
 import Mesdet from "./components/vendor_signin/mesdet";
@@ -32,6 +32,7 @@ function App() {
   <Navig/>
   </div>
       <Switch>
+            
         <Route exact path="/row" component={Row} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />
