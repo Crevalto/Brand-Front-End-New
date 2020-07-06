@@ -9,7 +9,6 @@ import Dashprofile from "./Dashprofile"
 import Dash from "./Dash"
 import {Row,Col} from "react-bootstrap"
 class dashboard extends Component {
-  
 constructor() {
     super();
     this.changeEdit = this.changeEdit.bind(this);
@@ -20,7 +19,7 @@ constructor() {
       regno: "",
       cinno: "",
       brandBackgroundGround: "",
-          dash:"profile",
+      dash:"profile",
       brandColor: "",
       initstate: false,
     };
@@ -28,7 +27,6 @@ constructor() {
   changeEdit() {
     this.setState({ edits: false });
   }
-
   componentDidMount() {
     const url =
       "https://crevaltobkend.herokuapp.com/brand/users/profile/" +
@@ -49,8 +47,7 @@ constructor() {
         this.setState({ regno: this.state.services.bid.regNo });
         this.setState({ regno: this.state.services.bid.regNo });
         this.setState({
-          brandBackgroundGround: this.state.services.brandAssets.brandColor
-            .bgColor,
+          brandBackgroundGround: this.state.services.brandAssets.brandColor.bgColor,
         });
         this.setState({
           brandColor: this.state.services.brandAssets.brandColor.fgColor,
@@ -61,12 +58,10 @@ constructor() {
         console.error(error);
       });
   }
-  
-  
   changestate(e){
     var param=e.target.dataset.param;
     console.log(param)
-   this.setState({dash:param})
+    this.setState({dash:param})
   }
   render() {
     return (
@@ -77,14 +72,13 @@ constructor() {
         >
           <img src={logo} alt="Brand logo" />
           <ul>
-            <li data-param="profile" onClick={this.changestate} >Profile</li>
-            <li data-param="chart" onClick={this.changestate} >Chart</li>
-            <li>CSR</li>
-            <li>Link4</li>
+            <li  data-param="profile"  onClick={this.changestate} disabled="true">Profile</li>
+            <li  data-param="chart" onClick={this.changestate} disabled>Chart</li>
+            <li disabled>CSR</li>
+            <li disabled>Link4</li>
           </ul>
         </div>
         <div class="col-md-9">
-       
         <div id="hide">
           <h2 style={{ color: this.state.brandBackgroundGround }}>
             {localStorage.getItem("compname")}{" "}
@@ -96,7 +90,6 @@ constructor() {
           </h2>
           <hr />
           {this.state.dash==="profile"?<Dashprofile/>:this.state.dash==="chart"?<Dash/>:""}
-            
           </div>
           </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import Pie from 'react-chartjs-2'
 import {Card} from 'react-bootstrap' 
 import {Row,Col} from "react-bootstrap"
+import "./dash.css"
 const data = {
 	labels: [
         'Shirts',
