@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./vendorsin.css";
 import logo from "../images/no_bg_noname.png";
+import Cookies from "universal-cookie";
+
 class vendor_signin extends Component {
   constructor() {
     super();
@@ -32,43 +34,35 @@ class vendor_signin extends Component {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
-      .catch((error) =>
-        console.error("Show me error that cannot be specify", error)
-      )
+      .catch((error) => console.error("Show me error", error))
       .then((response) => {
         console.log("Success", response);
         console.log(this.state.email);
-        this.props.history.push("/vendorsignin");
+        this.props.history.push("/");
       });
   };
 
   handleClick = (event) => {
     event.preventDefault();
-    const url = "http://crevaltoserver.herokuapp.com/v1/vendor/register";
-    var data = {
-      Name: this.state.Name,
-      Email: this.state.Email,
-      GSTNO: this.state.gstno,
-      Password: this.state.password,
-    };
-    fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .catch((error) =>
-        console.error("Show me error that cannot be specify", error)
-      )
-      .then((response) => {
-        console.log(response);
-        console.log(this.state.Name);
-        console.log(this.state.Email);
-        console.log(this.state.gstno);
-        console.log(this.state.npassword);
-        this.toggle();
-      });
+    console.log("====================================");
+    console.log("here");
+    console.log("====================================");
+    this.props.history.push({
+      pathname: "/vendorsignin",
+      state: {
+        Regdetails: {
+          Name: this.state.Name,
+          Email: this.state.Email,
+          GSTNO: this.state.gstno,
+          Password: this.state.npassword,
+        },
+      },
+    });
   };
+
+  toggle() {
+    document.querySelector(".cont").classList.toggle("s--signup");
+  }
 
   render() {
     return (
@@ -159,13 +153,7 @@ class vendor_signin extends Component {
                     value={this.state.npassword}
                   />
                 </label>
-                <button
-                  type="button"
-                  class="submit"
-                  onClick={() => {
-                    this.setState({ visible: true });
-                  }}
-                >
+                <button type="button" class="submit" onClick={this.handleClick}>
                   Get Started
                 </button>
               </div>

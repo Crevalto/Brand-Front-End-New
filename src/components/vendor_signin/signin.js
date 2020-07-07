@@ -39,6 +39,7 @@ class signin2 extends Component {
     this.state = {
       showxl: false,
       show: false,
+      r1details: "",
       Branch: "",
       phone: "",
       address1: "",
@@ -201,6 +202,10 @@ class signin2 extends Component {
 
   improveState(drop, drop1) {
     this.setState({ [drop]: drop1 });
+  }
+
+  componentDidMount() {
+    this.setState({ r1details: this.props.location.state.Regdetails });
   }
 
   render() {
