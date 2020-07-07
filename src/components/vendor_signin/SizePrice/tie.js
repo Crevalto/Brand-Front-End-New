@@ -1,10 +1,10 @@
-// tie,belt
+// tie,belt for all
 
 import React, { useState, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-function Tie(props) {
+const Tie = (props) => {
   const [inputFields, setInputFields] = useState([
     {
       brand: "",
@@ -53,7 +53,6 @@ function Tie(props) {
 
     setInputFields(values);
   };
-
   const back = (e) => {
     props.onchoosesizeaddback();
   };
@@ -65,14 +64,10 @@ function Tie(props) {
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>
-            <h1 className="addProdTitle" stlye={{ color: "white" }}>
-              Fill details
-            </h1>
-          </Modal.Title>
+          <Modal.Title>fill product </Modal.Title>
         </Modal.Header>
         <div className="hello">
           <button
@@ -286,7 +281,7 @@ function Tie(props) {
           </div>
         </Modal.Footer>
       </form>
-    </>
+    </div>
   );
-}
+};
 export default Tie;

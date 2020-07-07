@@ -35,6 +35,7 @@ class Map extends Component {
 
   gotomap() {
     console.log("hello");
+
     this.props.history.push("/mapping");
   }
 
@@ -82,9 +83,9 @@ class Map extends Component {
             ...this.state.viewport,
             width: window.innerWidth,
             height: window.innerHeight - 85,
-            latitude: 20.5937,
-            longitude: 78.9629,
-            zoom: 5,
+            latitude: 11.002,
+            longitude: 76.95937,
+            zoom: 7,
             transitionDuration: 3000,
             transitionInterpolator: new FlyToInterpolator(),
           },
@@ -149,11 +150,7 @@ class Map extends Component {
                 placement="top"
                 overlay={<Tooltip id="tooltip-top">{loc.companyName}</Tooltip>}
               >
-                <MdLocationOn
-                  size="40"
-                  onClick={this.gotomap}
-                  color={loc.color}
-                />
+                <MdLocationOn size="40" onClick={this.gotomap} color="purple" />
               </OverlayTrigger>
             </Marker>
           ))}

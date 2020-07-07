@@ -1,36 +1,22 @@
-//shirt and tshirt for men boy and womens
+//dothies for all
+
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Sizeadd = () => {
-  // inputfield is state and setinputfield id update component
+const Dothis = (props) => {
+  // this will create
   const [inputFields, setInputFields] = useState([
-    {
-      brand: "",
-      color: "",
-      size: "",
-      sholder: "",
-      chest: "",
-      sleeve: "",
-      neck: "",
-      length: "",
-      quantity: "",
-      amt: "",
-    },
+    { brand: "", color: "#000000", size: "", quantity: "", amt: "" },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
+
     values.push({
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
-      sholder: "",
-      chest: "",
-      sleeve: "",
-      neck: "",
-      length: "",
       quantity: "",
       amt: "",
     });
@@ -53,27 +39,20 @@ const Sizeadd = () => {
       values[index].quantity = event.target.value;
     } else if (event.target.name === "brand") {
       values[index].brand = event.target.value;
-    } else if (event.target.name === "sholder") {
-      values[index].sholder = event.target.value;
-    } else if (event.target.name === "chest") {
-      values[index].chest = event.target.value;
-    } else if (event.target.name === "sleeve") {
-      values[index].sleeve = event.target.value;
-    } else if (event.target.name === "neck") {
-      values[index].neck = event.target.value;
-    } else if (event.target.name === "length") {
-      values[index].length = event.target.value;
-    } else if (event.target.name === "amt") {
-      values[index].amt = event.target.value;
     } else {
+      values[index].amt = event.target.value;
     }
 
     setInputFields(values);
+  };
+  const back = (e) => {
+    props.onchoosesizeaddback();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -120,6 +99,7 @@ const Sizeadd = () => {
                   />
                 </div>
               </div>
+
               <div>
                 <label
                   htmlFor="color"
@@ -134,9 +114,9 @@ const Sizeadd = () => {
                 <div className="center">
                   <input
                     type="color"
+                    // className="form-control"
                     id="color"
                     name="color"
-                    // className="form-control"
                     style={{ width: "90px" }}
                     value={inputField.color}
                     onChange={(event) => handleInputChange(index, event)}
@@ -151,7 +131,7 @@ const Sizeadd = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>size</h6>
+                  <h6>Length</h6>
                 </label>
                 <div className="center">
                   <input
@@ -160,97 +140,42 @@ const Sizeadd = () => {
                     className="form-control"
                     style={{
                       width: "300px",
-                      // marginLeft: "35%",
-                      // marginRight: "35%",
                     }}
                     value={inputField.size}
                     onChange={(event) => handleInputChange(index, event)}
-                    placeholder="Enter or Choose Size"
+                    placeholder="Enter or Choose Length in Meters"
                   />
                   <datalist id="bro">
-                    <option value="free" />
-                    <option value="5xs(26)" />
-                    <option value="4xs(28)" />
-                    <option value="3xs(30)" />
-                    <option value="2xs(34)" />
-                    <option value="xs(36)" />
-                    <option value="s(38)" />
-                    <option value="m(40)" />
-                    <option value="l(42)" />
-                    <option value="xl(44)" />
-                    <option value="2xl(46)" />
-                    <option value="3xl(48)" />
-                    <option value="4xl(50)" />
-                    <option value="5xl(52)" />
+                    <option value="1" />
+                    <option value="1.5" />
+                    <option value="2" />
+                    <option value="2.5" />
+                    <option value="3" />
+                    <option value="3.5" />
+                    <option value="4" />
+                    <option value="4.5" />
+                    <option value="5" />
+                    <option value="5.5" />
+                    <option value="6" />
+                    <option value="6.5" />
+                    <option value="7" />
+                    <option value="7.5" />
+                    <option value="8" />
+                    <option value="8.5" />
+                    <option value="9" />
+                    <option value="9.5" />
+                    <option value="10" />
+                    <option value="10.5" />
+                    <option value="11" />
+                    <option value="11.5" />
+                    <option value="12" />
+                    <option value="12.5" />
+                    <option value="13" />
+                    <option value="13.5" />
+                    <option value="14" />
+                    <option value="14.5" />
                   </datalist>
                 </div>
-              </div>
-              <div>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Sholder</th>
-                      <th>Chest</th>
-                      <th>Sleeve</th>
-                      <th>Neck</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="sholder"
-                          name="sholder"
-                          placeholder="Enter sholder in inches"
-                          value={inputField.sholder}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="chest"
-                          name="chest"
-                          placeholder="Enter Chest in inches"
-                          value={inputField.chest}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="sleeve"
-                          name="sleeve"
-                          placeholder="Enter Sleeve in inches"
-                          value={inputField.sleeve}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="neck"
-                          name="neck"
-                          placeholder="Enter neck in inches"
-                          value={inputField.neck}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="length"
-                          name="length"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
               </div>
               <div>
                 <label
@@ -268,12 +193,10 @@ const Sizeadd = () => {
                     className="form-control"
                     id="quantity"
                     name="quantity"
+                    placeholder="Enter quantity of product"
                     style={{
                       width: "300px",
-                      // marginLeft: "35%",
-                      // marginRight: "35%",
                     }}
-                    placeholder="Enter quantity of product"
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -295,12 +218,10 @@ const Sizeadd = () => {
                     className="form-control"
                     id="amt"
                     name="amt"
+                    placeholder="Enter single product price "
                     style={{
                       width: "300px",
-                      // marginLeft: "35%",
-                      // marginRight: "35%",
                     }}
-                    placeholder="Enter single product price "
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -327,18 +248,18 @@ const Sizeadd = () => {
             </Fragment>
           ))}
         </div>
-
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
             </button>
             <button
-              className="btn btn-success mr-2"
+              className="btn btn-primary mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
@@ -350,4 +271,4 @@ const Sizeadd = () => {
     </>
   );
 };
-export default Sizeadd;
+export default Dothis;

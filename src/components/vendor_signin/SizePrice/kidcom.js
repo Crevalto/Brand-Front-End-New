@@ -1,34 +1,20 @@
-//kid pant
+//kid skirt ans chudi
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Sizeadd = () => {
+const Kidcom = (props) => {
   // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
-    {
-      brand: "",
-      color: "",
-      size: "",
-      waist: "",
-      inseamlength: "",
-      rise: "",
-      length: "",
-      quantity: "",
-      amt: "",
-    },
+    { brand: "", color: "#000000", size: "", quantity: "", amt: "" },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
     values.push({
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
-      waist: "",
-      inseamlength: "",
-      rise: "",
-      length: "",
       quantity: "",
       amt: "",
     });
@@ -51,25 +37,20 @@ const Sizeadd = () => {
       values[index].quantity = event.target.value;
     } else if (event.target.name === "brand") {
       values[index].brand = event.target.value;
-    } else if (event.target.name === "waist") {
-      values[index].waist = event.target.value;
-    } else if (event.target.name === "inseamlength") {
-      values[index].inseamlength = event.target.value;
-    } else if (event.target.name === "rise") {
-      values[index].sleeve = event.target.value;
-    } else if (event.target.name === "length") {
-      values[index].length = event.target.value;
-    } else if (event.target.name === "amt") {
-      values[index].amt = event.target.value;
     } else {
+      values[index].amt = event.target.value;
     }
 
     setInputFields(values);
+  };
+  const back = (e) => {
+    props.onchoosesizeaddback();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -147,7 +128,7 @@ const Sizeadd = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>Age group</h6>
+                  <h6>size</h6>
                 </label>
                 <div className="center">
                   <input
@@ -164,70 +145,24 @@ const Sizeadd = () => {
                     placeholder="Enter or Choose Size"
                   />
                   <datalist id="bro">
-                    <option value="0-3 Month " />
-                    <option value="3 - 6 Month" />
-                    <option value="6 - 9 Month" />
-                    <option value="9 - 12 Month" />
-                    <option value="12 - 18 Month" />
-                    <option value="18 -24 Month " />
+                    <option value="2 - 3 years" />
+                    <option value="3 - 4 years" />
+                    <option value="4 - 5 years" />
+                    <option value="5 - 6 years" />
+                    <option value="6 - 7 years" />
+                    <option value="7 - 8 years" />
+                    <option value="8 - 9 years" />
+                    <option value="9 - 10 years" />
+                    <option value="10 - 11 years" />
+                    <option value="11 - 12 years" />
+                    <option value="12 - 13 years" />
+                    <option value="13 - 14 years" />
+                    <option value="14 - 15 years" />
+                    <option value="15 - 16 years" />
+                    <option value="16 - 17 years" />
+                    <option value="17 - 18 years" />
                   </datalist>
                 </div>
-              </div>
-              <div>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Waist</th>
-                      <th>Inseamlength</th>
-                      <th>Rise</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="waist"
-                          name="waist"
-                          placeholder="Enter waist in inches"
-                          value={inputField.waist}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="inseamlength"
-                          name="inseamlength"
-                          placeholder="Enter inseamlength in inches"
-                          value={inputField.inseamlength}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="rise"
-                          name="rise"
-                          placeholder="Enter rise in inches"
-                          value={inputField.rise}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="length"
-                          name="length"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
               </div>
               <div>
                 <label
@@ -310,6 +245,7 @@ const Sizeadd = () => {
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
@@ -327,4 +263,4 @@ const Sizeadd = () => {
     </>
   );
 };
-export default Sizeadd;
+export default Kidcom;

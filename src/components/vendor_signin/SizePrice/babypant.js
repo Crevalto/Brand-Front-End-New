@@ -1,23 +1,19 @@
-//for coat all kid (shirt,pant)
+//kid pant
 import React, { useState, Fragment } from "react";
 import { Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Sizeadd = () => {
+const Babypant = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
     {
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
-      sholder: "",
-      chest: "",
-      sleeve: "",
-      neck: "",
-      lengthshirt: "",
       waist: "",
       inseamlength: "",
       rise: "",
-      lengthpant: "",
+      length: "",
       quantity: "",
       amt: "",
     },
@@ -27,17 +23,12 @@ const Sizeadd = () => {
     const values = [...inputFields];
     values.push({
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
-      sholder: "",
-      chest: "",
-      sleeve: "",
-      neck: "",
-      lengthshirt: "",
       waist: "",
       inseamlength: "",
       rise: "",
-      lengthpant: "",
+      length: "",
       quantity: "",
       amt: "",
     });
@@ -65,30 +56,26 @@ const Sizeadd = () => {
     } else if (event.target.name === "inseamlength") {
       values[index].inseamlength = event.target.value;
     } else if (event.target.name === "rise") {
-      values[index].rise = event.target.value;
-    } else if (event.target.name === "lengthpant") {
-      values[index].lengthpant = event.target.value;
+      values[index].sleeve = event.target.value;
+    } else if (event.target.name === "length") {
+      values[index].length = event.target.value;
     } else if (event.target.name === "amt") {
       values[index].amt = event.target.value;
-    } else if (event.target.name === "sholder") {
-      values[index].sholder = event.target.value;
-    } else if (event.target.name === "chest") {
-      values[index].chest = event.target.value;
-    } else if (event.target.name === "neck") {
-      values[index].neck = event.target.value;
-    } else if (event.target.name === "sleeve") {
-      values[index].sleeve = event.target.value;
-    } else if (event.target.name === "lengthshirt") {
-      values[index].lengthshirt = event.target.value;
     } else {
     }
 
     setInputFields(values);
   };
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -164,7 +151,7 @@ const Sizeadd = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>size</h6>
+                  <h6>Age group</h6>
                 </label>
                 <div className="center">
                   <input
@@ -181,94 +168,22 @@ const Sizeadd = () => {
                     placeholder="Enter or Choose Size"
                   />
                   <datalist id="bro">
-                    <option value="2 - 3 years" />
-                    <option value="3 - 4 years" />
-                    <option value="4 - 5 years" />
-                    <option value="5 - 6 years" />
-                    <option value="6 - 7 years" />
-                    <option value="7 - 8 years" />
-                    <option value="8 - 9 years" />
-                    <option value="9 - 10 years" />
-                    <option value="10 - 11 years" />
-                    <option value="11 - 12 years" />
-                    <option value="12 - 13 years" />
-                    <option value="13 - 14 years" />
-                    <option value="14 - 15 years" />
-                    <option value="15 - 16 years" />
-                    <option value="16 - 17 years" />
-                    <option value="17 - 18 years" />
+                    <option value="0-3 Month " />
+                    <option value="3 - 6 Month" />
+                    <option value="6 - 9 Month" />
+                    <option value="9 - 12 Month" />
+                    <option value="12 - 18 Month" />
+                    <option value="18 -24 Month " />
                   </datalist>
                 </div>
               </div>
               <div>
-                <h6>Top</h6>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Sholder</th>
-                      <th>Chest</th>
-                      <th>Sleeve</th>
-                      <th>Neck</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="sholder"
-                          name="sholder"
-                          placeholder="Enter sholder in inches"
-                          value={inputField.sholder}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="chest"
-                          name="chest"
-                          placeholder="Enter Chest in inches"
-                          value={inputField.chest}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="sleeve"
-                          name="sleeve"
-                          placeholder="Enter Sleeve in inches"
-                          value={inputField.sleeve}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="neck"
-                          name="neck"
-                          placeholder="Enter neck in inches"
-                          value={inputField.neck}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="lengthshirt"
-                          name="lengthshirt"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <h6>buttom</h6>
-                <Table>
+                <Table
+                  responsive
+                  striped
+                  bordered
+                  style={{ marginTop: "50px" }}
+                >
                   <thead>
                     <tr>
                       <th>Waist</th>
@@ -281,6 +196,7 @@ const Sizeadd = () => {
                     <tr>
                       <td>
                         <input
+                          className="form-control"
                           type="number"
                           id="waist"
                           name="waist"
@@ -293,6 +209,7 @@ const Sizeadd = () => {
                         <input
                           type="number"
                           id="inseamlength"
+                          className="form-control"
                           name="inseamlength"
                           placeholder="Enter inseamlength in inches"
                           value={inputField.inseamlength}
@@ -303,6 +220,7 @@ const Sizeadd = () => {
                         <input
                           type="number"
                           id="rise"
+                          className="form-control"
                           name="rise"
                           placeholder="Enter rise in inches"
                           value={inputField.rise}
@@ -312,8 +230,9 @@ const Sizeadd = () => {
                       <td>
                         <input
                           type="number"
-                          id="lengthpant"
-                          name="lengthpant"
+                          className="form-control"
+                          id="length"
+                          name="length"
                           placeholder="Enter Length in inches"
                           value={inputField.length}
                           onChange={(event) => handleInputChange(index, event)}
@@ -404,6 +323,7 @@ const Sizeadd = () => {
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
@@ -421,4 +341,4 @@ const Sizeadd = () => {
     </>
   );
 };
-export default Sizeadd;
+export default Babypant;

@@ -1,23 +1,20 @@
-//for coat all for men (shirt,pant) and chudidar
+//shirt and tshirt for men boy and women
 import React, { useState, Fragment } from "react";
 import { Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Sizeadd = () => {
+const Shirt = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
     {
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
       sholder: "",
       chest: "",
       sleeve: "",
       neck: "",
-      lengthshirt: "",
-      waist: "",
-      inseamlength: "",
-      rise: "",
-      lengthpant: "",
+      length: "",
       quantity: "",
       amt: "",
     },
@@ -27,17 +24,13 @@ const Sizeadd = () => {
     const values = [...inputFields];
     values.push({
       brand: "",
-      color: "",
+      color: "#000000",
       size: "",
       sholder: "",
       chest: "",
       sleeve: "",
       neck: "",
-      lengthshirt: "",
-      waist: "",
-      inseamlength: "",
-      rise: "",
-      lengthpant: "",
+      length: "",
       quantity: "",
       amt: "",
     });
@@ -60,35 +53,33 @@ const Sizeadd = () => {
       values[index].quantity = event.target.value;
     } else if (event.target.name === "brand") {
       values[index].brand = event.target.value;
-    } else if (event.target.name === "waist") {
-      values[index].waist = event.target.value;
-    } else if (event.target.name === "inseamlength") {
-      values[index].inseamlength = event.target.value;
-    } else if (event.target.name === "rise") {
-      values[index].rise = event.target.value;
-    } else if (event.target.name === "lengthpant") {
-      values[index].lengthpant = event.target.value;
-    } else if (event.target.name === "amt") {
-      values[index].amt = event.target.value;
     } else if (event.target.name === "sholder") {
       values[index].sholder = event.target.value;
     } else if (event.target.name === "chest") {
       values[index].chest = event.target.value;
-    } else if (event.target.name === "neck") {
-      values[index].neck = event.target.value;
     } else if (event.target.name === "sleeve") {
       values[index].sleeve = event.target.value;
-    } else if (event.target.name === "lengthshirt") {
-      values[index].lengthshirt = event.target.value;
+    } else if (event.target.name === "neck") {
+      values[index].neck = event.target.value;
+    } else if (event.target.name === "length") {
+      values[index].length = event.target.value;
+    } else if (event.target.name === "amt") {
+      values[index].amt = event.target.value;
     } else {
     }
 
     setInputFields(values);
   };
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -199,7 +190,6 @@ const Sizeadd = () => {
                 </div>
               </div>
               <div>
-                <h6>Top</h6>
                 <Table>
                   <thead>
                     <tr>
@@ -255,63 +245,8 @@ const Sizeadd = () => {
                       <td>
                         <input
                           type="number"
-                          id="lengthshirt"
-                          name="lengthshirt"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <h6>buttom</h6>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Waist</th>
-                      <th>Inseamlength</th>
-                      <th>Rise</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="waist"
-                          name="waist"
-                          placeholder="Enter waist in inches"
-                          value={inputField.waist}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="inseamlength"
-                          name="inseamlength"
-                          placeholder="Enter inseamlength in inches"
-                          value={inputField.inseamlength}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="rise"
-                          name="rise"
-                          placeholder="Enter rise in inches"
-                          value={inputField.rise}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="lengthpant"
-                          name="lengthpant"
+                          id="length"
+                          name="length"
                           placeholder="Enter Length in inches"
                           value={inputField.length}
                           onChange={(event) => handleInputChange(index, event)}
@@ -402,6 +337,7 @@ const Sizeadd = () => {
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
@@ -419,4 +355,4 @@ const Sizeadd = () => {
     </>
   );
 };
-export default Sizeadd;
+export default Shirt;

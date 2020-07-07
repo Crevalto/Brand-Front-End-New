@@ -1,19 +1,39 @@
-//shoes for all
-
+//kid shirt and tshirt
 import React, { useState, Fragment } from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Shoes = () => {
-  // this will create
+const Kidsshirt = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
-    { brand: "", color: "", size: "", quantity: "", amt: "" },
+    {
+      brand: "",
+      color: "#000000",
+      size: "",
+      sholder: "",
+      chest: "",
+      sleeve: "",
+      neck: "",
+      length: "",
+      quantity: "",
+      amt: "",
+    },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
-
-    values.push({ brand: "", color: "", size: "", quantity: "", amt: "" });
+    values.push({
+      brand: "",
+      color: "#000000",
+      size: "",
+      sholder: "",
+      chest: "",
+      sleeve: "",
+      neck: "",
+      length: "",
+      quantity: "",
+      amt: "",
+    });
     setInputFields(values);
   };
 
@@ -33,16 +53,31 @@ const Shoes = () => {
       values[index].quantity = event.target.value;
     } else if (event.target.name === "brand") {
       values[index].brand = event.target.value;
-    } else {
+    } else if (event.target.name === "sholder") {
+      values[index].sholder = event.target.value;
+    } else if (event.target.name === "chest") {
+      values[index].chest = event.target.value;
+    } else if (event.target.name === "sleeve") {
+      values[index].sleeve = event.target.value;
+    } else if (event.target.name === "neck") {
+      values[index].neck = event.target.value;
+    } else if (event.target.name === "length") {
+      values[index].length = event.target.value;
+    } else if (event.target.name === "amt") {
       values[index].amt = event.target.value;
+    } else {
     }
 
     setInputFields(values);
   };
 
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -89,7 +124,6 @@ const Shoes = () => {
                   />
                 </div>
               </div>
-
               <div>
                 <label
                   htmlFor="color"
@@ -104,9 +138,9 @@ const Shoes = () => {
                 <div className="center">
                   <input
                     type="color"
-                    // className="form-control"
                     id="color"
                     name="color"
+                    // className="form-control"
                     style={{ width: "90px" }}
                     value={inputField.color}
                     onChange={(event) => handleInputChange(index, event)}
@@ -121,7 +155,7 @@ const Shoes = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>size,Age Group,Length(in Cm)</h6>
+                  <h6>Age Group</h6>
                 </label>
                 <div className="center">
                   <input
@@ -130,27 +164,99 @@ const Shoes = () => {
                     className="form-control"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
                     value={inputField.size}
                     onChange={(event) => handleInputChange(index, event)}
-                    placeholder="Enter or Choose size,Age Group,Length(in Cm)"
+                    placeholder="Enter or Choose Size"
                   />
                   <datalist id="bro">
-                    <option value="0C  ,3 TO 6 MONTH BABY ,10 " />
-                    <option value="0.5C ,3 TO 6 MONTH BABY  ,10.4 " />
-                    <option value="1C ,3 TO 6 MONTH BABY  ,10.5 " />
-                    <option value="2C ,4 TO 6 MONTH BABY  ,11 " />
-                    <option value="3C ,7 TO 10 MONTH BABY ,11.5 " />
-                    <option value="4C ,10 TO 12 MONTH BABY  12  ,20" />
-                    <option value="4.5C  ,12 TO 17 MONTH BABY ,13 " />
-                    <option value="5C ,18 TO 24 MONTH BABY  ,13.5 " />
-                    <option value="6C ,2 YEAR TO 2.5 YEAR BABY  ,14 " />
-                    <option value="7C ,2.5 YEAR TO 3 YEAR BABY  ,14.5 " />
-                    <option value="8C ,3 YEAR TO 3.5 YEAR BABY  ,15 " />
-                    <option value="9C ,3.5 YEAR TO 4 YEAR BABY  ,3  " />
-                    <option value="10C  ,4 YEAR TO 4.3 YEAR BABY  ,16 " />
+                    <option value="2 - 3 years" />
+                    <option value="3 - 4 years" />
+                    <option value="4 - 5 years" />
+                    <option value="5 - 6 years" />
+                    <option value="6 - 7 years" />
+                    <option value="7 - 8 years" />
+                    <option value="8 - 9 years" />
+                    <option value="9 - 10 years" />
+                    <option value="10 - 11 years" />
+                    <option value="11 - 12 years" />
+                    <option value="12 - 13 years" />
+                    <option value="13 - 14 years" />
+                    <option value="14 - 15 years" />
+                    <option value="15 - 16 years" />
+                    <option value="16 - 17 years" />
+                    <option value="17 - 18 years" />
                   </datalist>
                 </div>
+              </div>
+              <div>
+                <Table responsive>
+                  <thead>
+                    <tr>
+                      <th>Sholder</th>
+                      <th>Chest</th>
+                      <th>Sleeve</th>
+                      <th>Neck</th>
+                      <th>Length</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="number"
+                          id="sholder"
+                          name="sholder"
+                          placeholder="Enter sholder in inches"
+                          value={inputField.sholder}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="chest"
+                          name="chest"
+                          placeholder="Enter Chest in inches"
+                          value={inputField.chest}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="sleeve"
+                          name="sleeve"
+                          placeholder="Enter Sleeve in inches"
+                          value={inputField.sleeve}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="neck"
+                          name="neck"
+                          placeholder="Enter neck in inches"
+                          value={inputField.neck}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="length"
+                          name="length"
+                          placeholder="Enter Length in inches"
+                          value={inputField.length}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
               </div>
               <div>
                 <label
@@ -168,10 +274,12 @@ const Shoes = () => {
                     className="form-control"
                     id="quantity"
                     name="quantity"
-                    placeholder="Enter quantity of product"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter quantity of product"
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -193,10 +301,12 @@ const Shoes = () => {
                     className="form-control"
                     id="amt"
                     name="amt"
-                    placeholder="Enter single product price "
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter single product price "
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -223,17 +333,19 @@ const Shoes = () => {
             </Fragment>
           ))}
         </div>
+
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
             </button>
             <button
-              className="btn btn-primary mr-2"
+              className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
@@ -245,4 +357,4 @@ const Shoes = () => {
     </>
   );
 };
-export default Shoes;
+export default Kidsshirt;

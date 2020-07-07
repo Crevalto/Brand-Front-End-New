@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import DropBox from "./Dropbox";
-import { Jumbotron, Card, Form, Col, Row, Modal } from "react-bootstrap";
+import {
+  Jumbotron,
+  Card,
+  Form,
+  Col,
+  Row,
+  Modal,
+  Button,
+} from "react-bootstrap";
 import "./signin.css";
 import { MdAddShoppingCart, MdAddAPhoto } from "react-icons/md";
 import { TiUserAdd } from "react-icons/ti";
@@ -578,6 +586,11 @@ class signin2 extends Component {
             </Card>
           </Col>
         </Row>
+        <Card>
+          <Card.Body>
+            <Button>hello</Button>
+          </Card.Body>
+        </Card>
       </div>
     );
   }

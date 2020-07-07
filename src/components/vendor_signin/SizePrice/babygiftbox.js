@@ -1,19 +1,23 @@
-//shoes for men and both kids and womens
-
+//all cloth
 import React, { useState, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Shoes = () => {
-  // this will create
+const Babygiftbox = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
-    { brand: "", color: "", size: "", quantity: "", amt: "" },
+    { brand: "", color: "#000000", size: "", quantity: "", amt: "" },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
-
-    values.push({ brand: "", color: "", size: "", quantity: "", amt: "" });
+    values.push({
+      brand: "",
+      color: "#000000",
+      size: "",
+      quantity: "",
+      amt: "",
+    });
     setInputFields(values);
   };
 
@@ -39,10 +43,14 @@ const Shoes = () => {
 
     setInputFields(values);
   };
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -89,7 +97,6 @@ const Shoes = () => {
                   />
                 </div>
               </div>
-
               <div>
                 <label
                   htmlFor="color"
@@ -104,9 +111,9 @@ const Shoes = () => {
                 <div className="center">
                   <input
                     type="color"
-                    // className="form-control"
                     id="color"
                     name="color"
+                    // className="form-control"
                     style={{ width: "90px" }}
                     value={inputField.color}
                     onChange={(event) => handleInputChange(index, event)}
@@ -121,50 +128,22 @@ const Shoes = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>size</h6>
+                  <h6>Number of box</h6>
                 </label>
                 <div className="center">
                   <input
-                    list="bro"
+                    type="number"
                     name="size"
                     className="form-control"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
                     value={inputField.size}
                     onChange={(event) => handleInputChange(index, event)}
-                    placeholder="Enter or Choose Size"
+                    placeholder="Enter number of gift-box"
                   />
-                  <datalist id="bro">
-                    <option value="1" />
-                    <option value="1.5" />
-                    <option value="2" />
-                    <option value="2.5" />
-                    <option value="3" />
-                    <option value="3.5" />
-                    <option value="4" />
-                    <option value="4.5" />
-                    <option value="5" />
-                    <option value="5.5" />
-                    <option value="6" />
-                    <option value="6.5" />
-                    <option value="7" />
-                    <option value="7.5" />
-                    <option value="8" />
-                    <option value="8.5" />
-                    <option value="9" />
-                    <option value="9.5" />
-                    <option value="10" />
-                    <option value="10.5" />
-                    <option value="11" />
-                    <option value="11.5" />
-                    <option value="12" />
-                    <option value="12.5" />
-                    <option value="13" />
-                    <option value="13.5" />
-                    <option value="14" />
-                    <option value="14.5" />
-                  </datalist>
                 </div>
               </div>
               <div>
@@ -183,10 +162,12 @@ const Shoes = () => {
                     className="form-control"
                     id="quantity"
                     name="quantity"
-                    placeholder="Enter quantity of product"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter quantity of product"
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -208,10 +189,12 @@ const Shoes = () => {
                     className="form-control"
                     id="amt"
                     name="amt"
-                    placeholder="Enter single product price "
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter single product price "
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -238,17 +221,19 @@ const Shoes = () => {
             </Fragment>
           ))}
         </div>
+
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
             </button>
             <button
-              className="btn btn-primary mr-2"
+              className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
@@ -260,4 +245,4 @@ const Shoes = () => {
     </>
   );
 };
-export default Shoes;
+export default Babygiftbox;

@@ -1,12 +1,12 @@
-//saree for women if girl kid
+//saree
 import React, { useState, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Shoes = () => {
+const Saree = (props) => {
   // this will create
   const [inputFields, setInputFields] = useState([
-    { brand: "", color: "", sareelength: "", quantity: "", amt: "" },
+    { brand: "", color: "#000000", sareelength: "", quantity: "", amt: "" },
   ]);
 
   const handleAddFields = () => {
@@ -14,7 +14,7 @@ const Shoes = () => {
 
     values.push({
       brand: "",
-      color: "",
+      color: "#000000",
       sareelength: "",
       quantity: "",
       amt: "",
@@ -44,10 +44,14 @@ const Shoes = () => {
 
     setInputFields(values);
   };
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -368,6 +372,7 @@ const Shoes = () => {
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
               back
@@ -385,4 +390,4 @@ const Shoes = () => {
     </>
   );
 };
-export default Shoes;
+export default Saree;

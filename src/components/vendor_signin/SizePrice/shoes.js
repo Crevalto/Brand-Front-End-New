@@ -1,9 +1,10 @@
-//shoes
+//shoes for all
+
 import React, { useState, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-function Shoes(props) {
+const Shoes = (props) => {
   // this will create
   const [inputFields, setInputFields] = useState([
     { brand: "", color: "#000000", size: "", quantity: "", amt: "" },
@@ -44,25 +45,21 @@ function Shoes(props) {
 
     setInputFields(values);
   };
+  const back = (e) => {
+    props.onchoosesizeaddback();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
     props.onchoosesizeaddchange(inputFields);
   };
-  const back = (e) => {
-    props.onchoosesizeaddback();
-  };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>
-            <h1 className="addProdTitle" stlye={{ color: "white" }}>
-              Fill details
-            </h1>
-          </Modal.Title>
+          <Modal.Title>fill product </Modal.Title>
         </Modal.Header>
         <div className="hello">
           <button
@@ -256,8 +253,8 @@ function Shoes(props) {
             <button
               className="btn btn-primary mr-2"
               type="submit"
-              // onSubmit={handleSubmit}
               onClick={back}
+              // onSubmit={handleSubmit}
             >
               back
             </button>
@@ -273,5 +270,5 @@ function Shoes(props) {
       </form>
     </>
   );
-}
+};
 export default Shoes;

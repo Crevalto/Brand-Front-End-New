@@ -1,20 +1,33 @@
-// tie,belt for men kids and womens
-
+//kid pant
 import React, { useState, Fragment } from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
-const Tie = () => {
+const Kidspant = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
-    { brand: "", color: "", width: "", length: "", quantity: "", amt: "" },
+    {
+      brand: "",
+      color: "#000000",
+      size: "",
+      waist: "",
+      inseamlength: "",
+      rise: "",
+      length: "",
+      quantity: "",
+      amt: "",
+    },
   ]);
 
   const handleAddFields = () => {
     const values = [...inputFields];
     values.push({
       brand: "",
-      color: "",
-      width: "",
+      color: "#000000",
+      size: "",
+      waist: "",
+      inseamlength: "",
+      rise: "",
       length: "",
       quantity: "",
       amt: "",
@@ -32,24 +45,35 @@ const Tie = () => {
     const values = [...inputFields];
     if (event.target.name === "color") {
       values[index].color = event.target.value;
-    } else if (event.target.name === "width") {
-      values[index].width = event.target.value;
-    } else if (event.target.name === "length") {
-      values[index].length = event.target.value;
+    } else if (event.target.name === "size") {
+      values[index].size = event.target.value;
     } else if (event.target.name === "quantity") {
       values[index].quantity = event.target.value;
     } else if (event.target.name === "brand") {
       values[index].brand = event.target.value;
-    } else {
+    } else if (event.target.name === "waist") {
+      values[index].waist = event.target.value;
+    } else if (event.target.name === "inseamlength") {
+      values[index].inseamlength = event.target.value;
+    } else if (event.target.name === "rise") {
+      values[index].sleeve = event.target.value;
+    } else if (event.target.name === "length") {
+      values[index].length = event.target.value;
+    } else if (event.target.name === "amt") {
       values[index].amt = event.target.value;
+    } else {
     }
 
     setInputFields(values);
+  };
+  const back = (e) => {
+    props.onchoosesizeaddback();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
@@ -62,10 +86,10 @@ const Tie = () => {
           <button
             className="btn btn-light"
             type="button"
-            onClick={() => handleAddFields()}
             style={{
               margin: "10px",
             }}
+            onClick={() => handleAddFields()}
           >
             +Add new list
           </button>
@@ -96,7 +120,6 @@ const Tie = () => {
                   />
                 </div>
               </div>
-
               <div>
                 <label
                   htmlFor="color"
@@ -105,15 +128,15 @@ const Tie = () => {
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>Choose Color</h6>
+                  <h6>choose Color</h6>
                 </label>
+                <br></br>
                 <div className="center">
                   <input
                     type="color"
-                    // className="form-control"
                     id="color"
                     name="color"
-                    // placeholder="Choose Color"
+                    // className="form-control"
                     style={{ width: "90px" }}
                     value={inputField.color}
                     onChange={(event) => handleInputChange(index, event)}
@@ -121,61 +144,104 @@ const Tie = () => {
                 </div>
               </div>
               <div>
-                {/* <lable
-                  style={{
-                    marginTop: "10px",
-                    marginBottom: "5px",
-                  }}
-                >
-                  <h6>size</h6>
-                </lable> */}
                 <label
-                  htmlFor="width"
+                  htmlFor="size"
                   style={{
                     marginTop: "10px",
                     marginBottom: "5px",
                   }}
                 >
-                  <h6>Width</h6>
+                  <h6>Age group</h6>
                 </label>
                 <div className="center">
                   <input
-                    type="number"
+                    list="bro"
+                    name="size"
                     className="form-control"
-                    id="width"
-                    name="width"
-                    placeholder="Enter Width in inches"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
-                    value={inputField.width}
+                    value={inputField.size}
                     onChange={(event) => handleInputChange(index, event)}
+                    placeholder="Enter or Choose Size"
                   />
+                  <datalist id="bro">
+                    <option value="2 - 3 years" />
+                    <option value="3 - 4 years" />
+                    <option value="4 - 5 years" />
+                    <option value="5 - 6 years" />
+                    <option value="6 - 7 years" />
+                    <option value="7 - 8 years" />
+                    <option value="8 - 9 years" />
+                    <option value="9 - 10 years" />
+                    <option value="10 - 11 years" />
+                    <option value="11 - 12 years" />
+                    <option value="12 - 13 years" />
+                    <option value="13 - 14 years" />
+                    <option value="14 - 15 years" />
+                    <option value="15 - 16 years" />
+                    <option value="16 - 17 years" />
+                    <option value="17 - 18 years" />
+                  </datalist>
                 </div>
-
-                <label
-                  htmlFor="length"
-                  style={{
-                    marginTop: "10px",
-                    marginBottom: "5px",
-                  }}
-                >
-                  <h6>Length</h6>
-                </label>
-                <div className="center">
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="length"
-                    name="length"
-                    placeholder="Enter Length in inches"
-                    style={{
-                      width: "300px",
-                    }}
-                    value={inputField.length}
-                    onChange={(event) => handleInputChange(index, event)}
-                  />
-                </div>
+              </div>
+              <div>
+                <Table responsive>
+                  <thead>
+                    <tr>
+                      <th>Waist</th>
+                      <th>Inseamlength</th>
+                      <th>Rise</th>
+                      <th>Length</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="number"
+                          id="waist"
+                          name="waist"
+                          placeholder="Enter waist in inches"
+                          value={inputField.waist}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="inseamlength"
+                          name="inseamlength"
+                          placeholder="Enter inseamlength in inches"
+                          value={inputField.inseamlength}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="rise"
+                          name="rise"
+                          placeholder="Enter rise in inches"
+                          value={inputField.rise}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          id="length"
+                          name="length"
+                          placeholder="Enter Length in inches"
+                          value={inputField.length}
+                          onChange={(event) => handleInputChange(index, event)}
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
               </div>
               <div>
                 <label
@@ -193,10 +259,12 @@ const Tie = () => {
                     className="form-control"
                     id="quantity"
                     name="quantity"
-                    placeholder="Enter quantity of product"
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter quantity of product"
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -218,10 +286,12 @@ const Tie = () => {
                     className="form-control"
                     id="amt"
                     name="amt"
-                    placeholder="Enter single product price "
                     style={{
                       width: "300px",
+                      // marginLeft: "35%",
+                      // marginRight: "35%",
                     }}
+                    placeholder="Enter single product price "
                     value={inputField.hello}
                     onChange={(event) => handleInputChange(index, event)}
                   />
@@ -248,16 +318,16 @@ const Tie = () => {
             </Fragment>
           ))}
         </div>
-        {/* <pre>{JSON.stringify(inputFields, null, 2)}</pre> */}
 
-        <Modal.Footer>
+        <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
             <button
               className="btn btn-primary mr-2"
               type="submit"
+              onClick={back}
               // onSubmit={handleSubmit}
             >
-              Back
+              back
             </button>
             <button
               className="btn btn-success mr-2"
@@ -272,4 +342,4 @@ const Tie = () => {
     </>
   );
 };
-export default Tie;
+export default Kidspant;

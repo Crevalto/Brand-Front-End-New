@@ -3,7 +3,8 @@ import React, { useState, Fragment } from "react";
 import { Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
-function Sizeadd(props) {
+const Sizeadd = (props) => {
+  // inputfield is state and setinputfield id update component
   const [inputFields, setInputFields] = useState([
     { brand: "", color: "#000000", size: "", quantity: "", amt: "" },
   ]);
@@ -53,14 +54,10 @@ function Sizeadd(props) {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>
-            <h1 className="addProdTitle" stlye={{ color: "white" }}>
-              Fill details
-            </h1>
-          </Modal.Title>
+          <Modal.Title>fill product </Modal.Title>
         </Modal.Header>
         <div className="hello">
           <button
@@ -261,7 +258,7 @@ function Sizeadd(props) {
           </div>
         </Modal.Footer>
       </form>
-    </div>
+    </>
   );
-}
+};
 export default Sizeadd;
