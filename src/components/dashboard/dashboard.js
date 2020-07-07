@@ -22,12 +22,14 @@ constructor() {
       dash:"profile",
       brandColor: "",
       initstate: false,
+      
     };
   }
   changeEdit() {
     this.setState({ edits: false });
   }
   componentDidMount() {
+  
     const url =
       "https://crevaltobkend.herokuapp.com/brand/users/profile/" +
       localStorage.getItem("compname");
@@ -57,6 +59,7 @@ constructor() {
         // handle your errors here
         console.error(error);
       });
+      
   }
   changestate(e){
     var param=e.target.dataset.param;
