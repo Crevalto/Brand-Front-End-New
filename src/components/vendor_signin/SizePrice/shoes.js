@@ -48,10 +48,10 @@ function Shoes(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
-    props.onsizeaddchange(inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
   const back = (e) => {
-    props.onsizeaddback();
+    props.onchoosesizeaddback();
   };
 
   return (

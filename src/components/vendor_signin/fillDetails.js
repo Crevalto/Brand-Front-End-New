@@ -1929,7 +1929,7 @@ export default class fillDetails extends Component {
               <option value="Banded collar" />
               <option value="Asymmeyric" />
             </datalist>
-            <h6></h6>
+
             <input
               list="chudiarstyle"
               id="chidirstyle"

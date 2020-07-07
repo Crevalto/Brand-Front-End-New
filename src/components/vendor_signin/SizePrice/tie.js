@@ -55,13 +55,13 @@ function Tie(props) {
   };
 
   const back = (e) => {
-    props.onsizeaddback();
+    props.onchoosesizeaddback();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
-    props.onsizeaddchange(inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (

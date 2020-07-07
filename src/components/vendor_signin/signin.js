@@ -8,9 +8,6 @@ import ChooseCategories from "./chooseCategories";
 import FillDetails from "./fillDetails";
 import DropboxAddProduct from "./DropboxAddProduct";
 
-import Sizeadd from "./SizePrice/Sizeadd";
-import Tie from "./SizePrice/tie";
-import Shoes from "./SizePrice/shoes";
 import Choosesizeadd from "./choosesizeadd";
 import MenChooseType from "./ChooseType/MenChooseType";
 import KidsMainCategory from "./KidsMainCategory";
@@ -559,27 +556,11 @@ class signin2 extends Component {
                       />
                     </Modal.Body>
                   ) : this.state.product.size_color_price === "" ? (
-                    this.state.product.product_type === "tie" ||
-                    this.state.product.product_type === "belt" ? (
-                      <div>
-                        jbkbb
-                        <Choosesizeadd name="belt" />
-                      </div>
-                    ) : this.state.product.product_type === "shoes" ? (
-                      <Modal.Body>
-                        <Shoes
-                          onsizeaddchange={this.sizeaddchange}
-                          onsizeaddback={this.sizeaddback}
-                        />
-                      </Modal.Body>
-                    ) : (
-                      <Modal.Body>
-                        <Sizeadd
-                          onsizeaddchange={this.sizeaddchange}
-                          onsizeaddback={this.sizeaddback}
-                        />
-                      </Modal.Body>
-                    )
+                    <Choosesizeadd
+                      onsizeaddchange={this.sizeaddchange}
+                      onsizeaddback={this.sizeaddback}
+                      name={this.state.product.product_type}
+                    />
                   ) : this.state.product.images === "" ? (
                     <Modal.Body>
                       <DropboxAddProduct

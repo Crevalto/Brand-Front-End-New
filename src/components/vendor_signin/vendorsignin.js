@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./vendorsin.css";
 import logo from "../images/no_bg_noname.png";
-import Cookies from "universal-cookie";
 
 class vendor_signin extends Component {
   constructor() {
@@ -22,7 +21,6 @@ class vendor_signin extends Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    const cookies = new Cookies();
     const url = "http://Crevalto-server.herokuapp.com/v1/vendor/login";
     var Data = {
       email: this.state.email,
@@ -44,9 +42,6 @@ class vendor_signin extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log("====================================");
-    console.log("here");
-    console.log("====================================");
     this.props.history.push({
       pathname: "/vendorsignin",
       state: {

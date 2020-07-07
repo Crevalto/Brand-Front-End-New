@@ -43,17 +43,17 @@ function Sizeadd(props) {
     setInputFields(values);
   };
   const back = (e) => {
-    props.onsizeaddback();
+    props.onchoosesizeaddback();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("inputFields", inputFields);
-    props.onsizeaddchange(inputFields);
+    props.onchoosesizeaddchange(inputFields);
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -261,7 +261,7 @@ function Sizeadd(props) {
           </div>
         </Modal.Footer>
       </form>
-    </>
+    </div>
   );
 }
 export default Sizeadd;

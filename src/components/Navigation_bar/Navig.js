@@ -286,28 +286,29 @@ class Navig extends Component {
                   Welcome, {this.state.cmpname}
                 </PopoverHeader>
                 <PopoverBody style={{ lineHeight: "2rem" }}>
-                  <a
-                    style={{ cursor: "pointer" }}
+                  <p
+                    style={{ margin: "0px", cursor: "pointer" }}
                     onClick={this.handleShow}
                     className="popovereff"
                   >
                     Dashboard
-                  </a>
-                  <br />
-                  <a className="popovereff" href="/">
-                    CSR
-                  </a>
-                  <br />
-                  <a className="popovereff" href="/">
-                    Payments
-                  </a>
-                  <br />
-                  <a className="popovereff" href="/">
-                    Your Orders
-                  </a>
-                  <br />
+                  </p>
                   <p
-                    style={{ cursor: "pointer", color: "red" }}
+                    className="popovereff"
+                    style={{ margin: "0px", cursor: "pointer" }}
+                    onClick={this.handleShow}
+                  >
+                    CSR
+                  </p>
+                  <p style={{ margin: "0px" }} className="popovereff">
+                    Payments
+                  </p>
+                  <p style={{ margin: "0px" }} className="popovereff">
+                    Your Orders
+                  </p>
+                  <hr style={{ marginTop: "5px", marginBottom: "2px" }} />
+                  <p
+                    style={{ cursor: "pointer", color: "red", margin: "0px" }}
                     onClick={this.logout}
                   >
                     Logout
