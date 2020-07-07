@@ -20,20 +20,57 @@ class Map extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.gotomap = this.gotomap.bind(this);
     this.state = {
+      locations:[],
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight - 85,
         latitude: 10.790483,
         longitude: 78.704674,
         zoom: 0,
+        
       },
       mapstyle: "mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc",
       place: "",
       locations: [],
     };
   }
-
-  gotomap() {
+componentDidMount(){
+  const url="https://crevaltoserver.herokuapp.com/v1/brand/getlocations"
+fetch(url,{
+  method: "GET",
+  headers:{
+    "Content-Type": "application/json"
+  }
+})
+.then((response)=>response.json())
+.then((jsonData)=>{
+  console.log(jsonData)
+  this.setState({locations:jsonData});
+    
+}
+)
+.then((run)=> {
+ console.log("hello")
+   console.log(this.state.locations)  
+  this.setState({
+    viewport: {
+      ...this.state.viewport,
+      width: window.innerWidth,
+      height: window.innerHeight - 85,
+      latitude: 20.5937,
+      longitude: 78.9629,
+      zoom: 5,
+      transitionDuration: 3000,
+      transitionInterpolator: new FlyToInterpolator(),
+    },
+  });
+  console.log(this.state.locations)
+})
+.catch((error)=>{
+  console.error(error);
+});
+}
+gotomap() {
     console.log("hello");
     this.props.history.push("/mapping");
   }
@@ -123,7 +160,7 @@ class Map extends Component {
                 />
               </OverlayTrigger>
             </Marker>
-          ))}
+           ))}
 
           <div style={{ position: "absolute", right: 20, bottom: 20 }}>
             <NavigationControl onViewportChange={this.onViewportChange} />

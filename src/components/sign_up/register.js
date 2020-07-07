@@ -7,6 +7,7 @@ class Signup extends Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       responses_otp: "",
       responses_status: "",
@@ -58,7 +59,7 @@ class Signup extends Component {
         console.error("Show me error that cannot be specify", error)
       )
       .then((response) => {
-        console.log("Success:", response.status);
+        console.log("Success:", response);
         this.setState({
           responses_otp: response.otp,
           responses_status: response.status,

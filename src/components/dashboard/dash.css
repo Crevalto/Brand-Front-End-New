@@ -1,0 +1,22 @@
+.designs {
+    box-shadow:  0px 5px 10px   #00000040;
+    color: #620b80;
+    border-top: 3px solid #620b80;
+    
+    background-color: whitesmoke;
+    border-radius: 5px;
+    
+ }
+ .designss{
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    
+ }
+ .pad{
+     padding-left: 0.8rem;
+     padding-right: 0.8rem;
+ }
+ .backgrnd{
+     background-color: #e1cfe8;
+ }
