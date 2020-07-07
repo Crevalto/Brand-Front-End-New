@@ -16,26 +16,20 @@ import { Route, Switch } from "react-router-dom";
 import Cart from "./components/cart/cartdis";
 import Merchant from "./components/map_merchant/Mapmerchant";
 import Map from "./components/map/mapgs";
-import Veera from "./components/Veera"
 import Mapping from "./components/Mapping/Mapping";
 import Single from "./components/SingleShare/SingleShare";
 import VendorLogin from "./components/vendor_signin/vendorsignin";
 import VendorSignIn from "./components/vendor_signin/signin";
-import Mesdet from "./components/vendor_signin/mesdet";
 
 //import Profile from "./components/profile/profile";
 import csr from "./components/csr/csr";
 function App() {
-  return (<div>
+  return (
     <div>
-  <Navig/>
-  </div>
+      <div>
+        <Navig />
+      </div>
       <Switch>
-<<<<<<< HEAD
-=======
-            
-        <Route exact path="/row" component={Row} />
->>>>>>> 9b41c31b17df648ffd439b97519d1629fd3f6743
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />
         <Route exact path="/greeting" component={Greeting} />
@@ -54,7 +48,6 @@ function App() {
          */}
         <Route exact path="/vendorlogin" component={VendorLogin} />
         <Route exact path="/vendorsignin" component={VendorSignIn} />
-        <Route exact path="/vera12" component={Mesdet} />
 
         <Route component={Pagenotfound} />
       </Switch>
