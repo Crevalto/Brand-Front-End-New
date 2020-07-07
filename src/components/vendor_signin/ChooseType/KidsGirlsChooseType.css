@@ -1,0 +1,73 @@
+.type-choose-kidgirl {
+  position: relative;
+  height: 550px;
+}
+.choose-type-kidgirl {
+  display: flex;
+}
+
+.choose-type-kidgirl .topsntees {
+  position: absolute;
+  width: 230px;
+  height: 307px;
+  top: 0.2rem;
+  left: 42rem;
+}
+
+.choose-type-kidgirl .miditops {
+  position: absolute;
+  width: 220px;
+  transform: rotate(-12deg);
+  height: 289px;
+  top: 254px;
+  left: 16px;
+}
+
+.choose-type-kidgirl .frock {
+  position: absolute;
+  width: 210px;
+  height: 310px;
+  top: 60px;
+  left: 256px;
+}
+.choose-type-kidgirl .belt {
+  position: absolute;
+  width: 122px;
+  height: 81px;
+  top: 90px;
+  left: 31.5px;
+}
+.choose-type-kidgirl .slippers {
+  position: absolute;
+  width: 129px;
+  height: 141px;
+  top: 367.5px;
+  transform: rotate(5deg);
+  left: 757px;
+}
+.choose-type-kidgirl .chudithar {
+  position: absolute;
+  width: 200px;
+  height: 307px;
+  top: 202.5px;
+  left: 496.5px;
+}
+
+.choose-type-kidgirl .belt:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidgirl .chudithar:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidgirl .slippers:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidgirl .frock:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidgirl .miditops:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidgirl .topsntees:hover {
+  transform: scale(1.1);
+}

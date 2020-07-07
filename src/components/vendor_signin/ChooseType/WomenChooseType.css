@@ -1,0 +1,72 @@
+.type-choose-women {
+  position: relative;
+  height: 550px;
+}
+.choose-type-women {
+  display: flex;
+}
+
+.choose-type-women .topsntees {
+  position: absolute;
+  width: 230px;
+  height: 307px;
+  top: -2.8rem;
+  left: 42rem;
+}
+.choose-type-women .chudithar {
+  position: absolute;
+  width: 201px;
+  height: 370px;
+  top: 155px;
+  transform: rotate(-7deg);
+  left: 272px;
+}
+.choose-type-women .pants {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 37px;
+  left: 469px;
+}
+.choose-type-women .sarees {
+  position: absolute;
+  width: 280px;
+  height: 315px;
+  top: 0px;
+  left: 0px;
+}
+.choose-type-women .slipper {
+  position: absolute;
+  width: 139px;
+  height: 196px;
+  top: 341.5px;
+  transform: rotate(5deg);
+  left: 48px;
+}
+.choose-type-women .tshirt {
+  position: absolute;
+  width: 235px;
+  height: 222px;
+  top: 305.5px;
+  transform: rotate(13deg);
+  left: 702.5px;
+}
+
+.choose-type-women .slipper:hover {
+  transform: scale(1.1);
+}
+.choose-type-women .tshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-women .sarees:hover {
+  transform: scale(1.1);
+}
+.choose-type-women .chudithar:hover {
+  transform: scale(1.1);
+}
+.choose-type-women .topsntees:hover {
+  transform: scale(1.1);
+}
+.choose-type-women .pants:hover {
+  transform: scale(1.1);
+}

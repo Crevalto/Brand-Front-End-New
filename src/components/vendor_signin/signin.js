@@ -4,18 +4,25 @@ import { Jumbotron, Card, Form, Col, Row, Modal } from "react-bootstrap";
 import "./signin.css";
 import { MdAddShoppingCart, MdAddAPhoto } from "react-icons/md";
 import { TiUserAdd } from "react-icons/ti";
-import "./ChooseType.css";
 import ChooseCategories from "./chooseCategories";
-import ChooseType from "./ChooseType";
 import FillDetails from "./fillDetails";
-import ImageDrop from "./row";
+import DropboxAddProduct from "./DropboxAddProduct";
+
 import Sizeadd from "./SizePrice/Sizeadd";
 import Tie from "./SizePrice/tie";
 import Shoes from "./SizePrice/shoes";
 
+import MenChooseType from "./ChooseType/MenChooseType";
+import KidsMainCategory from "./KidsMainCategory";
+import KidsBoysChooseType from "./ChooseType/KidsBoysChooseType";
+import KidsGirlsChooseType from "./ChooseType/KidsGirlsChooseType";
+import KidsBabyChooseType from "./ChooseType/KidsBabyChooseType";
+import WomenChooseType from "./ChooseType/WomenChooseType";
+
 class signin2 extends Component {
   constructor() {
     super();
+    this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.handleClosexl = this.handleClosexl.bind(this);
@@ -32,6 +39,14 @@ class signin2 extends Component {
     this.state = {
       showxl: false,
       show: false,
+      Branch: "",
+      phone: "",
+      address1: "",
+      address2: "",
+      country: "",
+      city: "",
+      state: "",
+      zip: "",
       profile: "",
       cover: "",
       product: {
@@ -167,6 +182,10 @@ class signin2 extends Component {
       }
     );
   }
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   imageaddback() {
     this.setState({
@@ -315,42 +334,90 @@ class signin2 extends Component {
                 <Card.Body>
                   <Form.Group controlId="formGroupBranchName">
                     <Form.Label>Branch Name</Form.Label>
-                    <Form.Control type="text" placeholder="Branch" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="Branch"
+                      type="text"
+                      required
+                      placeholder="Branch"
+                    />
                   </Form.Group>
 
                   <Form.Group controlId="formGroupPhone">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="phone" placeholder="123-456-789" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="phone"
+                      type="phone"
+                      required
+                      placeholder="123-456-789"
+                    />
                   </Form.Group>
 
                   <Form.Group controlId="formGridAddress1">
                     <Form.Label>Address</Form.Label>
-                    <Form.Control placeholder="1234 Main St" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="address1"
+                      required
+                      type="text"
+                      placeholder="1234 Main St"
+                    />
                   </Form.Group>
 
                   <Form.Group controlId="formGridAddress2">
                     <Form.Label>Address 2</Form.Label>
-                    <Form.Control placeholder="Apartment, studio, or floor" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="address2"
+                      required
+                      type="text"
+                      placeholder="Apartment, studio, or floor"
+                    />
                   </Form.Group>
 
                   <Form.Group controlId="formGroupCountry">
                     <Form.Label>Country</Form.Label>
-                    <Form.Control type="text" placeholder="India" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="country"
+                      type="text"
+                      required
+                      placeholder="India"
+                    />
                   </Form.Group>
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridCity">
                       <Form.Label>City</Form.Label>
-                      <Form.Control type="text" placeholder="Trichy" />
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="city"
+                        required
+                        type="text"
+                        placeholder="Trichy"
+                      />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
                       <Form.Label>State</Form.Label>
-                      <Form.Control type="text" placeholder="Tamil Nadu" />
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="state"
+                        type="text"
+                        required
+                        placeholder="Tamil Nadu"
+                      />
                     </Form.Group>
                   </Form.Row>
                   <Form.Group controlId="formGridZip">
                     <Form.Label>Zip</Form.Label>
-                    <Form.Control type="number" placeholder="620012" />
+                    <Form.Control
+                      onChange={this.handleChange}
+                      name="zip"
+                      required
+                      type="number"
+                      placeholder="620012"
+                    />
                   </Form.Group>
                 </Card.Body>
               </Card>
@@ -382,7 +449,11 @@ class signin2 extends Component {
                             <Card.Body style={{ padding: "0.75rem" }}>
                               <img
                                 style={{ width: "100%", height: "100%" }}
-                                src={pro.images[0].preview}
+                                src={
+                                  pro.images[0]
+                                    ? pro.images[0].preview
+                                    : require("../images/default.jpg")
+                                }
                                 alt="preview"
                               />
                             </Card.Body>
@@ -409,14 +480,67 @@ class signin2 extends Component {
                         changeCategory={this.onchangeCategory}
                       />
                     </Modal.Body>
-                  ) : this.state.product.product_type === "" ? (
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Men" ? (
                     <Modal.Body
                       style={{ margin: "10px", backgroundColor: "#dedede" }}
                     >
                       <h6 onClick={this.handleClosexl} className="modalclosing">
                         X
                       </h6>
-                      <ChooseType onchangeType={this.onchangeType} />
+                      <MenChooseType onchangeType={this.onchangeType} />
+                    </Modal.Body>
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Kids" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "white" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <KidsMainCategory
+                        changeCategory={this.onchangeCategory}
+                      />
+                    </Modal.Body>
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Boys" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "#dedede" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <KidsBoysChooseType onchangeType={this.onchangeType} />
+                    </Modal.Body>
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Girls" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "#dedede" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <KidsGirlsChooseType onchangeType={this.onchangeType} />
+                    </Modal.Body>
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Babies" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "#dedede" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <KidsBabyChooseType onchangeType={this.onchangeType} />
+                    </Modal.Body>
+                  ) : this.state.product.product_type === "" &&
+                    this.state.product.product_category === "Women" ? (
+                    <Modal.Body
+                      style={{ margin: "10px", backgroundColor: "#dedede" }}
+                    >
+                      <h6 onClick={this.handleClosexl} className="modalclosing">
+                        X
+                      </h6>
+                      <WomenChooseType onchangeType={this.onchangeType} />
                     </Modal.Body>
                   ) : this.state.product.product_details === "" ? (
                     <Modal.Body>
@@ -455,7 +579,7 @@ class signin2 extends Component {
                     )
                   ) : this.state.product.images === "" ? (
                     <Modal.Body>
-                      <ImageDrop
+                      <DropboxAddProduct
                         imageaddchange={this.imageaddchange}
                         imageaddback={this.imageaddback}
                       />

@@ -1,0 +1,84 @@
+.type-choose-baby {
+  position: relative;
+  height: 550px;
+}
+.choose-type-baby {
+  display: flex;
+}
+
+.choose-type-baby .BabyGift {
+  position: absolute;
+  width: 271px;
+  height: 211px;
+  top: 22.5px;
+  left: 315.5px;
+}
+
+.choose-type-baby .BabySuit {
+  position: absolute;
+  width: 228px;
+  height: 281px;
+  top: 36px;
+  left: 11px;
+}
+.choose-type-baby .FrockKids {
+  position: absolute;
+  width: 262px;
+  height: 300px;
+  top: 244px;
+  left: 456px;
+}
+.choose-type-baby .shoes {
+  position: absolute;
+  width: 128px;
+  height: 109px;
+  top: 379px;
+  left: 28.5px;
+}
+.choose-type-baby .pants {
+  position: absolute;
+  width: 230px;
+  height: 305px;
+  top: -29px;
+  transform: rotate(-3deg);
+  left: 649px;
+}
+.choose-type-baby .tshirt {
+  position: absolute;
+  width: 231px;
+  height: 237px;
+  transform: rotate(-11deg);
+  top: 303.5px;
+  left: 212.5px;
+}
+
+.choose-type-baby .trouser {
+  position: absolute;
+  width: 200px;
+  height: 195px;
+  top: 339px;
+  left: 748.5px;
+}
+
+.choose-type-baby .BabyGift:hover {
+  transform: scale(1.1);
+}
+.choose-type-baby .BabySuit:hover {
+  transform: scale(1.1);
+}
+.choose-type-baby .FrockKids:hover {
+  transform: scale(1.1);
+}
+.choose-type-baby .shoes:hover {
+  transform: scale(1.1);
+}
+
+.choose-type-baby .pants:hover {
+  transform: scale(1.1);
+}
+.choose-type-baby .tshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-baby .trouser:hover {
+  transform: scale(1.1);
+}

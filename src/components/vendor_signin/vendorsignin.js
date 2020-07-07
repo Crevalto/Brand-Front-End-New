@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import "./vendorsin.css";
 import logo from "../images/no_bg_noname.png";
+import suc from "./successreg";
 class vendor_signin extends Component {
   constructor() {
     super();
     this.toggle = this.toggle.bind(this);
   }
-
+  state = {
+    visible: false,
+  };
   toggle() {
     document.querySelector(".cont").classList.toggle("s--signup");
   }
@@ -15,6 +18,20 @@ class vendor_signin extends Component {
     return (
       <div className="reg_body">
         <div class="paddertop">
+          {this.state.visible ? (
+            <div>
+              {" "}
+              <suc></suc>
+            </div>
+          ) : //     <div class="alert alert-success" role="alert">
+          //   <h4 class="alert-heading">Thank you ! for Registering in Creavlto</h4>
+          //   <p>Your request is in progress! </p>
+          //   <p>
+          //     your details are validating and we will be sending an email within 24
+          //     hours regards registration successful
+          //   </p>
+          // </div>
+          null}
           <div class="cont">
             <div class="form sign-in">
               <img src={logo} alt="logo" width="100px" height="100px" />
@@ -54,7 +71,6 @@ class vendor_signin extends Component {
               <div class="signup">
                 <img src={logo} alt="logo" width="100px" height="100px" />
                 <h2>Let's built your Shop,</h2>
-
                 <label>
                   <span>Name</span>
                   <input type="text" />
@@ -71,7 +87,14 @@ class vendor_signin extends Component {
                   <span>Password</span>
                   <input type="password" />
                 </label>
-                <button type="button" class="submit">
+
+                <button
+                  type="button"
+                  class="submit"
+                  onClick={() => {
+                    this.setState({ visible: true });
+                  }}
+                >
                   Get Started
                 </button>
               </div>

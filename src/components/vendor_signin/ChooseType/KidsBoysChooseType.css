@@ -1,0 +1,84 @@
+.type-choose-kidboy {
+  position: relative;
+  height: 550px;
+}
+.choose-type-kidboy {
+  display: flex;
+}
+
+.choose-type-kidboy .Boys-Coat {
+  position: absolute;
+  width: 230px;
+  height: 307px;
+  top: 0.2rem;
+  left: 42rem;
+}
+
+.choose-type-kidboy .dotheees {
+  position: absolute;
+  width: 220px;
+  height: 289px;
+  top: 254px;
+  left: 16px;
+}
+
+.choose-type-kidboy .kidshirt {
+  position: absolute;
+  width: 182px;
+  height: 216px;
+  top: 47px;
+  left: 278px;
+}
+.choose-type-kidboy .kidsshoes {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 70px;
+  left: 16.5px;
+}
+.choose-type-kidboy .track {
+  position: absolute;
+  width: 169px;
+  height: 183px;
+  top: 351.5px;
+  transform: rotate(5deg);
+  left: 757px;
+}
+.choose-type-kidboy .pants {
+  position: absolute;
+  width: 160px;
+  height: 267px;
+  top: 174.5px;
+  left: 508.5px;
+}
+
+.choose-type-kidboy .tshirt {
+  position: absolute;
+  width: 200px;
+  height: 233px;
+  top: 303px;
+  transform: rotate(-15deg);
+  left: 277.5px;
+}
+
+.choose-type-kidboy .pants:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .tshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .Boys-Coat:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .kidshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .track:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .dotheees:hover {
+  transform: scale(1.1);
+}
+.choose-type-kidboy .kidsshoes:hover {
+  transform: scale(1.1);
+}

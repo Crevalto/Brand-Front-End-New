@@ -25,13 +25,11 @@ import Mesdet from "./components/vendor_signin/mesdet";
 
 //import Profile from "./components/profile/profile";
 import csr from "./components/csr/csr";
-import Row from "./components/vendor_signin/row";
 function App() {
   return (
     <div>
       <Navig />
       <Switch>
-        <Route exact path="/row" component={Row} />
         <Route exact path="/" component={Landing} />
         <Route exact path="/single" component={Single} />
         <Route exact path="/greeting" component={Greeting} />

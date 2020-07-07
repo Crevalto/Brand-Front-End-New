@@ -1,0 +1,104 @@
+.type-choose-men {
+  position: relative;
+  height: 550px;
+}
+.choose-type-men {
+  display: flex;
+}
+
+.choose-type-men .pants {
+  position: absolute;
+  width: 160px;
+  height: 307px;
+  top: 196.5px;
+  left: 0.5px;
+}
+
+.choose-type-men .tshirt {
+  position: absolute;
+  width: 220px;
+  height: 281px;
+  top: 66px;
+  left: 136px;
+}
+.choose-type-men .belt {
+  position: absolute;
+  width: 126px;
+  height: 70px;
+  top: 98px;
+  left: 8px;
+}
+.choose-type-men .shirt {
+  position: absolute;
+  width: 200px;
+  height: 365px;
+  top: 98px;
+  left: 326.5px;
+}
+.choose-type-men .track {
+  position: absolute;
+  width: 230px;
+  height: 305px;
+  top: 1.5px;
+  transform: rotate(5deg);
+  left: 545px;
+}
+.choose-type-men .tie {
+  position: absolute;
+  width: 164px;
+  height: 156px;
+  top: 376.5px;
+  left: 193.5px;
+}
+
+.choose-type-men .shoes {
+  position: absolute;
+  width: 200px;
+  height: 195px;
+  top: 376px;
+  left: 506.5px;
+}
+.choose-type-men .coat {
+  position: absolute;
+  width: 241px;
+  height: 326px;
+  top: 229.5px;
+  left: 714.5px;
+}
+
+.choose-type-men .bow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 25.5px;
+  left: 766.5px;
+  transform: rotate(20deg);
+}
+
+.choose-type-men .pants:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .tshirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .belt:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .shirt:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .track:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .tie:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .shoes:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .coat:hover {
+  transform: scale(1.1);
+}
+.choose-type-men .bow:hover {
+  transform: scale(1.1);
+}

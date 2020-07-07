@@ -32,7 +32,9 @@ export default class chooseCategories extends Component {
           </Col>
           <Col md={4} className="categoryKids">
             <img
+              onClick={this.onChooseCategory}
               src={require("../images/kids.jpg")}
+              data-param="Kids"
               alt="Kids"
               width="100%"
               height="450"
@@ -41,9 +43,11 @@ export default class chooseCategories extends Component {
           </Col>
           <Col md={4} className="categoryWomen">
             <img
+              onClick={this.onChooseCategory}
               src={require("../images/women.jpg")}
               alt="Women"
               width="100%"
+              data-param="Women"
               height="450"
             />
             <div class="overlay">Women</div>
