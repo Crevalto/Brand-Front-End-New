@@ -24,7 +24,6 @@ export default class choosesizeadd extends Component {
               onchoosesizeaddchange={this.onsizeaddchangetemp}
               onchoosesizeaddback={this.onsizeaddbacktemp}
             />
-            sdfghjgffghj
           </div>
         ) : (
           <div></div>
