@@ -85,7 +85,7 @@ class Map extends Component {
             height: window.innerHeight - 85,
             latitude: 11.002,
             longitude: 76.95937,
-            zoom: 7,
+            zoom: 4,
             transitionDuration: 3000,
             transitionInterpolator: new FlyToInterpolator(),
           },
