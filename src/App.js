@@ -44,8 +44,6 @@ function App() {
         <Route path="/products/:slug" component={Products} />
         <Route path="/dashboard/:slug" component={Dashboard} />
         <Route exact path="/csr" component={csr} />
-        {/*        <Route exact path="/profile" component={Profile} />
-         */}
         <Route exact path="/vendorlogin" component={VendorLogin} />
         <Route exact path="/vendorsignin" component={VendorSignIn} />
 
