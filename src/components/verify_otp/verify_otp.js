@@ -31,11 +31,13 @@ class Home extends Component {
     const val = this.state.otp.split("_");
     if (
       this.state.val1 + this.state.val2 + this.state.val3 + this.state.val4 ===
-      val[0]
+      window.atob(val[0])
     ) {
-      const url = "https://crevaltobkend.herokuapp.com/brand/users/verify";
+      const url =
+        "http://crevaltoserver.herokuapp.com/v1/brand/users/verifysecure";
       var data = {
-        emailAddress: val[1],
+        userId: val[1],
+        otpCode: window.atob(val[0]),
       };
 
       console.log(val[1]);
@@ -58,7 +60,7 @@ class Home extends Component {
           }
         });
     } else {
-      alert("vicky");
+      alert("Invalid OTP");
     }
   }
 

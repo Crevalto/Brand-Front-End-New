@@ -28,7 +28,7 @@ class login extends Component {
     cookies.set("password", this.state.password[0]);
     console.log(cookies.get("email"));
     this.props.history.push("/");
-    const url = "http://crevaltobkend.herokuapp.com/brand/users/login";
+    const url = "http://crevaltoserver.herokuapp.com/v1/brand/users/login";
     var data = {
       emailAddress: this.state.email[0],
       accountPassword: this.state.password[0],
@@ -43,7 +43,13 @@ class login extends Component {
       .catch((error) =>
         console.error("Show me error that cannot be specify", error)
       )
-      .then((response) => console.log("Success:", response));
+      .then((response) => {
+        console.log("Success:", response);
+
+        localStorage.setItem("loggedin", true);
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("compname", response.name);
+      });
   }
 
   render() {

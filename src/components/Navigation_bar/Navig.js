@@ -43,7 +43,7 @@ class Navig extends Component {
   handleclick(e) {
     e.preventDefault();
     document.getElementById("button_disable").disabled = true;
-    const url = "http://crevaltobkend.herokuapp.com/brand/users/login";
+    const url = "http://crevaltoserver.herokuapp.com/v1/brand/users/login";
     var data = {
       emailAddress: this.state.email[0],
       accountPassword: this.state.password[0],
@@ -178,7 +178,7 @@ class Navig extends Component {
                   </svg>
                 )}
               </Nav.Link>
-              <Nav.Link href="/cart">
+              <Nav.Link href="/map">
                 <svg
                   class="bi bi-geo-alt"
                   width="1.5em"

@@ -41,6 +41,7 @@ class signin2 extends Component {
     this.sizeaddchange = this.sizeaddchange.bind(this);
     this.imageaddchange = this.imageaddchange.bind(this);
     this.imageaddback = this.imageaddback.bind(this);
+    this.getregistered = this.getregistered.bind(this);
     this.state = {
       showxl: false,
       show: false,
@@ -213,384 +214,381 @@ class signin2 extends Component {
     this.setState({ r1details: this.props.location.state.Regdetails });
   }
 
+  getregistered() {}
+
   render() {
-    const thumbsContainer_cover = {
-      display: "flex",
-      border: "3px solid white",
-      width: "100%",
-      borderRadius: "10px",
-      height: "400px",
-      flexDirection: "row",
-      flexWrap: "wrap",
-    };
-
-    const thumbsContainer_profile = {
-      top: " 385px",
-      left: "41%",
-      position: "absolute",
-      display: "flex",
-      border: "3px solid  white",
-      width: "250px",
-      height: "250px",
-      background: "violet",
-      borderRadius: "100%",
-      flexDirection: "row",
-      flexWrap: "wrap",
-    };
-
-    const thumb_cover = {
-      display: "inline-flex",
-      borderRadius: 2,
-      marginBottom: 8,
-      marginRight: 8,
-      width: "100%",
-      height: "100% ",
-      padding: 4,
-      boxSizing: "border-box",
-      justifyContent: "center",
-    };
-
-    const thumb_profile = {
-      display: "inline-flex",
-      borderRadius: " 100%",
-      width: "100%",
-      height: "100%",
-      padding: 4,
-      boxSizing: "border-box",
-      justifyContent: "center",
-    };
-
-    const img_cover = {
-      display: "block",
-      width: "auto",
-      height: "100%",
-    };
-
-    const img_profile = {
-      display: "block",
-      width: "100%",
-      borderRadius: "100%",
-      height: "100%",
-    };
     console.log(this.state);
 
     return (
       <div className="backgroundSign">
-        <div className="sign">
-          <Jumbotron className="cover">
-            <DropBox
-              imgname="cover"
-              improveState={this.improveState}
-              thumb={thumb_cover}
-              thumbsContainer={thumbsContainer_cover}
-              img={img_cover}
-              message={
-                <h2
+        <Form onSubmit={this.getregistered}>
+          <Row>
+            <Col style={{ padding: "0px" }} md={1}></Col>
+            <Col style={{ padding: "0px" }} md={10}>
+              <div className="sign">
+                <Jumbotron className="cover">
+                  <DropBox
+                    imgname="cover"
+                    improveState={this.improveState}
+                    thumb="thumb_cover"
+                    thumbsContainer="thumbsContainer_cover"
+                    img="img_cover"
+                    message={
+                      <h2
+                        style={{
+                          color: "white",
+                          width: "100%",
+                          textAlign: "center",
+                          alignSelf: "center",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <MdAddAPhoto />
+                        <br />
+                        Add Cover Photo
+                      </h2>
+                    }
+                  />
+                </Jumbotron>
+
+                <DropBox
+                  imgname="profile"
+                  improveState={this.improveState}
+                  thumb="thumb_profile"
+                  thumbsContainer="thumbsContainer_profile"
+                  img="img_profile"
+                  message={
+                    <h4
+                      style={{
+                        color: "white",
+                        width: "100%",
+                        textAlign: "center",
+                        alignSelf: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <TiUserAdd size={30} />
+                      <br />
+                      Add Profile Photo
+                    </h4>
+                  }
+                />
+                <div className="details">
+                  <h2>
+                    <b>
+                      Welcome{" "}
+                      {this.state.r1details !== ""
+                        ? this.state.r1details.Name
+                        : "Hero"}
+                      !
+                    </b>
+                  </h2>
+                  <h5 style={{ color: "blue", padding: "5px" }}>
+                    {this.state.r1details !== ""
+                      ? this.state.r1details.Email
+                      : "someone@some.com"}
+                  </h5>
+                </div>
+              </div>
+            </Col>
+            <Col style={{ padding: "0px" }} md={1}></Col>
+          </Row>
+
+          <Row>
+            <Col style={{ padding: "0px" }} sm={1}></Col>
+            <Col style={{ padding: "0px" }} sm={3}>
+              <div className="detailsCard">
+                <Card
                   style={{
-                    color: "white",
-                    width: "100%",
-                    textAlign: "center",
-                    alignSelf: "center",
-                    cursor: "pointer",
+                    border: "0px",
+                    borderRadius: "10px",
                   }}
                 >
-                  <MdAddAPhoto />
-                  <br />
-                  Add Cover Photo
-                </h2>
-              }
-            />
-          </Jumbotron>
-          <DropBox
-            imgname="profile"
-            improveState={this.improveState}
-            thumb={thumb_profile}
-            thumbsContainer={thumbsContainer_profile}
-            img={img_profile}
-            message={
-              <h4
-                style={{
-                  color: "white",
-                  width: "100%",
-                  textAlign: "center",
-                  alignSelf: "center",
-                  cursor: "pointer",
-                }}
-              >
-                <TiUserAdd size={30} />
-                <br />
-                Add Profile Photo
-              </h4>
-            }
-          />
-          <div className="details">
-            <h2>
-              <b>Welcome Google!</b>
-            </h2>
-            <h5 style={{ color: "blue", padding: "5px" }}>someone@some.com</h5>
-          </div>
-        </div>
-
-        <Row>
-          <Col md={4}>
-            <div className="detailsCard">
-              <Card
-                style={{
-                  width: "25rem",
-                  border: "0px",
-                  borderRadius: "10px",
-                }}
-              >
-                <Card.Body>
-                  <Form.Group controlId="formGroupBranchName">
-                    <Form.Label>Branch Name</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="Branch"
-                      type="text"
-                      required
-                      placeholder="Branch"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGroupPhone">
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="phone"
-                      type="phone"
-                      required
-                      placeholder="123-456-789"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGridAddress1">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="address1"
-                      required
-                      type="text"
-                      placeholder="1234 Main St"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGridAddress2">
-                    <Form.Label>Address 2</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="address2"
-                      required
-                      type="text"
-                      placeholder="Apartment, studio, or floor"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGroupCountry">
-                    <Form.Label>Country</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="country"
-                      type="text"
-                      required
-                      placeholder="India"
-                    />
-                  </Form.Group>
-                  <Form.Row>
-                    <Form.Group as={Col} controlId="formGridCity">
-                      <Form.Label>City</Form.Label>
-                      <Form.Control
-                        onChange={this.handleChange}
-                        name="city"
-                        required
-                        type="text"
-                        placeholder="Trichy"
-                      />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridState">
-                      <Form.Label>State</Form.Label>
-                      <Form.Control
-                        onChange={this.handleChange}
-                        name="state"
-                        type="text"
-                        required
-                        placeholder="Tamil Nadu"
-                      />
-                    </Form.Group>
-                  </Form.Row>
-                  <Form.Group controlId="formGridZip">
-                    <Form.Label>Zip</Form.Label>
-                    <Form.Control
-                      onChange={this.handleChange}
-                      name="zip"
-                      required
-                      type="number"
-                      placeholder="620012"
-                    />
-                  </Form.Group>
-                </Card.Body>
-              </Card>
-            </div>
-          </Col>
-          <Col md={8}>
-            <Card className="addproductcard">
-              <Card.Body>
-                <b>NEW ADD PRODUCT</b>
-                <Card className="AddingProducts" onClick={this.handleShowxl}>
                   <Card.Body>
-                    <MdAddShoppingCart size="40" color="violet" />
-                    <br />
-                    Click & Add Product
+                    <Form.Group controlId="formGroupBranchName">
+                      <Form.Label>Branch Name</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="Branch"
+                        type="text"
+                        required
+                        placeholder="Branch"
+                      />
+                    </Form.Group>
+
+                    <Form.Group controlId="formGroupPhone">
+                      <Form.Label>Phone Number</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="phone"
+                        type="phone"
+                        required
+                        placeholder="123-456-789"
+                      />
+                    </Form.Group>
+
+                    <Form.Group controlId="formGridAddress1">
+                      <Form.Label>Address</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="address1"
+                        required
+                        type="text"
+                        placeholder="1234 Main St"
+                      />
+                    </Form.Group>
+
+                    <Form.Group controlId="formGridAddress2">
+                      <Form.Label>Address 2</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="address2"
+                        required
+                        type="text"
+                        placeholder="Apartment, studio, or floor"
+                      />
+                    </Form.Group>
+
+                    <Form.Group controlId="formGroupCountry">
+                      <Form.Label>Country</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="country"
+                        type="text"
+                        required
+                        placeholder="India"
+                      />
+                    </Form.Group>
+                    <Form.Row>
+                      <Form.Group as={Col} controlId="formGridCity">
+                        <Form.Label>City</Form.Label>
+                        <Form.Control
+                          onChange={this.handleChange}
+                          name="city"
+                          required
+                          type="text"
+                          placeholder="Trichy"
+                        />
+                      </Form.Group>
+
+                      <Form.Group as={Col} controlId="formGridState">
+                        <Form.Label>State</Form.Label>
+                        <Form.Control
+                          onChange={this.handleChange}
+                          name="state"
+                          type="text"
+                          required
+                          placeholder="Tamil Nadu"
+                        />
+                      </Form.Group>
+                    </Form.Row>
+                    <Form.Group controlId="formGridZip">
+                      <Form.Label>Zip</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="zip"
+                        required
+                        type="number"
+                        placeholder="620012"
+                      />
+                    </Form.Group>
                   </Card.Body>
                 </Card>
-                <Row style={{ margin: "5px" }}>
-                  {this.state.productBundle.map((pro, index) => {
-                    return (
-                      <div>
-                        <Col md={2}>
-                          <Card
-                            style={{
-                              width: "16rem",
-                              height: "400px",
-                              marginTop: "10px",
-                            }}
-                          >
-                            <Card.Body style={{ padding: "0.75rem" }}>
-                              <img
-                                style={{ width: "100%", height: "100%" }}
-                                src={
-                                  pro.images[0]
-                                    ? pro.images[0].preview
-                                    : require("../images/default.jpg")
-                                }
-                                alt="preview"
-                              />
-                            </Card.Body>
-                          </Card>
-                        </Col>
-                      </div>
-                    );
-                  })}
-                </Row>
-                <Modal
-                  backdrop="static"
-                  size="lg"
-                  show={this.state.showxl}
-                  onHide={this.handleClosexl}
-                >
-                  {this.state.product.product_category === "" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "white" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <ChooseCategories
-                        changeCategory={this.onchangeCategory}
+              </div>
+            </Col>
+
+            <Col sm={7} style={{ padding: "0px" }}>
+              <Card className="addproductcard">
+                <Card.Body>
+                  <b>NEW ADD PRODUCT</b>
+                  <Card className="AddingProducts" onClick={this.handleShowxl}>
+                    <Card.Body>
+                      <MdAddShoppingCart size="40" color="violet" />
+                      <br />
+                      Click & Add Product
+                    </Card.Body>
+                  </Card>
+                  <Row style={{ margin: "5px" }}>
+                    {this.state.productBundle.map((pro, index) => {
+                      return (
+                        <div>
+                          <Col md={2}>
+                            <Card
+                              style={{
+                                width: "15rem",
+                                height: "380px",
+                                marginTop: "10px",
+                              }}
+                            >
+                              <Card.Body style={{ padding: "0.75rem" }}>
+                                <img
+                                  style={{ width: "100%", height: "100%" }}
+                                  src={
+                                    pro.images[0]
+                                      ? pro.images[0].preview
+                                      : require("../images/default.jpg")
+                                  }
+                                  alt="preview"
+                                />
+                              </Card.Body>
+                            </Card>
+                          </Col>
+                        </div>
+                      );
+                    })}
+                  </Row>
+                  <Modal
+                    backdrop="static"
+                    size="lg"
+                    show={this.state.showxl}
+                    onHide={this.handleClosexl}
+                  >
+                    {this.state.product.product_category === "" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "white" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <ChooseCategories
+                          changeCategory={this.onchangeCategory}
+                        />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Men" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "#dedede" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <MenChooseType onchangeType={this.onchangeType} />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Kids" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "white" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <KidsMainCategory
+                          changeCategory={this.onchangeCategory}
+                        />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Boys" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "#dedede" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <KidsBoysChooseType onchangeType={this.onchangeType} />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Girls" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "#dedede" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <KidsGirlsChooseType onchangeType={this.onchangeType} />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Babies" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "#dedede" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <KidsBabyChooseType onchangeType={this.onchangeType} />
+                      </Modal.Body>
+                    ) : this.state.product.product_type === "" &&
+                      this.state.product.product_category === "Women" ? (
+                      <Modal.Body
+                        style={{ margin: "10px", backgroundColor: "#dedede" }}
+                      >
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <WomenChooseType onchangeType={this.onchangeType} />
+                      </Modal.Body>
+                    ) : this.state.product.product_details === "" ? (
+                      <Modal.Body>
+                        <h6
+                          onClick={this.handleClosexl}
+                          className="modalclosing"
+                        >
+                          X
+                        </h6>
+                        <FillDetails
+                          onPreviousfilldetails={this.onPreviousdetails}
+                          onchangefilldetails={this.onchangedetails}
+                          categtype={this.state.product.product_type}
+                        />
+                      </Modal.Body>
+                    ) : this.state.product.size_color_price === "" ? (
+                      <Choosesizeadd
+                        onsizeaddchange={this.sizeaddchange}
+                        onsizeaddback={this.sizeaddback}
+                        name={this.state.product.product_type}
                       />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Men" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "#dedede" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <MenChooseType onchangeType={this.onchangeType} />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Kids" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "white" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <KidsMainCategory
-                        changeCategory={this.onchangeCategory}
-                      />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Boys" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "#dedede" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <KidsBoysChooseType onchangeType={this.onchangeType} />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Girls" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "#dedede" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <KidsGirlsChooseType onchangeType={this.onchangeType} />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Babies" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "#dedede" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <KidsBabyChooseType onchangeType={this.onchangeType} />
-                    </Modal.Body>
-                  ) : this.state.product.product_type === "" &&
-                    this.state.product.product_category === "Women" ? (
-                    <Modal.Body
-                      style={{ margin: "10px", backgroundColor: "#dedede" }}
-                    >
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <WomenChooseType onchangeType={this.onchangeType} />
-                    </Modal.Body>
-                  ) : this.state.product.product_details === "" ? (
-                    <Modal.Body>
-                      <h6 onClick={this.handleClosexl} className="modalclosing">
-                        X
-                      </h6>
-                      <FillDetails
-                        onPreviousfilldetails={this.onPreviousdetails}
-                        onchangefilldetails={this.onchangedetails}
-                        categtype={this.state.product.product_type}
-                      />
-                    </Modal.Body>
-                  ) : this.state.product.size_color_price === "" ? (
-                    <Choosesizeadd
-                      onsizeaddchange={this.sizeaddchange}
-                      onsizeaddback={this.sizeaddback}
-                      name={this.state.product.product_type}
-                    />
-                  ) : this.state.product.images === "" ? (
-                    <Modal.Body>
-                      <DropboxAddProduct
-                        imageaddchange={this.imageaddchange}
-                        imageaddback={this.imageaddback}
-                      />
-                    </Modal.Body>
-                  ) : (
-                    <Modal.Header closeButton>
-                      "Product Added Successfully"
-                    </Modal.Header>
-                  )}
-                </Modal>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-        <Card>
-          <Card.Body>
-            <Button>hello</Button>
-          </Card.Body>
-        </Card>
+                    ) : this.state.product.images === "" ? (
+                      <Modal.Body>
+                        <DropboxAddProduct
+                          imageaddchange={this.imageaddchange}
+                          imageaddback={this.imageaddback}
+                        />
+                      </Modal.Body>
+                    ) : (
+                      <Modal.Header closeButton>
+                        "Product Added Successfully"
+                      </Modal.Header>
+                    )}
+                  </Modal>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col style={{ padding: "0px" }} sm={1}></Col>
+          </Row>
+          <Row>
+            <Col style={{ padding: "0px" }} md={4}></Col>
+            <Col style={{ padding: "0px" }} md={7}>
+              <Card className="submitcard">
+                <Card.Body>
+                  <Button style={{ width: "200px" }} type="submit">
+                    Submit
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col style={{ padding: "0px" }} md={1}></Col>
+          </Row>
+        </Form>
       </div>
     );
   }

@@ -10,8 +10,6 @@
 
 .sign {
   background-color: white;
-  margin-left: 80px;
-  margin-right: 80px;
   margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -33,16 +31,63 @@
 }
 
 .detailsCard {
-  margin-left: 80px;
+  width: "100%";
   margin-top: 40px;
 }
 
 .addproductcard {
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-left: 20px;
   border: 0px;
+  min-height: 634px;
   border-radius: 11px;
-  margin-right: 80px;
+}
+
+@media (max-width: 992px) {
+  .addproductcard {
+    margin-top: 40px;
+    margin-left: 20px;
+    border: 0px;
+    min-height: 634px;
+    border-radius: 11px;
+  }
+}
+
+@media (max-width: 450px) {
+  .addproductcard {
+    margin-top: 40px;
+    margin-left: 0px;
+    border: 0px;
+    min-height: 100%;
+    border-radius: 11px;
+  }
+}
+
+.submitcard {
+  margin-top: 30px;
+  border: 0px;
+  margin-left: 20px;
+  text-align: end;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .submitcard {
+    margin-top: 30px;
+    margin-left: 20px;
+
+    border: 0px;
+    text-align: end;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 450px) {
+  .submitcard {
+    margin-top: 50px;
+    border: 0px;
+    text-align: center;
+    border-radius: 8px;
+  }
 }
 
 .categoryMen {
@@ -88,6 +133,99 @@
   .modal-lg {
     min-height: 550px;
     max-width: 1000px;
+  }
+}
+
+/*dropbox*/
+
+.thumb_cover {
+  display: inline-flex;
+  border-radius: 2;
+  margin-bottom: 8;
+  margin-right: 8;
+  width: 100%;
+  height: 100%;
+  padding: 4;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.thumb_profile {
+  display: inline-flex;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 4;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.img_cover {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.img_profile {
+  display: block;
+  width: 100%;
+  border-radius: 100%;
+  height: 100%;
+}
+
+.thumbsContainer_profile {
+  top: 310px;
+  left: 40%;
+  position: absolute;
+  display: flex;
+  border: 3px solid white;
+  width: 250px;
+  height: 250px;
+  background: violet;
+  border-radius: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.thumbsContainer_cover {
+  display: flex;
+  border: 3px solid white;
+  width: 100%;
+  border-radius: 10px;
+  height: 400px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .thumbsContainer_profile {
+    top: 310px;
+    left: 31%;
+    position: absolute;
+    display: flex;
+    border: 3px solid white;
+    width: 38%;
+    height: 250px;
+    background: violet;
+    border-radius: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 450px) {
+  .thumbsContainer_profile {
+    top: 310px;
+    left: 25%;
+    position: absolute;
+    display: flex;
+    border: 3px solid white;
+    width: 50%;
+    height: 200px;
+    background: violet;
+    border-radius: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 

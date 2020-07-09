@@ -35,7 +35,6 @@ function App() {
         <Route exact path="/greeting" component={Greeting} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/mapping" component={Mapping} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/map" component={Map} />
@@ -43,6 +42,8 @@ function App() {
         <Route path="/verify/:slug" component={Verify} />
         <Route path="/products/:slug" component={Products} />
         <Route path="/dashboard/:slug" component={Dashboard} />
+        <Route exact path="/mapping/:slug" component={Mapping} />
+
         <Route exact path="/csr" component={csr} />
         <Route exact path="/vendorlogin" component={VendorLogin} />
         <Route exact path="/vendorsignin" component={VendorSignIn} />

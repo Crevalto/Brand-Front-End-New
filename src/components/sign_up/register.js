@@ -11,10 +11,12 @@ class Signup extends Component {
     this.state = {
       responses_otp: "",
       responses_status: "",
+      response_id: "",
       OrganisationName: "",
       Cinnumber: "",
       Address: "",
       email: "",
+      phone: "",
       accountPassword: "",
       Password: "",
       Color: "",
@@ -31,24 +33,24 @@ class Signup extends Component {
     console.log("Email" + this.state.email);
     console.log("Account Password" + this.state.accountPassword);
     console.log("Password" + this.state.Password);
-    const url = "http://crevaltobkend.herokuapp.com/brand/users/register";
+    const url = "http://crevaltoserver.herokuapp.com/v1/brand/users/register";
     var data = {
       brandName: this.state.OrganisationName,
       accountPassword: this.state.Password,
       brandAddress: this.state.Address,
       identificationDetail: {
-        regNo: "12345",
+        regNo: "45123111",
         cinNo: this.state.Cinnumber,
       },
       emailAddress: this.state.email,
-      phoneNo: 9455445548,
+      phoneNo: this.state.phone,
       brandAssets: {
         brandLogoSrc: "logo",
         brandColor: this.state.Color,
         brandSoundTrack: "piano",
       },
     };
-    console.log(data);
+    console.log(JSON.stringify(data));
     fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
@@ -62,14 +64,20 @@ class Signup extends Component {
         console.log("Success:", response);
         this.setState({
           responses_otp: response.otp,
+          response_id: response.userId,
           responses_status: response.status,
         });
+        localStorage.setItem("userId", response.userId);
       })
       .then((run) => {
         console.log(this.state.responses_otp);
         if (this.state.responses_status === true) {
           this.props.history.push(
-            `/verify/${this.state.responses_otp + "_" + this.state.email}`
+            `/verify/${
+              window.btoa(this.state.responses_otp) +
+              "_" +
+              this.state.response_id
+            }`
           );
         } else {
           alert("Something Went Wrong");
@@ -145,6 +153,18 @@ class Signup extends Component {
                             placeholder="Organisation E-mail"
                             onChange={this.handleChange}
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="number"
+                            name="phone"
+                            class="form-control"
+                            id="phone"
+                            placeholder="Phonenumber"
+                            onChange={this.handleChange}
+                            pattern="[0-9]+"
                             required
                           />
                         </div>

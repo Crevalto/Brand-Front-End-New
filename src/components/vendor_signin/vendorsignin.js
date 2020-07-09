@@ -67,28 +67,32 @@ class vendor_signin extends Component {
             <div class="form sign-in">
               <img src={logo} alt="logo" width="100px" height="100px" />
               <h2>Welcome back,</h2>
-              <label>
-                <span>Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  onChange={this.handleChange}
-                  value={this.state.email}
-                />
-              </label>
-              <label>
-                <span>Password</span>
-                <input
-                  type="password"
-                  name="password"
-                  onChange={this.handleChange}
-                  value={this.state.password}
-                />
-              </label>
-              <p class="forgot-pass">Forgot password?</p>
-              <button type="button" class="submit" onClick={this.handleSubmit}>
-                Sign In
-              </button>
+              <form onSubmit={this.handleSubmit}>
+                <label>
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    onChange={this.handleChange}
+                    value={this.state.email}
+                  />
+                </label>
+                <label>
+                  <span>Password</span>
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    onChange={this.handleChange}
+                    value={this.state.password}
+                  />
+                </label>
+                <p class="forgot-pass">Forgot password?</p>
+                <button type="submit" class="submit">
+                  Sign In
+                </button>
+              </form>
             </div>
             <div class="sub-cont">
               <div class="img">
@@ -112,45 +116,51 @@ class vendor_signin extends Component {
               <div class="signup">
                 <img src={logo} alt="logo" width="100px" height="100px" />
                 <h2>Let's built your Shop,</h2>
-                <label>
-                  <span>Name</span>
-                  <input
-                    type="text"
-                    name="Name"
-                    onChange={this.handleChange}
-                    value={this.state.Name}
-                  />
-                </label>
-                <label>
-                  <span>Email</span>
-                  <input
-                    type="email"
-                    name="Email"
-                    onChange={this.handleChange}
-                    value={this.state.Email}
-                  />
-                </label>
-                <label>
-                  <span>GST Number</span>
-                  <input
-                    type="text"
-                    name="gstno"
-                    onChange={this.handleChange}
-                    value={this.state.gstno}
-                  />
-                </label>
-                <label>
-                  <span>Password</span>
-                  <input
-                    type="password"
-                    name="npassword"
-                    onChange={this.handleChange}
-                    value={this.state.npassword}
-                  />
-                </label>
-                <button type="button" class="submit" onClick={this.handleClick}>
-                  Get Started
-                </button>
+                <form onSubmit={this.handleClick}>
+                  <label>
+                    <span>Name</span>
+                    <input
+                      type="text"
+                      name="Name"
+                      onChange={this.handleChange}
+                      value={this.state.Name}
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Email</span>
+                    <input
+                      type="email"
+                      name="Email"
+                      onChange={this.handleChange}
+                      value={this.state.Email}
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>GST Number</span>
+                    <input
+                      type="text"
+                      name="gstno"
+                      onChange={this.handleChange}
+                      value={this.state.gstno}
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Password</span>
+                    <input
+                      type="password"
+                      name="npassword"
+                      onChange={this.handleChange}
+                      value={this.state.npassword}
+                      required
+                    />
+                  </label>
+                  <button type="submit" class="submit">
+                    Get Started
+                  </button>
+                </form>
               </div>
             </div>
           </div>

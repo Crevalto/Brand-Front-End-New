@@ -37,9 +37,9 @@ function Dropbox(props) {
   });
 
   const thumbs = files.map((file) => (
-    <div style={props.thumb} key={file.name}>
+    <div class={props.thumb} key={file.name}>
       <div style={thumbInner}>
-        <img src={file.preview} style={props.img} alt="" />
+        <img src={file.preview} class={props.img} alt="" />
       </div>
     </div>
   ));
@@ -58,8 +58,8 @@ function Dropbox(props) {
   );
 
   return (
-    <section>
-      <div onClick={handleShow} style={props.thumbsContainer}>
+    <section style={{ width: "100%", height: "100%" }}>
+      <div onClick={handleShow} class={props.thumbsContainer}>
         {thumbs}
         {message}
       </div>

@@ -6,16 +6,12 @@ import ReactMapGL, {
 } from "react-map-gl";
 import { MdLocationOn } from "react-icons/md";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import img1 from "../images/normalview.png";
-import img2 from "../images/satiliteview.png";
-import img3 from "../images/darkmap.png";
 import { withRouter } from "react-router-dom";
 class Map extends Component {
   constructor() {
     super();
     this.onViewportChange = this.onViewportChange.bind(this);
     this.changemap = this.changemap.bind(this);
-    this.renderTooltip = this.renderTooltip.bind(this);
     this.changelocation = this.changelocation.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.gotomap = this.gotomap.bind(this);
@@ -28,6 +24,8 @@ class Map extends Component {
         longitude: 78.704674,
         zoom: 0,
       },
+      name: "",
+      id: "",
       mapstyle: "mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc",
       place: "",
     };
@@ -35,34 +33,13 @@ class Map extends Component {
 
   gotomap() {
     console.log("hello");
-
-    this.props.history.push("/mapping");
+    console.log(this.state.name);
+    this.props.history.push(
+      `/mapping/${this.state.name + "_" + this.state.id}`
+    );
   }
 
   componentDidMount() {
-    // this.setState({
-    //   viewport: {
-    //     ...this.state.viewport,
-    //     width: window.innerWidth,
-    //     height: window.innerHeight - 85,
-    //     latitude: 10.790483,
-    //     longitude: 78.704674,
-    //     zoom: 12,
-    //     transitionDuration: 5000,
-    //     transitionInterpolator: new FlyToInterpolator(),
-    //   },
-    // });
-
-    // fetch("https://crevaltoserver.herokuapp.com/v1/brand/getlocations")
-    //   .then((response) => response.json())
-    //   .then((jsonData) => {
-    //     this.setState({ locations: jsonData });
-    //     console.log(this.state.locations[0].addressCoordinates);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
-
     const url = "https://crevaltoserver.herokuapp.com/v1/brand/getlocations";
     fetch(url, {
       method: "GET",
@@ -83,8 +60,8 @@ class Map extends Component {
             ...this.state.viewport,
             width: window.innerWidth,
             height: window.innerHeight - 85,
-            latitude: 11.002,
-            longitude: 76.95937,
+            latitude: 23.593394,
+            longitude: 77.588464,
             zoom: 4,
             transitionDuration: 3000,
             transitionInterpolator: new FlyToInterpolator(),
@@ -97,8 +74,18 @@ class Map extends Component {
       });
   }
 
+  // componentDidUpdate() {
+  //   this.setState({
+  //     viewport: {
+  //       ...this.state.viewport,
+  //       width: window.innerWidth,
+  //       height: window.innerHeight - 85,
+  //     },
+  //   });
+  // }
+
   handleChange(e) {
-    this.setState({ [e.target.name]: [e.target.value] });
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   onViewportChange = (viewport) => {
@@ -111,24 +98,40 @@ class Map extends Component {
     this.setState({ mapstyle: param });
   }
 
-  renderTooltip() {
-    return <Tooltip id="button-tooltip">Simple tooltip</Tooltip>;
-  }
-
   changelocation() {
-    console.log(this.state.place);
-    const viewport = {
-      ...this.state.viewport,
-      longitude: -74.1,
-      latitude: 40.7,
-      zoom: 14,
-      transitionDuration: 5000,
-      transitionInterpolator: new FlyToInterpolator(),
-    };
-    this.setState({ viewport: viewport });
+    var flag = 0;
+    for (var i = 0; i < this.state.locations.length; i++) {
+      if (
+        this.state.place.toUpperCase() ===
+        this.state.locations[i].companyName.toUpperCase()
+      ) {
+        const viewport = {
+          ...this.state.viewport,
+          longitude: parseFloat(
+            this.state.locations[i].addressCoordinates.longitude
+          ),
+          latitude: parseFloat(
+            this.state.locations[i].addressCoordinates.latitude
+          ),
+          zoom: 14,
+          transitionDuration: 5000,
+          transitionInterpolator: new FlyToInterpolator(),
+        };
+
+        this.setState({ viewport: viewport });
+        flag = 1;
+        break;
+      }
+    }
+    if (flag === 0) {
+      alert(`${this.state.place.toUpperCase()} is not FOUND`);
+    }
+    this.setState({ place: "" });
   }
 
   render() {
+    console.log(this.state);
+
     console.log(this.state.locations);
     return (
       <div className="paddertop" style={{ overflow: "hidden" }}>
@@ -136,7 +139,7 @@ class Map extends Component {
           attributionControl={true}
           customAttribution={true}
           {...this.state.viewport}
-          mapboxApiAccessToken="pk.eyJ1Ijoidmlja3ktMjAwMCIsImEiOiJja2E2Y3k0cnIwNzFrMnltdWZwaWczd3hwIn0.218X0nbylfqIwrddVsYPWA"
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
           mapStyle={this.state.mapstyle}
           onViewportChange={this.onViewportChange}
         >
@@ -150,7 +153,18 @@ class Map extends Component {
                 placement="top"
                 overlay={<Tooltip id="tooltip-top">{loc.companyName}</Tooltip>}
               >
-                <MdLocationOn size="40" onClick={this.gotomap} color="purple" />
+                <MdLocationOn
+                  size="40"
+                  onClick={() => {
+                    this.setState(
+                      { name: loc.companyName, id: loc._id },
+                      () => {
+                        this.gotomap();
+                      }
+                    );
+                  }}
+                  color="purple"
+                />
               </OverlayTrigger>
             </Marker>
           ))}
@@ -165,7 +179,7 @@ class Map extends Component {
           overlay={<Tooltip id="tooltip-right">Normal Map</Tooltip>}
         >
           <img
-            src={img1}
+            src={require("../images/normalview.png")}
             alt="view"
             style={{
               position: "absolute",
@@ -187,7 +201,7 @@ class Map extends Component {
           overlay={<Tooltip id="tooltip-right">Satilite Map</Tooltip>}
         >
           <img
-            src={img2}
+            src={require("../images/satiliteview.png")}
             alt="view"
             style={{
               position: "absolute",
@@ -209,7 +223,7 @@ class Map extends Component {
           overlay={<Tooltip id="tooltip-right">Dark Map</Tooltip>}
         >
           <img
-            src={img3}
+            src={require("../images/darkmap.png")}
             alt="view"
             style={{
               position: "absolute",
@@ -224,20 +238,27 @@ class Map extends Component {
             data-param="mapbox://styles/vicky-2000/cka6gjuej0jl11irp3c6ps7fl"
             onClick={this.changemap}
           />
-        </OverlayTrigger>{" "}
+        </OverlayTrigger>
         <input
-          style={{ position: "absolute", left: 20, top: 255 }}
+          style={{
+            position: "absolute",
+            width: "250px",
+            left: 20,
+            top: 265,
+          }}
           type="text"
           name="place"
+          placeholder="Merchant Name"
+          class="form-control"
           onChange={this.handleChange}
           value={this.state.place}
         ></input>
         <button
-          style={{ position: "absolute", left: 20, top: 285 }}
+          class="btn btn-primary"
+          style={{ position: "absolute", left: 20, top: 310 }}
           onClick={this.changelocation}
         >
-          {" "}
-          clickme
+          Search
         </button>
       </div>
     );

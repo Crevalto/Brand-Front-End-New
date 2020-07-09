@@ -23,6 +23,7 @@
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-app-env": "^1.2.3",
     "react-bootstrap": "^1.0.1",
     "react-chartjs-2": "^2.9.0",
     "react-cookie": "^4.0.3",
