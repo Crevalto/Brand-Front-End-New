@@ -6,13 +6,14 @@ class vendor_signin extends Component {
   constructor() {
     super();
     this.toggle = this.toggle.bind(this);
+    this.togglingcard = this.togglingcard.bind(this);
     this.state = {
       email: "",
       Email: "",
       password: "",
       npassword: "",
+      togglingcard: false,
       name: "",
-      gstno: "",
       token: "",
     };
   }
@@ -48,7 +49,6 @@ class vendor_signin extends Component {
         Regdetails: {
           Name: this.state.Name,
           Email: this.state.Email,
-          GSTNO: this.state.gstno,
           Password: this.state.npassword,
         },
       },
@@ -57,6 +57,11 @@ class vendor_signin extends Component {
 
   toggle() {
     document.querySelector(".cont").classList.toggle("s--signup");
+  }
+
+  togglingcard() {
+    this.setState({ togglingcard: !this.state.togglingcard });
+    //document.querySelector(".cont-1").getEle
   }
 
   render() {
@@ -138,16 +143,6 @@ class vendor_signin extends Component {
                     />
                   </label>
                   <label>
-                    <span>GST Number</span>
-                    <input
-                      type="text"
-                      name="gstno"
-                      onChange={this.handleChange}
-                      value={this.state.gstno}
-                      required
-                    />
-                  </label>
-                  <label>
                     <span>Password</span>
                     <input
                       type="password"
@@ -163,6 +158,113 @@ class vendor_signin extends Component {
                 </form>
               </div>
             </div>
+          </div>
+
+          {/*responsive*/}
+
+          <div class="cont-com">
+            {this.state.togglingcard === false ? (
+              <div class="cont-1">
+                <div class="form-1 sign-in">
+                  <img src={logo} alt="logo" width="100px" height="100px" />
+                  <h2>Welcome back,</h2>
+                  <form onSubmit={this.handleSubmit}>
+                    <label>
+                      <span>Email</span>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        onChange={this.handleChange}
+                        value={this.state.email}
+                      />
+                    </label>
+                    <label>
+                      <span>Password</span>
+                      <input
+                        type="password"
+                        name="password"
+                        required
+                        onChange={this.handleChange}
+                        value={this.state.password}
+                      />
+                    </label>
+                    <p class="forgot-pass">Forgot password?</p>
+                    <button type="submit" class="submitsignin">
+                      Sign In
+                    </button>
+                  </form>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "purple",
+                      marginBottom: "5px",
+                    }}
+                    onClick={this.togglingcard}
+                  >
+                    New here?
+                  </p>
+                  <p style={{ fontSize: "12px" }} onClick={this.togglingcard}>
+                    Sign up to light your workers life!
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div class="cont-2">
+                <div class="form-2">
+                  <img src={logo} alt="logo" width="100px" height="100px" />
+                  <h2>Let's built your Shop,</h2>
+                  <form onSubmit={this.handleClick}>
+                    <label>
+                      <span>Name</span>
+                      <input
+                        type="text"
+                        name="Name"
+                        onChange={this.handleChange}
+                        value={this.state.Name}
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Email</span>
+                      <input
+                        type="email"
+                        name="Email"
+                        onChange={this.handleChange}
+                        value={this.state.Email}
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Password</span>
+                      <input
+                        type="password"
+                        name="npassword"
+                        onChange={this.handleChange}
+                        value={this.state.npassword}
+                        required
+                      />
+                    </label>
+                    <button type="submit" class="submit">
+                      Get Started
+                    </button>
+                  </form>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "purple",
+                      marginBottom: "5px",
+                    }}
+                    onClick={this.togglingcard}
+                  >
+                    One of us?
+                  </p>
+                  <p style={{ fontSize: "12px" }} onClick={this.togglingcard}>
+                    If you already has an account, just sign in.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

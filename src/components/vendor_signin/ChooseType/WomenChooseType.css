@@ -70,3 +70,58 @@
 .choose-type-women .pants:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 450px) {
+  .type-choose-women {
+    position: relative;
+    height: 1500px;
+  }
+
+  .choose-type-women .topsntees {
+    position: absolute;
+    width: 230px;
+    height: 307px;
+    transform: rotate(20deg);
+    top: 74.2rem;
+    left: 7rem;
+  }
+  .choose-type-women .chudithar {
+    position: absolute;
+    width: 201px;
+    height: 370px;
+    top: 309px;
+    transform: rotate(1deg);
+    left: 132px;
+  }
+  .choose-type-women .pants {
+    position: absolute;
+    width: 200px;
+    transform: rotate(-12deg);
+    height: 300px;
+    top: 655px;
+    left: 4rem;
+  }
+  .choose-type-women .sarees {
+    position: absolute;
+    width: 280px;
+    height: 315px;
+    top: 14px;
+    left: 0px;
+  }
+  .choose-type-women .slipper {
+    position: absolute;
+    width: 124px;
+    height: 182px;
+    top: 413.5px;
+    transform: rotate(5deg);
+    left: -7px;
+  }
+  .choose-type-women .tshirt {
+    position: absolute;
+    width: 235px;
+    height: 222px;
+    top: 960.5px;
+    transform: rotate(3deg);
+    left: -4.5px;
+  }
+}

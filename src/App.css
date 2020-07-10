@@ -10,3 +10,13 @@
 .all_nav {
   margin-top: 2rem;
 }
+
+.paddertop {
+  padding-top: 85px;
+}
+
+@media (max-width: 450px) {
+  .paddertop {
+    padding-top: 178px;
+  }
+}

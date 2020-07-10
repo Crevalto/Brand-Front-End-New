@@ -45,7 +45,7 @@ function App() {
         <Route exact path="/mapping/:slug" component={Mapping} />
 
         <Route exact path="/csr" component={csr} />
-        <Route exact path="/vendorlogin" component={VendorLogin} />
+        <Route exact path="/vendor" component={VendorLogin} />
         <Route exact path="/vendorsignin" component={VendorSignIn} />
 
         <Route component={Pagenotfound} />

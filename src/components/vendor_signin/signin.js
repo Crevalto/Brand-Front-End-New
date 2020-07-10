@@ -48,6 +48,7 @@ class signin2 extends Component {
       r1details: "",
       Branch: "",
       phone: "",
+      gstnumber: "",
       address1: "",
       address2: "",
       country: "",
@@ -327,6 +328,17 @@ class signin2 extends Component {
                       />
                     </Form.Group>
 
+                    <Form.Group controlId="formGroupPhone">
+                      <Form.Label>GST Number</Form.Label>
+                      <Form.Control
+                        onChange={this.handleChange}
+                        name="gstnumber"
+                        type="number"
+                        required
+                        placeholder="GST"
+                      />
+                    </Form.Group>
+
                     <Form.Group controlId="formGridAddress1">
                       <Form.Label>Address</Form.Label>
                       <Form.Control
@@ -413,13 +425,7 @@ class signin2 extends Component {
                       return (
                         <div>
                           <Col md={2}>
-                            <Card
-                              style={{
-                                width: "15rem",
-                                height: "380px",
-                                marginTop: "10px",
-                              }}
-                            >
+                            <Card class="preview-products">
                               <Card.Body style={{ padding: "0.75rem" }}>
                                 <img
                                   style={{ width: "100%", height: "100%" }}

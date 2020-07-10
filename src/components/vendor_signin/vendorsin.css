@@ -6,13 +6,16 @@
   padding: 0;
 }
 .reg_body {
+  overflow: hidden;
   padding-bottom: 50px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  height: 120vh;
   text-align: center;
   background: linear-gradient(#00000094, #00000094), url("../images/backk.jpg");
 
   background-attachment: fixed;
 }
+
 .reg_body input,
 .reg_body button {
   border: none;
@@ -25,6 +28,7 @@
   margin: 40px auto 50px;
   text-align: center;
 }
+
 .reg_body .cont {
   box-shadow: 10px 10px 5px #39373eb0;
   overflow: hidden;
@@ -34,12 +38,62 @@
   margin: 50px auto 50px;
   background: #fff;
 }
+
 .reg_body .form {
   position: relative;
   width: 640px;
   height: 100%;
+  margin: 0px;
   transition: transform 1.2s ease-in-out;
   padding: 50px 30px 0;
+}
+
+.reg_body .cont-1 {
+  box-shadow: 10px 10px 5px #39373eb0;
+  position: relative;
+  height: 540px;
+  text-align: center;
+  width: 350px;
+  margin: 50px auto 50px;
+  background: #fff;
+}
+
+.reg_body .cont-2 {
+  box-shadow: 10px 10px 5px #39373eb0;
+  position: relative;
+  height: 590px;
+  text-align: center;
+  width: 350px;
+  margin: 50px auto 50px;
+  background: #fff;
+}
+
+.reg_body .form-1 {
+  position: relative;
+  width: 350px;
+  height: 420px;
+  transition: transform 1.2s ease-in-out;
+  padding: 50px 30px 20px 30px;
+}
+
+.reg_body .form-2 {
+  position: relative;
+  width: 350px;
+  height: 585px;
+  transition: transform 1.2s ease-in-out;
+  padding: 50px 30px 20px 30px;
+}
+.cont-com {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .reg_body .cont {
+    display: none;
+  }
+  .reg_body .cont-com {
+    display: block;
+  }
 }
 
 .reg_body .signup {
@@ -47,8 +101,9 @@
   width: 640px;
   height: 100%;
   transition: transform 1.2s ease-in-out;
-  padding: 20px 30px 0;
+  padding: 40px 30px 0;
 }
+
 .reg_body input {
   margin-top: 0px !important;
   padding-bottom: 0px !important;
@@ -65,6 +120,7 @@
   background: #fff;
   transition: transform 1.2s ease-in-out;
 }
+
 .reg_body .cont.s--signup .sub-cont {
   transform: translate3d(-640px, 0, 0);
 }
@@ -221,6 +277,39 @@
   background: purple;
   text-transform: uppercase;
 }
+
+.reg_body .submitsignup {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: purple;
+  border: 1px solid pink;
+  color: white;
+  text-transform: uppercase;
+}
+
+.reg_body .submitsignup:hover {
+  background: white;
+  color: purple;
+  border: 1px solid purple;
+  transition: all 0.3s ease-out;
+}
+
+.reg_body .submitsignin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: purple;
+  border: 1px solid pink;
+  color: white;
+  text-transform: uppercase;
+}
+
+.reg_body .submitsignin:hover {
+  background: white;
+  color: purple;
+  border: 1px solid purple;
+  transition: all 0.3s ease-out;
+}
+
 .reg_body .fb-btn {
   border: 2px solid #d3dae9;
   color: #8fa1c7;
