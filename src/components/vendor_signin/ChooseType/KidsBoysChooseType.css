@@ -2,6 +2,7 @@
   position: relative;
   height: 550px;
 }
+
 .choose-type-kidboy {
   display: flex;
 }
@@ -81,4 +82,56 @@
 }
 .choose-type-kidboy .kidsshoes:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 450px) {
+  .type-choose-kidboy {
+    position: relative;
+    height: 1300px;
+  }
+  .choose-type-kidboy .tshirt {
+    position: absolute;
+    width: 200px;
+    height: 233px;
+    top: 2px;
+    transform: rotate(0deg);
+    left: -9.5px;
+  }
+  .choose-type-kidboy .pants {
+    position: absolute;
+    width: 140px;
+    height: 294px;
+    top: 201.5px;
+    transform: rotate(7deg);
+    left: 153.5px;
+  }
+  .choose-type-kidboy .dotheees {
+    position: absolute;
+    width: 220px;
+    height: 289px;
+    top: 1018px;
+    left: -15px;
+  }
+  .choose-type-kidboy .kidshirt {
+    position: absolute;
+    width: 182px;
+    transform: rotate(-12deg);
+    height: 216px;
+    top: 501px;
+    left: 0px;
+  }
+  .choose-type-kidboy .Boys-Coat {
+    position: absolute;
+    width: 230px;
+    height: 307px;
+    top: 45.2rem;
+    left: 5.5rem;
+  }
+  .choose-type-kidboy .kidsshoes {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: 289px;
+    left: -8.5px;
+  }
 }

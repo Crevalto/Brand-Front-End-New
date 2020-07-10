@@ -424,8 +424,8 @@ class signin2 extends Component {
                     {this.state.productBundle.map((pro, index) => {
                       return (
                         <div>
-                          <Col md={2}>
-                            <Card class="preview-products">
+                          <Col md={2} style={{ padding: "10px" }}>
+                            <Card className="preview-products">
                               <Card.Body style={{ padding: "0.75rem" }}>
                                 <img
                                   style={{ width: "100%", height: "100%" }}

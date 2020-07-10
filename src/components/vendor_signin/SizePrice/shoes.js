@@ -1,7 +1,7 @@
 //shoes for all
 
 import React, { useState, Fragment } from "react";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Shoes = (props) => {
@@ -250,21 +250,21 @@ const Shoes = (props) => {
         </div>
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
               // onSubmit={handleSubmit}
             >
               back
-            </button>
-            <button
-              className="btn btn-primary mr-2"
+            </Button>
+            <Button
+              className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>

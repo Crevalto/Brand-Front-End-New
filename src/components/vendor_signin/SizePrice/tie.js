@@ -1,7 +1,6 @@
 // tie,belt for all
-
 import React, { useState, Fragment } from "react";
-import { Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Tie = (props) => {
@@ -121,10 +120,8 @@ const Tie = (props) => {
                 <div className="center">
                   <input
                     type="color"
-                    // className="form-control"
                     id="color"
                     name="color"
-                    // placeholder="Choose Color"
                     style={{ width: "90px" }}
                     value={inputField.color}
                     onChange={(event) => handleInputChange(index, event)}
@@ -263,21 +260,20 @@ const Tie = (props) => {
 
         <Modal.Footer>
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
-              // onSubmit={handleSubmit}
             >
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>

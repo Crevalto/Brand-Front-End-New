@@ -93,6 +93,7 @@ export default class kidsfillDetails extends Component {
           class="form-control"
           list="material"
           name="material"
+          style={{ width: "450px" }}
           onChange={this.handleChange}
           placeholder="Choose or Enter material "
         />
@@ -214,51 +215,6 @@ export default class kidsfillDetails extends Component {
               <option value="short Sleeve" />
               <option value="Sleeveless" />
             </datalist>
-            {/* <label>
-              <input
-                name="sleeve"
-                value="3/4 Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>3/4 Sleeve</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Half Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Half Sleeve</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Long Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Long Sleeve</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Short Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Short Sleeve</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Sleeveless"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Sleeveless</span>
-            </label> */}
           </div>
         ) : this.state.cattype === "shirt" ? (
           // shirt for men and kid boy
@@ -300,24 +256,6 @@ export default class kidsfillDetails extends Component {
               <option value="short Sleeve" />
               <option value="Sleeveless" />
             </datalist>
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Half Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Half Sleeve</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Long Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Long Sleeve</span>
-            </label> */}
           </div>
         ) : this.state.cattype === "track" ? (
           // only for men tracks
@@ -408,64 +346,10 @@ export default class kidsfillDetails extends Component {
               <option value="Ethnic Footwear" />
               <option value="Safety Shoes" />
             </datalist>
-
-            {/* <label>
-              <input
-                name="shoetype"
-                onChange={this.handleChange}
-                type="radio"
-                value=""
-              />
-              <span>Formal shoes</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="shoetype"
-                value="Casual Shoes"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Casual Shoes</span>
-            </label> */}
-            {/* <label>
-              <input
-                name="shoetype"
-                onChange={this.handleChange}
-                type="radio"
-                value="Sport Shoes"
-              />
-              <span>Sport Shoes</span>
-            </label> */}
-            {/* <h6>size</h6>
-            <input
-              type="number"
-              onChange={this.handleChange}
-              name="size"
-              class="form-control"
-              placeholder="Enter in inches"
-            /> */}
           </div>
         ) : this.state.cattype === "belt" ? (
           // belt for all
-          <div>
-            {/* <h6>Length</h6>
-            <input
-              type="number"
-              class="form-control"
-              name="length"
-              onChange={this.handleChange}
-              placeholder="Enter Length in inches"
-            />
-
-            <h6>Width</h6>
-            <input
-              type="number"
-              onChange={this.handleChange}
-              name="width"
-              class="form-control"
-              placeholder="Enter Width in inches"
-            /> */}
-          </div>
+          <div></div>
         ) : this.state.cattype === "pants" ? (
           // pant for men
           <div>
@@ -614,7 +498,6 @@ export default class kidsfillDetails extends Component {
               <option value="short Type" />
             </datalist>
           </div>
-          
         ) : this.state.cattype === "womenshoes" ? (
           // shoes for both girl and women
           <div>

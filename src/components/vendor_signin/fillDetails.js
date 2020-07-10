@@ -91,12 +91,12 @@ export default class fillDetails extends Component {
         <h6>Material</h6>
         <input
           class="form-control"
-          list="material"
+          list="1"
           name="material"
           onChange={this.handleChange}
           placeholder="Choose or Enter material "
         />
-        <datalist id="material">
+        <datalist id="1">
           <option value="Cotton" />
           <option value="Chiffon" />
           <option value="Denim" />
@@ -104,7 +104,6 @@ export default class fillDetails extends Component {
           <option value="Fleece" />
           <option value="Linen" />
           <option value="Rayon" />
-          <option value="Silk" />
           <option value="Georgette" />
           <option value="Leather" />
           <option value="Lyocell" />
@@ -164,13 +163,12 @@ export default class fillDetails extends Component {
             <h6> Choose NeckLine </h6>
             <input
               class="form-control"
-              list="neckline"
+              list="2"
               name="neckline"
               onChange={this.handleChange}
-              style={{ width: "220px" }}
               placeholder="Choose or Enter Neckline"
             />
-            <datalist id="neckline">
+            <datalist id="2">
               <option value="V-neck" />
               <option value=" U-neck" />
               <option value="Round neck" />
@@ -191,64 +189,18 @@ export default class fillDetails extends Component {
             <h6>Sleeve Type </h6>
             <input
               class="form-control"
-              list="sleeve"
+              list="3"
               name="sleeve"
               onChange={this.handleChange}
-              style={{ width: "220px" }}
               placeholder="Choose or Enter Sleeve"
             />
-            <datalist id="sleeve">
+            <datalist id="3">
               <option value="3/4 Sleeve" />
               <option value="Half Sleeve" />
               <option value="Long Sleeve" />
               <option value="short Sleeve" />
               <option value="Sleeveless" />
             </datalist>
-            {/* <label>
-              <input
-                name="sleeve"
-                value="3/4 Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>3/4 Sleeve</span>
-            </label>
-            <label>
-              <input
-                name="sleeve"
-                value="Half Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Half Sleeve</span>
-            </label>
-            <label>
-              <input
-                name="sleeve"
-                value="Long Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Long Sleeve</span>
-            </label>
-            <label>
-              <input
-                name="sleeve"
-                value="Short Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Short Sleeve</span>
-            </label>
-            <label>
-              <input
-                name="sleeve"
-                value="Sleeveless"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Sleeveless</span>
-            </label> */}
           </div>
         ) : this.state.cattype === "Men-shirt" ||
           this.state.cattype === "Boys-shirt" ? (
@@ -276,13 +228,12 @@ export default class fillDetails extends Component {
             <h6>Sleeve Type: </h6>
             <input
               class="form-control"
-              list="sleeve"
+              list="4"
               name="sleeve"
               onChange={this.handleChange}
-              style={{ width: "220px" }}
               placeholder="Choose or Enter Sleeve"
             />
-            <datalist id="sleeve">
+            <datalist id="4">
               <option value="3/4 Sleeve" />
               <option value="Cap Sleeve" />
               <option value="Half Sleeve" />
@@ -290,24 +241,6 @@ export default class fillDetails extends Component {
               <option value="short Sleeve" />
               <option value="Sleeveless" />
             </datalist>
-            {/* <label>
-              <input
-                name="sleeve"
-                value="Half Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Half Sleeve</span>
-            </label>
-            <label>
-              <input
-                name="sleeve"
-                value="Long Sleeve"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Long Sleeve</span>
-            </label> */}
           </div>
         ) : this.state.cattype === "Men-track" ||
           this.state.cattype === "Boys-track" ? (
@@ -315,13 +248,13 @@ export default class fillDetails extends Component {
             <h6>Pant's</h6>
             <input
               class="form-control"
-              list="menboypant"
+              list="5"
               id="mentroucer"
               name="mentroucer"
               onChange={this.handleChange}
               placeholder="Enter or choose Pants"
             />
-            <datalist id="menboypantpant">
+            <datalist id="5">
               <option value="sports" />
               <option value="harem pants" />
               <option value="three-forth" />
@@ -334,12 +267,12 @@ export default class fillDetails extends Component {
             <h6>Pant Pattern</h6>
             <input
               class="form-control"
-              list="pantpattern"
+              list="6"
               name="pantpattern"
               onChange={this.handleChange}
               placeholder="Enter or choose Pant pattern"
             />
-            <datalist id="pantpattern">
+            <datalist id="6">
               <option value="Solid" />
               <option value="Self Design" />
               <option value="Printed" />
@@ -358,12 +291,12 @@ export default class fillDetails extends Component {
             <h6>Pant Type</h6>
             <input
               class="form-control"
-              list="panttype"
+              list="7"
               name="panttype"
               onChange={this.handleChange}
               placeholder="Enter or choose Pant type"
             />
-            <datalist id="panttype">
+            <datalist id="7">
               <option value="Sports Shorts" />
               <option value="Running Shorts" />
               <option value="Regular Shorts" />
@@ -384,37 +317,15 @@ export default class fillDetails extends Component {
               <option value="Formal" />
               <option value="casual" />
             </datalist>
-            {/*<h6>Trocer Type: </h6>
-            <label>
-              <input
-                name="tracktype"
-                value="Formal Trocer"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Formal Trocer</span>
-            </label>
-            <label>
-              <input
-                name="tracktype"
-                value="Casual Trocer"
-                onChange={this.handleChange}
-                type="radio"
-              />
-              <span>Casual Trocer</span>
-            </label>*/}
-
-            <br />
             <h6> Choose Trocer Style:</h6>
             <input
               class="form-control"
-              list="trocerstyle"
+              list="8"
               name="trocerstyle"
               onChange={this.handleChange}
-              style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
-            <datalist id="trocerstyle">
+            <datalist id="8">
               <option value="Boot Cut" />
               <option value="Boyfriend" />
               <option value="Capri" />
@@ -434,13 +345,12 @@ export default class fillDetails extends Component {
             <h6> Choose Closer:</h6>
             <input
               class="form-control"
-              list="closer"
+              list="9"
               onChange={this.handleChange}
               name="closer"
-              style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
-            <datalist id="closer">
+            <datalist id="9">
               <option value="Belt" />
               <option value="Buttoned" />
               <option value="Drawstring" />
@@ -478,13 +388,12 @@ export default class fillDetails extends Component {
             <h6>Shoes Type: </h6>
             <input
               class="form-control"
-              list="shoe"
+              list="10"
               onChange={this.handleChange}
               name="shoestype"
-              style={{ width: "300px" }}
               placeholder="Choose or Enter Shoes Type "
             />
-            <datalist id="shoe">
+            <datalist id="10">
               <option value="Casual Shoes" />
               <option value="Sports & Outdoor Shoes" />
               <option value="Formal Shoes" />
@@ -576,14 +485,13 @@ export default class fillDetails extends Component {
             <br />
             <h6> Choose Pants Style:</h6>
             <input
-              list="trocerstyle"
+              list="11"
               class="form-control"
               name="pantstyle"
               onChange={this.handleChange}
-              style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
-            <datalist id="pantstyle">
+            <datalist id="11">
               <option value="Boot Cut" />
               <option value="Boyfriend" />
               <option value="Capri" />
@@ -603,13 +511,12 @@ export default class fillDetails extends Component {
             <h6> Choose Closer:</h6>
             <input
               class="form-control"
-              list="closer"
+              list="12"
               name="closer"
               onChange={this.handleChange}
-              style={{ width: "300px" }}
               placeholder="Choose or Enter closer Type "
             />
-            <datalist id="closer">
+            <datalist id="12">
               <option value="Belt" />
               <option value="Buttoned" />
               <option value="Drawstring" />
@@ -624,13 +531,12 @@ export default class fillDetails extends Component {
             <h6>Shoes Type</h6>
             <input
               class="form-control"
-              list="womenshoe"
+              list="13"
               onChange={this.handleChange}
               name="shoestype"
-              style={{ width: "300px" }}
               placeholder="Choose or Enter Shoes Type "
             />
-            <datalist id="womenshoe">
+            <datalist id="13">
               <option value="Ballet" />
               <option value="Flats" />
               <option value="Boots" />
@@ -648,12 +554,12 @@ export default class fillDetails extends Component {
             <h6>Shoe Closer</h6>
             <input
               class="form-control"
-              list="shoescloser"
+              list="14"
               name="shoescloser"
               onChange={this.handleChange}
               placeholder="Enter or choose Shoe Closer"
             />
-            <datalist id="sheoscloser">
+            <datalist id="14">
               <option value="Buckle" />
               <option value="Button" />
               <option value="Hook & Loop" />
@@ -668,12 +574,12 @@ export default class fillDetails extends Component {
             <h6>Length</h6>
             <input
               class="form-control"
-              list="skirtlength"
+              list="15"
               name="frocklength"
               onChange={this.handleChange}
               placeholder="Enter or choose length"
             />
-            <datalist id="skirtlength">
+            <datalist id="15">
               <option value="Midi/Below Knee Length" />
               <option value="Maxi/Full Length" />
               <option value="" />
@@ -690,12 +596,12 @@ export default class fillDetails extends Component {
             <h6>Skirt Type</h6>
             <input
               class="form-control"
-              list="skirttype"
+              list="16"
               name="skirttype"
               onChange={this.handleChange}
               placeholder="Enter or choose Skirt Type"
             />
-            <datalist id="skirttype">
+            <datalist id="16">
               <option value="Bubble" />
               <option value="Trumpet" />
               <option value="Divided" />
@@ -719,12 +625,12 @@ export default class fillDetails extends Component {
             <h6>Skirt pattern</h6>
             <input
               class="form-control"
-              list="shirtpattern"
+              list="17"
               name="shirtpattern"
               onChange={this.handleChange}
               placeholder="Enter or choose Skirt Pattern "
             />
-            <datalist id="shirtpattern">
+            <datalist id="17">
               <option value="Argyle" />
               <option value="Woven" />
               <option value=" Striped " />
@@ -749,12 +655,12 @@ export default class fillDetails extends Component {
             <h6>Fit Type</h6>
             <input
               class="form-control"
-              list="skirtfittype"
+              list="18"
               name="skirtfittype"
               onChange={this.handleChange}
               placeholder="Enter or choose Fit Type"
             />
-            <datalist id="skirtfittype">
+            <datalist id="18">
               <option value="Regular" />
               <option value="loose" />
             </datalist>
@@ -765,12 +671,12 @@ export default class fillDetails extends Component {
             <h6>Chudithar Bottoms Style:</h6>
             <input
               class="form-control"
-              list="chuditharbottomsstyle"
+              list="19"
               name="chuditharbottomsstyle"
               onChange={this.handleChange}
               placeholder="Enter or choose Bottom Style"
             />
-            <datalist id="chuditharbottomsstyle">
+            <datalist id="19">
               <option value="Chudidar" />
               <option value="Legging" />
               <option value="Patialas" />
@@ -779,12 +685,12 @@ export default class fillDetails extends Component {
             <h6>Chudithar Sleeve Type</h6>
             <input
               class="form-control"
-              list="Chuditharsleeves"
+              list="20"
               name="Chuditharsleeves"
               onChange={this.handleChange}
               placeholder="Enter or choose Chudithar Sleeve Type"
             />
-            <datalist id="Chuditharsleeves">
+            <datalist id="20">
               <option value="3/4 Sleeve" />
               <option value="Cap Sleeve" />
               <option value="Half Sleeve" />
@@ -795,13 +701,12 @@ export default class fillDetails extends Component {
             <h6> Chudithar Choose NeckLine </h6>
             <input
               class="form-control"
-              list="chuditharneckline"
+              list="21"
               name="chuditharneckline"
               onChange={this.handleChange}
-              style={{ width: "220px" }}
               placeholder="Choose or Enter Neckline"
             />
-            <datalist id="chuditharneckline">
+            <datalist id="21">
               <option value="V-neck" />
               <option value=" U-neck" />
               <option value="Round neck" />
@@ -821,13 +726,13 @@ export default class fillDetails extends Component {
             <h6>Styling</h6>
             <input
               class="form-control"
-              list="chudiarstyle"
+              list="22"
               id="chidirstyle"
               name="chidirstyle"
               onChange={this.handleChange}
               placeholder="Enter or choose Chudir Style"
             />
-            <datalist id="chudiarstyle">
+            <datalist id="22">
               <option value="Applique, Thread Work, Button" />
               <option value="Applique, Thread Work, Lace" />
               <option value="Beads & Stones, Applique " />
@@ -842,12 +747,12 @@ export default class fillDetails extends Component {
             <h6>Sleeve Type</h6>
             <input
               class="form-control"
-              list="kidgirlstopsleeves"
+              list="23"
               name="kidgirlstopsleeves"
               onChange={this.handleChange}
               placeholder="Enter or Choose Sleeve Type"
             />
-            <datalist id="kidgirlstopsleeves">
+            <datalist id="23">
               <option value="3/4 Sleeve" />
               <option value="Cap Sleeve" />
               <option value="Half Sleeve" />
@@ -862,13 +767,13 @@ export default class fillDetails extends Component {
             <h6>Pant's</h6>
             <input
               class="form-control"
-              list="girlpant"
+              list="24"
               id="womengirltroucer"
               name="womengirltroucer"
               onChange={this.handleChange}
               placeholder="Enter or choose Pants"
             />
-            <datalist id="girlpant">
+            <datalist id="24">
               <option value="shorts" />
               <option value="harem pants" />
               <option value="jeggings" />
@@ -883,12 +788,12 @@ export default class fillDetails extends Component {
             <h6>Pant Pattern</h6>
             <input
               class="form-control"
-              list="pantpattern"
+              list="25"
               name="pantpattern"
               onChange={this.handleChange}
               placeholder="Enter or choose Pant pattern"
             />
-            <datalist id="pantpattern">
+            <datalist id="25">
               <option value="Solid" />
               <option value="Self Design" />
               <option value="Printed" />
@@ -907,12 +812,12 @@ export default class fillDetails extends Component {
             <h6>Pant Type</h6>
             <input
               class="form-control"
-              list="panttype"
+              list="26"
               name="panttype"
               onChange={this.handleChange}
               placeholder="Enter or choose Pant type"
             />
-            <datalist id="panttype">
+            <datalist id="26">
               <option value="Sports Shorts" />
               <option value="Running Shorts" />
               <option value="Regular Shorts" />
@@ -940,12 +845,12 @@ export default class fillDetails extends Component {
             <h6>Saree Type</h6>
             <input
               class="form-control"
-              list="sareetype"
+              list="27"
               name="sareetype"
               onChange={this.handleChange}
               placeholder="Enter or choose Saree Type"
             />
-            <datalist id="sareetype">
+            <datalist id="27">
               <option value="Khandua" />
               <option value="Konrad" />
               <option value="Puttapaka" />
@@ -1017,12 +922,12 @@ export default class fillDetails extends Component {
             <h6>Saree Pattern</h6>
             <input
               class="form-control"
-              list="sareepattern"
+              list="28"
               name="sareepattern"
               onChange={this.handleChange}
               placeholder="Enter or choose Saree Pattern"
             />
-            <datalist id="sareepattern">
+            <datalist id="28">
               <option value="Ombre" />
               <option value="Polka Print" />
               <option value="Temple Border" />
@@ -1049,12 +954,12 @@ export default class fillDetails extends Component {
             <h6>Saree Theme</h6>
             <input
               class="form-control"
-              list="sareetheme"
+              list="29"
               name="sareetheme"
               onChange={this.handleChange}
               placeholder="Enter or choose Saree Theme"
             />
-            <datalist id="sareetheme">
+            <datalist id="29">
               <option value="Bold Borders" />
               <option value="Bridal Sarees" />
               <option value="Classic Solids" />
@@ -1198,11 +1103,13 @@ export default class fillDetails extends Component {
             <h6>Pattern</h6>
             <input
               class="form-control"
-              list="coatpattern"
+              list="30"
+              onChange={this.handleChange}
+              placeholder="Enter or Chose Pattern"
               id="coatpattern"
               name="coatpattern"
             />
-            <datalist id="coatpattern">
+            <datalist id="30">
               <option value="Printed" />
               <option value="Polka Print" />
               <option value="Striped" />
@@ -1229,7 +1136,9 @@ export default class fillDetails extends Component {
         )}
         <Modal.Footer className="fill-modal-footer">
           <Button onClick={this.onprevious}>Previous</Button>
-          <Button onClick={this.onsubmit}>Proceed</Button>
+          <Button className="btn btn-success mr-2" onClick={this.onsubmit}>
+            Proceed
+          </Button>
         </Modal.Footer>
       </div>
     );

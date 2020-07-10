@@ -75,10 +75,70 @@
 
 .choose-type-baby .pants:hover {
   transform: scale(1.1);
+  transform: rotate(-40deg);
 }
 .choose-type-baby .tshirt:hover {
   transform: scale(1.1);
 }
 .choose-type-baby .trouser:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 450px) {
+  .type-choose-baby {
+    position: relative;
+    height: 1700px;
+  }
+  .choose-type-baby .BabySuit {
+    position: absolute;
+    width: 228px;
+    height: 281px;
+    top: 36px;
+    left: 11px;
+  }
+  .choose-type-baby .shoes {
+    position: absolute;
+    width: 128px;
+    height: 109px;
+    top: 328px;
+    left: 8.5px;
+  }
+  .choose-type-baby .tshirt {
+    position: absolute;
+    width: 231px;
+    height: 237px;
+    transform: rotate(8deg);
+    top: 439.5px;
+    left: 87.5px;
+  }
+  .choose-type-baby .BabyGift {
+    position: absolute;
+    width: 271px;
+    height: 211px;
+    top: 694.5px;
+    left: 20.5px;
+  }
+  .choose-type-baby .pants {
+    position: absolute;
+    width: 230px;
+    height: 305px;
+    top: 1112px;
+    transform: rotate(-40deg);
+    left: -47px;
+  }
+  .choose-type-baby .trouser {
+    position: absolute;
+    width: 200px;
+    height: 195px;
+    top: 933px;
+    left: 115.5px;
+  }
+  .choose-type-baby .FrockKids {
+    position: absolute;
+    width: 262px;
+    transform: rotate(7deg);
+    height: 300px;
+    top: 1384px;
+    left: 52px;
+  }
 }

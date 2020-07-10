@@ -1,6 +1,6 @@
 //kid pant
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Kidspant = (props) => {
@@ -56,7 +56,7 @@ const Kidspant = (props) => {
     } else if (event.target.name === "inseamlength") {
       values[index].inseamlength = event.target.value;
     } else if (event.target.name === "rise") {
-      values[index].sleeve = event.target.value;
+      values[index].rise = event.target.value;
     } else if (event.target.name === "length") {
       values[index].length = event.target.value;
     } else if (event.target.name === "amt") {
@@ -321,21 +321,21 @@ const Kidspant = (props) => {
 
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
               // onSubmit={handleSubmit}
             >
               back
-            </button>
-            <button
+            </Button>
+            <Button
               className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>

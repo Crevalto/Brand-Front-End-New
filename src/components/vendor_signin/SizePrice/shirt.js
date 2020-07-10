@@ -1,6 +1,6 @@
 //shirt and tshirt for men boy and women
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Shirt = (props) => {
@@ -334,21 +334,21 @@ const Shirt = (props) => {
 
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
               // onSubmit={handleSubmit}
             >
               back
-            </button>
-            <button
+            </Button>
+            <Button
               className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>

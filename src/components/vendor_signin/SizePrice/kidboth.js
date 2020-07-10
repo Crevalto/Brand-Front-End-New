@@ -1,6 +1,6 @@
 //for coat all kid (shirt,pant)
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Kidboth = (props) => {
@@ -405,21 +405,21 @@ const Kidboth = (props) => {
 
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
               // onSubmit={handleSubmit}
             >
               back
-            </button>
-            <button
+            </Button>
+            <Button
               className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>

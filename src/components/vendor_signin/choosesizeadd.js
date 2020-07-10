@@ -16,6 +16,8 @@ import Shirt from "./SizePrice/shirt";
 import Shoes from "./SizePrice/shoes";
 import Sizeadd from "./SizePrice/Sizeadd";
 import Tie from "./SizePrice/tie";
+// import DropboxAddProduct from "./DropboxAddProduct";
+import Both from "./SizePrice/both";
 
 import { Modal } from "react-bootstrap";
 
@@ -63,9 +65,10 @@ export default class choosesizeadd extends Component {
             />
           </div>
         ) : this.props.name === "Men-tie" ||
+          this.props.name === "Men-belt" ||
           this.props.name === "Boys-tie" ||
           this.props.name === "Girls-belt" ||
-          this.props.name === "Boy-belt" ? (
+          this.props.name === "Boys-belt" ? (
           <div>
             <Tie
               onchoosesizeaddchange={this.onsizeaddchangetemp}
@@ -96,6 +99,13 @@ export default class choosesizeadd extends Component {
           this.props.name === "Women-topsntees" ? (
           <div>
             <Sizeadd
+              onchoosesizeaddchange={this.onsizeaddchangetemp}
+              onchoosesizeaddback={this.onsizeaddbacktemp}
+            />
+          </div>
+        ) : this.props.name === "Men-coat" ? (
+          <div>
+            <Both
               onchoosesizeaddchange={this.onsizeaddchangetemp}
               onchoosesizeaddback={this.onsizeaddbacktemp}
             />
@@ -159,7 +169,7 @@ export default class choosesizeadd extends Component {
             />
           </div>
         ) : this.props.name === "Boys-pants" ||
-          this.props.name === "Boys-track " ||
+          this.props.name === "Boys-track" ||
           this.props.name === "Girls-pants" ? (
           <div>
             <Kidspant

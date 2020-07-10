@@ -1,6 +1,6 @@
 //for coat all for men (shirt,pant) and chudidar
 import React, { useState, Fragment } from "react";
-import { Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Babytopbot = (props) => {
@@ -185,20 +185,12 @@ const Babytopbot = (props) => {
                     placeholder="Enter or Choose Size"
                   />
                   <datalist id="bro">
-                    <option value="free" />
-                    <option value="5xs(26)" />
-                    <option value="4xs(28)" />
-                    <option value="3xs(30)" />
-                    <option value="2xs(34)" />
-                    <option value="xs(36)" />
-                    <option value="s(38)" />
-                    <option value="m(40)" />
-                    <option value="l(42)" />
-                    <option value="xl(44)" />
-                    <option value="2xl(46)" />
-                    <option value="3xl(48)" />
-                    <option value="4xl(50)" />
-                    <option value="5xl(52)" />
+                    <option value="0-3 Month " />
+                    <option value="3 - 6 Month" />
+                    <option value="6 - 9 Month" />
+                    <option value="9 - 12 Month" />
+                    <option value="12 - 18 Month" />
+                    <option value="18 -24 Month " />
                   </datalist>
                 </div>
               </div>
@@ -403,21 +395,21 @@ const Babytopbot = (props) => {
 
         <Modal.Footer className="fill-modal-footer">
           <div className="submit-button">
-            <button
+            <Button
               className="btn btn-primary mr-2"
               type="submit"
               onClick={back}
               // onSubmit={handleSubmit}
             >
               back
-            </button>
-            <button
+            </Button>
+            <Button
               className="btn btn-success mr-2"
               type="submit"
               onSubmit={handleSubmit}
             >
               Save
-            </button>
+            </Button>
           </div>
         </Modal.Footer>
       </form>
