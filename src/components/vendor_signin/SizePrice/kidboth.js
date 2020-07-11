@@ -1,6 +1,6 @@
 //for coat all kid (shirt,pant)
 import React, { useState, Fragment } from "react";
-import { Button, Modal, Table, Row, Col } from "react-bootstrap";
+import { Button, Modal, Row, Col } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Kidboth = (props) => {

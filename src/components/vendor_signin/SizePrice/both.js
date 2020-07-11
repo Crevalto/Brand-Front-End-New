@@ -1,6 +1,6 @@
 //for coat all for men (shirt,pant) and chudidar
 import React, { useState, Fragment } from "react";
-import { Button, Modal, Table, Row, Col } from "react-bootstrap";
+import { Button, Modal, Row, Col } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Both = (props) => {
