@@ -1,6 +1,6 @@
 //kid pant
 import React, { useState, Fragment } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Modal, Row, Col } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Babypant = (props) => {
@@ -178,7 +178,89 @@ const Babypant = (props) => {
                 </div>
               </div>
               <div>
-                <Table
+                <Row>
+                  <Col md={3}>
+                    <label
+                      htmlFor="waist"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Waist</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="waist"
+                      name="waist"
+                      placeholder="Enter waist in inches"
+                      value={inputField.waist}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="inseamlength"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Inseamlength</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="inseamlength"
+                      name="inseamlength"
+                      placeholder="Enter inseamlength in inches"
+                      value={inputField.inseamlength}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="rise"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Rise</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="rise"
+                      name="rise"
+                      placeholder="Enter rise in inches"
+                      value={inputField.rise}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="length"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Length</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="length"
+                      name="length"
+                      placeholder="Enter Length in inches"
+                      value={inputField.length}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                </Row>
+                {/* <Table
                   responsive
                   striped
                   bordered
@@ -240,7 +322,7 @@ const Babypant = (props) => {
                       </td>
                     </tr>
                   </tbody>
-                </Table>
+                </Table> */}
               </div>
               <div>
                 <label

@@ -6,7 +6,7 @@ import Babyshirt from "./SizePrice/babyshirts";
 import Babyshoes from "./SizePrice/babyshoes";
 import Babytopbot from "./SizePrice/babytopbot";
 import Dothis from "./SizePrice/dothis";
-import Kidboth from "./SizePrice/shirt";
+import Kidboth from "./SizePrice/kidboth";
 import Kidcom from "./SizePrice/kidcom";
 import Kidspant from "./SizePrice/kidspant";
 import Kidsshirt from "./SizePrice/kidsshirt";
@@ -127,14 +127,14 @@ export default class choosesizeadd extends Component {
           </div>
         ) : this.props.name === "Boys-Coat" ? (
           <div>
-            <Babytopbot
+            <Kidboth
               onchoosesizeaddchange={this.onsizeaddchangetemp}
               onchoosesizeaddback={this.onsizeaddbacktemp}
             />
           </div>
         ) : this.props.name === "Baby-Suit" ? (
           <div>
-            <Babycommon
+            <Babytopbot
               onchoosesizeaddchange={this.onsizeaddchangetemp}
               onchoosesizeaddback={this.onsizeaddbacktemp}
             />
@@ -180,13 +180,6 @@ export default class choosesizeadd extends Component {
         ) : this.props.name === "Boys-Dotheees" ? (
           <div>
             <Dothis
-              onchoosesizeaddchange={this.onsizeaddchangetemp}
-              onchoosesizeaddback={this.onsizeaddbacktemp}
-            />
-          </div>
-        ) : this.props.name === "Boys-Coat" ? (
-          <div>
-            <Kidboth
               onchoosesizeaddchange={this.onsizeaddchangetemp}
               onchoosesizeaddback={this.onsizeaddbacktemp}
             />

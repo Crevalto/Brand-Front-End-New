@@ -1,6 +1,6 @@
 //for coat all for men (shirt,pant) and chudidar
 import React, { useState, Fragment } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Modal, Table, Row, Col } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Babytopbot = (props) => {
@@ -195,127 +195,206 @@ const Babytopbot = (props) => {
                 </div>
               </div>
               <div>
-                <h6>Top</h6>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Sholder</th>
-                      <th>Chest</th>
-                      <th>Sleeve</th>
-                      <th>Neck</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="sholder"
-                          name="sholder"
-                          placeholder="Enter sholder in inches"
-                          value={inputField.sholder}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="chest"
-                          name="chest"
-                          placeholder="Enter Chest in inches"
-                          value={inputField.chest}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="sleeve"
-                          name="sleeve"
-                          placeholder="Enter Sleeve in inches"
-                          value={inputField.sleeve}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="neck"
-                          name="neck"
-                          placeholder="Enter neck in inches"
-                          value={inputField.neck}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="lengthshirt"
-                          name="lengthshirt"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-                <h6>buttom</h6>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Waist</th>
-                      <th>Inseamlength</th>
-                      <th>Rise</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="waist"
-                          name="waist"
-                          placeholder="Enter waist in inches"
-                          value={inputField.waist}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="inseamlength"
-                          name="inseamlength"
-                          placeholder="Enter inseamlength in inches"
-                          value={inputField.inseamlength}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="rise"
-                          name="rise"
-                          placeholder="Enter rise in inches"
-                          value={inputField.rise}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="lengthpant"
-                          name="lengthpant"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
+                <h5
+                  style={{
+                    marginTop: "10px",
+                    marginBottom: "5px",
+                  }}
+                >
+                  Top
+                </h5>
+                <Row>
+                  <Col md={3}>
+                    <label
+                      htmlFor="sholder"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Sholder</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="sholder"
+                      name="sholder"
+                      placeholder="Enter sholder in inches"
+                      value={inputField.sholder}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="chest"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Chest</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="chest"
+                      name="chest"
+                      placeholder="Enter Chest in inches"
+                      value={inputField.chest}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="sleeve"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Sleeve</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="sleeve"
+                      name="sleeve"
+                      placeholder="Enter Sleeve in inches"
+                      value={inputField.sleeve}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="size"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Neck</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="neck"
+                      name="neck"
+                      placeholder="Enter neck in inches"
+                      value={inputField.neck}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={{ span: 6, offset: 3 }}>
+                    <label
+                      htmlFor="lengthshirt"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Length</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="lengthshirt"
+                      name="lengthshirt"
+                      placeholder="Enter Length in inches"
+                      value={inputField.lengthshirt}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                </Row>
+                <h5
+                  style={{
+                    marginTop: "10px",
+                    marginBottom: "5px",
+                  }}
+                >
+                  buttom
+                </h5>
+                <Row>
+                  <Col md={3}>
+                    <label
+                      htmlFor="waist"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Waist</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="waist"
+                      name="waist"
+                      placeholder="Enter waist in inches"
+                      value={inputField.waist}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="inseamlength"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Inseamlength</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="inseamlength"
+                      name="inseamlength"
+                      placeholder="Enter inseamlength in inches"
+                      value={inputField.inseamlength}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="rise"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Rise</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="rise"
+                      name="rise"
+                      placeholder="Enter rise in inches"
+                      value={inputField.rise}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="lengthpant"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Length</h6>
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      id="lengthpant"
+                      name="lengthpant"
+                      placeholder="Enter Length in inches"
+                      value={inputField.lengthpant}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                </Row>
               </div>
               <div>
                 <label
