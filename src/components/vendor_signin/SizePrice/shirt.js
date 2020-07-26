@@ -1,6 +1,6 @@
 //shirt and tshirt for men boy and women
 import React, { useState, Fragment } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Modal, Row, Col } from "react-bootstrap";
 import "./sizeadd.css";
 
 const Shirt = (props) => {
@@ -189,72 +189,110 @@ const Shirt = (props) => {
                   </datalist>
                 </div>
               </div>
-              <div>
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Sholder</th>
-                      <th>Chest</th>
-                      <th>Sleeve</th>
-                      <th>Neck</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          type="number"
-                          id="sholder"
-                          name="sholder"
-                          placeholder="Enter sholder in inches"
-                          value={inputField.sholder}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="chest"
-                          name="chest"
-                          placeholder="Enter Chest in inches"
-                          value={inputField.chest}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="sleeve"
-                          name="sleeve"
-                          placeholder="Enter Sleeve in inches"
-                          value={inputField.sleeve}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="neck"
-                          name="neck"
-                          placeholder="Enter neck in inches"
-                          value={inputField.neck}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                      <td>
-                        <input
-                          type="number"
-                          id="length"
-                          name="length"
-                          placeholder="Enter Length in inches"
-                          value={inputField.length}
-                          onChange={(event) => handleInputChange(index, event)}
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
+              <div className="center">
+                <Row md={4}>
+                  <Col md={3}>
+                    <label
+                      htmlFor="sholder"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Sholder</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      id="sholder"
+                      name="sholder"
+                      placeholder="Enter sholder in inches"
+                      value={inputField.sholder}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="chest"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Chest</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      id="chest"
+                      name="chest"
+                      placeholder="Enter Chest in inches"
+                      value={inputField.chest}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="sleeve"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Sleeve</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      id="sleeve"
+                      name="sleeve"
+                      placeholder="Enter Sleeve in inches"
+                      value={inputField.sleeve}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                  <Col md={3}>
+                    <label
+                      htmlFor="neck"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Neck</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      id="neck"
+                      name="neck"
+                      placeholder="Enter neck in inches"
+                      value={inputField.neck}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+
+                  <Col md={{ span: 6, offset: 3 }}>
+                    <label
+                      htmlFor="length"
+                      style={{
+                        marginTop: "10px",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      <h6>Length</h6>
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      id="length"
+                      name="length"
+                      placeholder="Enter Length in inches"
+                      value={inputField.length}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Col>
+                </Row>
               </div>
               <div>
                 <label
@@ -351,7 +389,7 @@ const Shirt = (props) => {
             </Button>
           </div>
         </Modal.Footer>
-      </form>
+      </form>{" "}
     </>
   );
 };

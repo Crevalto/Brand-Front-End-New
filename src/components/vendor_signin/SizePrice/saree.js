@@ -113,7 +113,6 @@ const Saree = (props) => {
                 <div className="center">
                   <input
                     type="color"
-                    // className="form-control"
                     id="color"
                     name="color"
                     style={{ width: "90px" }}
