@@ -1,0 +1,105 @@
+{
+  "showxl": false,
+  "show": false,
+  "r1details": {
+    "Name": "Ramco",
+    "Email": "ramco@gmail.com",
+    "Password": "goodpassword"
+  },
+  "Branch": "Trichy",
+  "phone": "9584125874",
+  "gstnumber": "78945612345",
+  "address1": "No 3/89",
+  "address2": "Ramco Industries",
+  "country": "India",
+  "city": "Trichy",
+  "state": "Tamil Nadu",
+  "zip": "620013",
+  "profile": "[{\"path\":\"logo.jpg\",\"preview\":\"blob:https://elated-hawking-37daa2.netlify.app/46229f8b-2b1b-45e9-9128-236f676bbf7c\"}]",
+  "cover": "[{\"path\":\"back.jpg\",\"preview\":\"blob:https://elated-hawking-37daa2.netlify.app/b1446a69-bc14-4b46-abbe-366daf7491a7\"}]",
+  "product": {
+    "product_category": "",
+    "product_type": "",
+    "product_details": "",
+    "size_color_price": "",
+    "images": ""
+  },
+  "productBundle": [
+    {
+      "product_category": "Men",
+      "product_type": "Men-shirt",
+      "product_details": {
+        "cattype": "Men-shirt",
+        "productname": "Vikings Shirt",
+        "productdescription": "A good looking Shirt",
+        "material": "Cotton",
+        "Occassion": ["Evening", "Casual"],
+        "shirttype": "Formal Shirt",
+        "sleeve": "short Sleeve"
+      },
+      "size_color_price": [
+        {
+          "brand": "Raymond",
+          "color": "#04ff00",
+          "size": "xl(44)",
+          "sholder": "55",
+          "chest": "45",
+          "sleeve": "50",
+          "neck": "40",
+          "length": "125",
+          "quantity": "100",
+          "amt": "800"
+        },
+        {
+          "brand": "Raymond",
+          "color": "#5900ff",
+          "size": "2xl(46)",
+          "sholder": "40",
+          "chest": "50",
+          "sleeve": "44",
+          "neck": "51",
+          "length": "165",
+          "quantity": "200",
+          "amt": "1200"
+        }
+      ],
+      "images": [
+        {
+          "path": "men.jpg",
+          "preview": "blob:https://elated-hawking-37daa2.netlify.app/420d407a-a29e-4532-9741-ec45739edd19"
+        },
+        {
+          "path": "shirt.jpeg",
+          "preview": "blob:https://elated-hawking-37daa2.netlify.app/4b9b0e89-1f15-40d3-8519-4ba2688a15ce"
+        }
+      ]
+    },
+    {
+      "product_category": "Babies",
+      "product_type": "Baby-Gift-Box",
+      "product_details": {
+        "cattype": "Baby-Gift-Box",
+        "productname": "Sweet Gift Box",
+        "productdescription": "A Gift set for newborn babies",
+        "material": "Chiffon",
+        "Occassion": ["Casual"],
+        "totnumberofthing": "10"
+      },
+      "size_color_price": [
+        {
+          "brand": "Swifty",
+          "color": "#ec04e4",
+          "size": "10",
+          "quantity": "200",
+          "amt": "999"
+        }
+      ],
+      "images": [
+        {
+          "path": "babygift.png",
+          "preview": "blob:https://elated-hawking-37daa2.netlify.app/55893857-3a26-450b-9d74-4c6a28c69271"
+        }
+      ]
+    }
+  ]
+}
