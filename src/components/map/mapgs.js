@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 import ReactMapGL, {
   Marker,
   NavigationControl,
   FlyToInterpolator,
-} from "react-map-gl";
-import { MdLocationOn } from "react-icons/md";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { withRouter } from "react-router-dom";
+} from 'react-map-gl';
+import {MdLocationOn} from 'react-icons/md';
+import {OverlayTrigger, Tooltip} from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
 class Map extends Component {
   constructor() {
     super();
@@ -24,36 +24,36 @@ class Map extends Component {
         longitude: 78.704674,
         zoom: 0,
       },
-      name: "",
-      id: "",
-      mapstyle: "mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc",
-      place: "",
+      name: '',
+      id: '',
+      mapstyle: 'mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc',
+      place: '',
     };
   }
 
   gotomap() {
-    console.log("hello");
+    console.log('hello');
     console.log(this.state.name);
     this.props.history.push(
-      `/mapping/${this.state.name + "_" + this.state.id}`
+      `/mapping/${this.state.name + '_' + this.state.id}`
     );
   }
 
   componentDidMount() {
-    const url = "https://crevaltoserver.herokuapp.com/v1/brand/getlocations";
+    const url = 'https://crevaltoserver.herokuapp.com/v1/brand/getlocations';
     fetch(url, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then((response) => response.json())
       .then((jsonData) => {
         console.log(jsonData);
-        this.setState({ locations: jsonData });
+        this.setState({locations: jsonData});
       })
       .then((run) => {
-        console.log("hello");
+        console.log('hello');
         console.log(this.state.locations);
         this.setState({
           viewport: {
@@ -85,17 +85,17 @@ class Map extends Component {
   // }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({[e.target.name]: e.target.value});
   }
 
   onViewportChange = (viewport) => {
-    this.setState({ viewport });
+    this.setState({viewport});
   };
 
   changemap(e) {
-    const { param } = e.target.dataset;
+    const {param} = e.target.dataset;
 
-    this.setState({ mapstyle: param });
+    this.setState({mapstyle: param});
   }
 
   changelocation() {
@@ -118,7 +118,7 @@ class Map extends Component {
           transitionInterpolator: new FlyToInterpolator(),
         };
 
-        this.setState({ viewport: viewport });
+        this.setState({viewport: viewport});
         flag = 1;
         break;
       }
@@ -126,7 +126,7 @@ class Map extends Component {
     if (flag === 0) {
       alert(`${this.state.place.toUpperCase()} is not FOUND`);
     }
-    this.setState({ place: "" });
+    this.setState({place: ''});
   }
 
   render() {
@@ -134,7 +134,7 @@ class Map extends Component {
 
     console.log(this.state.locations);
     return (
-      <div className="paddertop" style={{ overflow: "hidden" }}>
+      <div className="paddertop" style={{overflow: 'hidden'}}>
         <ReactMapGL
           attributionControl={true}
           customAttribution={true}
@@ -156,12 +156,9 @@ class Map extends Component {
                 <MdLocationOn
                   size="40"
                   onClick={() => {
-                    this.setState(
-                      { name: loc.companyName, id: loc._id },
-                      () => {
-                        this.gotomap();
-                      }
-                    );
+                    this.setState({name: loc.companyName, id: loc._id}, () => {
+                      this.gotomap();
+                    });
                   }}
                   color="purple"
                 />
@@ -169,7 +166,7 @@ class Map extends Component {
             </Marker>
           ))}
 
-          <div style={{ position: "absolute", right: 20, bottom: 20 }}>
+          <div style={{position: 'absolute', right: 20, bottom: 20}}>
             <NavigationControl onViewportChange={this.onViewportChange} />
           </div>
         </ReactMapGL>
@@ -179,17 +176,17 @@ class Map extends Component {
           overlay={<Tooltip id="tooltip-right">Normal Map</Tooltip>}
         >
           <img
-            src={require("../images/normalview.png")}
+            src={require('../images/normalview.png')}
             alt="view"
             style={{
-              position: "absolute",
-              width: "40px",
-              height: "40px",
-              borderRadius: "2px",
-              border: "1px solid white",
+              position: 'absolute',
+              width: '40px',
+              height: '40px',
+              borderRadius: '2px',
+              border: '1px solid white',
               left: 20,
               top: 105,
-              cursor: "pointer",
+              cursor: 'pointer',
             }}
             data-param="mapbox://styles/vicky-2000/cka6uyllz0xos1jo20816u56l"
             onClick={this.changemap}
@@ -201,37 +198,37 @@ class Map extends Component {
           overlay={<Tooltip id="tooltip-right">Satilite Map</Tooltip>}
         >
           <img
-            src={require("../images/satiliteview.png")}
+            src={require('../images/satiliteview.png')}
             alt="view"
             style={{
-              position: "absolute",
-              width: "40px",
-              height: "40px",
-              borderRadius: "2px",
-              border: "1px solid white",
+              position: 'absolute',
+              width: '40px',
+              height: '40px',
+              borderRadius: '2px',
+              border: '1px solid white',
               left: 20,
               top: 155,
-              cursor: "pointer",
+              cursor: 'pointer',
             }}
             data-param="mapbox://styles/vicky-2000/cka6g893l0jat1in5et9o9hsc"
             onClick={this.changemap}
           />
-        </OverlayTrigger>{" "}
+        </OverlayTrigger>{' '}
         <OverlayTrigger
           key="right"
           placement="right"
           overlay={<Tooltip id="tooltip-right">Dark Map</Tooltip>}
         >
           <img
-            src={require("../images/darkmap.png")}
+            src={require('../images/darkmap.png')}
             alt="view"
             style={{
-              position: "absolute",
-              cursor: "pointer",
-              width: "40px",
-              height: "40px",
-              borderRadius: "2px",
-              border: "1px solid white",
+              position: 'absolute',
+              cursor: 'pointer',
+              width: '40px',
+              height: '40px',
+              borderRadius: '2px',
+              border: '1px solid white',
               left: 20,
               top: 205,
             }}
@@ -241,8 +238,8 @@ class Map extends Component {
         </OverlayTrigger>
         <input
           style={{
-            position: "absolute",
-            width: "250px",
+            position: 'absolute',
+            width: '250px',
             left: 20,
             top: 265,
           }}
@@ -255,7 +252,7 @@ class Map extends Component {
         ></input>
         <button
           class="btn btn-primary"
-          style={{ position: "absolute", left: 20, top: 310 }}
+          style={{position: 'absolute', left: 20, top: 310}}
           onClick={this.changelocation}
         >
           Search
